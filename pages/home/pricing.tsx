@@ -1,9 +1,21 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import {
+  PaymentDialog,
+  PaymentDialogTrigger,
+  PaymentDialogContent,
+  PaymentDialogHeader,
+  PaymentDialogFooter,
+  PaymentDialogTitle,
+  PaymentDialogDescription,
+  PaymentDialogPlan,
+  PaymentDialogPrice,
+} from "@/components/client/payment-dialog";
+import {
   PricingCard,
   PricingCardHeader,
   PricingCardContent,
+  PricingCardFeature,
 } from "@/components/client/pricing-card";
 import { ArrowRight } from "lucide-react";
 import PaypalSubscriptionButton from "@/components/client/paypal-button";
@@ -12,7 +24,7 @@ const pricingCards = [
   {
     title: "Basic",
     description: "For small cafes or takeout spots",
-    price: "From $69.99/month",
+    price: "69.99",
     features: [
       "3-page custom website (Homepage, Menu, Contact)",
       "Unlimited menu items",
@@ -25,11 +37,12 @@ const pricingCards = [
       "Maintenance & support",
     ],
     variant: "default",
+    planId: "P-2XU60119GU648443YNA64AEA",
   },
   {
     title: "Pro",
     description: "For growing restaurants",
-    price: "From $99.99/month",
+    price: "99.99",
     features: [
       "Everything in Basic",
       "Custom branding",
@@ -42,11 +55,12 @@ const pricingCards = [
       "Social media feed integration on website",
     ],
     variant: "popular",
+    planId: "P-02876306HE3896415NA7AZGQ",
   },
   {
     title: "Premium",
     description: "For upscale brands",
-    price: "From $149.99/month",
+    price: "149.99",
     features: [
       "Everything in Pro",
       "10-20 page custom website",
@@ -57,6 +71,7 @@ const pricingCards = [
       "Google My Business management & optimization",
     ],
     variant: "default",
+    planId: "P-44256660A5342815BNA7A5VY",
   },
 ];
 
@@ -74,7 +89,7 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 mx-auto">
           {/* Starter */}
           {pricingCards.map((card, index) => (
             <PricingCard key={index} variant={card.variant as any}>
@@ -83,7 +98,36 @@ const Pricing = () => {
                 description={card.description}
                 price={card.price}
               />
-              <PricingCardContent features={card.features} />
+              <PricingCardContent>
+                {card.features.map((feature, index) => (
+                  <PricingCardFeature key={index}>{feature}</PricingCardFeature>
+                ))}
+                <PaymentDialog>
+                  <PaymentDialogTrigger>
+                    <Button className="w-full">Get Started</Button>
+                  </PaymentDialogTrigger>
+                  <PaymentDialogContent>
+                    <PaymentDialogHeader>
+                      <PaymentDialogTitle>{card.title}</PaymentDialogTitle>
+                      <PaymentDialogDescription>
+                        This will include all the {card.title} features as
+                        listed
+                      </PaymentDialogDescription>
+                    </PaymentDialogHeader>
+                    <PaymentDialogPlan>
+                      <PaymentDialogPrice>{card.price}</PaymentDialogPrice>
+                    </PaymentDialogPlan>
+                    <PaymentDialogFooter>
+                      <PaypalSubscriptionButton planId={card.planId} />
+                    </PaymentDialogFooter>
+
+                    <p className="text-xs text-gray-500 text-center">
+                      By subscribing, you agree to our Terms of Service and
+                      Privacy Policy
+                    </p>
+                  </PaymentDialogContent>
+                </PaymentDialog>
+              </PricingCardContent>
             </PricingCard>
           ))}
         </div>
@@ -94,7 +138,6 @@ const Pricing = () => {
           </Button>
         </div>
       </div>
-      <PaypalSubscriptionButton planId="P-2XU60119GU648443YNA64AEA" />
     </section>
   );
 };

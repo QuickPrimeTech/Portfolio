@@ -3,16 +3,17 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Children } from "@/types";
 
 type PricingCardVariant = "default" | "popular";
 
-function PricingCard({
+const PricingCard = ({
   children,
   variant = "default",
 }: {
   children: React.ReactNode;
   variant?: PricingCardVariant;
-}) {
+}) => {
   return (
     <Card
       className={cn(
@@ -28,9 +29,9 @@ function PricingCard({
       {children}
     </Card>
   );
-}
+};
 
-function PricingCardHeader({
+const PricingCardHeader = ({
   title,
   description,
   price,
@@ -38,32 +39,38 @@ function PricingCardHeader({
   title: string;
   description: string;
   price: string;
-}) {
+}) => {
   return (
     <div className="text-center p-6">
       <h3 className="text-2xl font-semibold">{title}</h3>
       <p className="text-sm text-muted-foreground">{description}</p>
-      <div className="text-3xl font-bold text-blue-600 mt-4">{price}</div>
+      <div className="text-3xl font-bold text-blue-600 mt-4">
+        ${price}
+        <span className="text-lg font-semibold text-muted-foreground">
+          /month
+        </span>
+      </div>
     </div>
   );
-}
+};
 
-function PricingCardContent({ features }: { features: string[] }) {
+const PricingCardContent = ({ children }: Children) => {
+  return <div className="p-6 pt-0">{children}</div>;
+};
+
+const PricingCardFeature = ({ children }: Children) => {
   return (
-    <div className="p-6 pt-0">
-      <ul className="space-y-3 mb-6">
-        {features.map((feature, index) => (
-          <li key={index} className="flex items-center">
-            <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-            {feature}
-          </li>
-        ))}
-      </ul>
-      <Button className="w-full bg-blue-600 hover:bg-blue-700">
-        Get Started
-      </Button>
-    </div>
+    <ul className="space-y-3 mb-6">
+      <li className="flex items-center">
+        <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+        {children}
+      </li>
+    </ul>
   );
-}
-
-export { PricingCard, PricingCardHeader, PricingCardContent };
+};
+export {
+  PricingCard,
+  PricingCardHeader,
+  PricingCardContent,
+  PricingCardFeature,
+};
