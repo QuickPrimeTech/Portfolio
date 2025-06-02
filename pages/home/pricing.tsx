@@ -88,7 +88,7 @@ const Pricing = () => {
           ))}
         </div>
         <div className="text-center mt-8">
-          <Button size="lg" variant={"outline-solid"}>
+          <Button size="lg" variant={"outline"}>
             Compare All Plans
             <ArrowRight />
           </Button>

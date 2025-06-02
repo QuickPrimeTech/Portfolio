@@ -30,7 +30,7 @@ const Hero = () => {
       >
         <defs>
           <linearGradient id="heroGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="hsl(var(--secondary))" />
+            <stop offset="0%" stopColor="var(--secondary)" />
             <stop offset="70%" stopColor="#EE4B2B" />
             <stop offset="100%" stopColor="#2563eb" />
           </linearGradient>

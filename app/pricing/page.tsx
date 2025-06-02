@@ -28,6 +28,7 @@ import {
   Headphones,
 } from "lucide-react";
 import Link from "next/link";
+import Pricing from "@/pages/home/pricing";
 
 export default function PricingPage() {
   const [billingCycle, setBillingCycle] = React.useState<"monthly" | "annual">(
@@ -270,66 +271,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Pricing Cards */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
-            {plans.map((plan) => (
-              <Card
-                key={plan.name}
-                className={`relative border-2 transition-all hover:shadow-lg ${
-                  plan.popular
-                    ? "border-blue-600 shadow-lg scale-105"
-                    : "border-gray-200 hover:border-blue-200"
-                }`}
-              >
-                {plan.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600">
-                    Most Popular
-                  </Badge>
-                )}
-                <CardHeader className="text-center pb-8">
-                  <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                  <CardDescription className="text-base mb-6">
-                    {plan.description}
-                  </CardDescription>
-                  <div className="text-4xl font-bold text-blue-600">
-                    ${plan.price[billingCycle].toLocaleString()}
-                    {billingCycle === "annual" && (
-                      <span className="text-lg text-gray-500">/year</span>
-                    )}
-                  </div>
-                  {billingCycle === "annual" && (
-                    <p className="text-sm text-gray-500 mt-2">
-                      Includes ongoing maintenance & support
-                    </p>
-                  )}
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 mb-8">
-                    {plan.features.map((feature, index) => (
-                      <li key={index} className="flex items-center">
-                        <CheckCircle className="h-5 w-5 text-green-500 mr-3 shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button
-                    className={`w-full ${
-                      plan.popular
-                        ? "bg-blue-600 hover:bg-blue-700"
-                        : "bg-gray-900 hover:bg-gray-800"
-                    }`}
-                  >
-                    Get Started
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Pricing />
 
       {/* Feature Comparison Table */}
       <section className="py-20 bg-gray-50 relative">
