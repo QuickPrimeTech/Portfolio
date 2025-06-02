@@ -6,6 +6,7 @@ import {
   PricingCardContent,
 } from "@/components/client/pricing-card";
 import { ArrowRight } from "lucide-react";
+import PaypalSubscriptionButton from "@/components/client/paypal-button";
 
 const pricingCards = [
   {
@@ -93,6 +94,7 @@ const Pricing = () => {
           </Button>
         </div>
       </div>
+      <PaypalSubscriptionButton planId="P-2XU60119GU648443YNA64AEA" />
     </section>
   );
 };
