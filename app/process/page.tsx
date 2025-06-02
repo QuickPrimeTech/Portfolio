@@ -275,36 +275,6 @@ export default function ProcessPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <ChefHat className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">QuickPrimeTech</span>
-          </Link>
-          <div className="hidden md:flex items-center space-x-6">
-            <Link href="/process" className="text-blue-600 font-medium">
-              Process
-            </Link>
-            <Link href="/#work" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Our Work
-            </Link>
-            <Link href="/pricing" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Pricing
-            </Link>
-            <Link href="/team" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Team
-            </Link>
-            <Link href="/reviews" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Reviews
-            </Link>
-          </div>
-          <Link href="/book-consultation">
-            <Button className="bg-blue-600 hover:bg-blue-700">Book Free Consultation</Button>
-          </Link>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-red-50 to-red-100">
         <div className="container mx-auto px-4 text-center">
@@ -659,32 +629,6 @@ export default function ProcessPage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <Link href="/" className="flex items-center space-x-2 mb-4 md:mb-0">
-              <ChefHat className="h-8 w-8 text-blue-600" />
-              <span className="text-xl font-bold">QuickPrimeTech</span>
-            </Link>
-            <div className="flex space-x-6 text-sm text-gray-400">
-              <Link href="#" className="hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="hover:text-white transition-colors">
-                Terms of Service
-              </Link>
-              <Link href="/contact" className="hover:text-white transition-colors">
-                Contact
-              </Link>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2024 QuickPrimeTech. All rights reserved. Specialized in restaurant website development.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

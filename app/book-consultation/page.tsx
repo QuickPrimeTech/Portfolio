@@ -1,18 +1,41 @@
-"use client"
+"use client";
 
-import React from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { ChefHat, Calendar, Phone, Mail, CheckCircle, Users, Globe, ArrowRight, ArrowLeft } from "lucide-react"
-import Link from "next/link"
+import React from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  CardFooter,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  ChefHat,
+  Calendar,
+  Phone,
+  Mail,
+  CheckCircle,
+  Users,
+  Globe,
+  ArrowRight,
+  ArrowLeft,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function BookConsultationPage() {
-  const [currentStep, setCurrentStep] = React.useState(0)
+  const [currentStep, setCurrentStep] = React.useState(0);
   const [formData, setFormData] = React.useState({
     firstName: "",
     lastName: "",
@@ -29,7 +52,7 @@ export default function BookConsultationPage() {
     selectedPackage: "",
     hearAboutUs: "",
     newsletter: false,
-  })
+  });
 
   const steps = [
     {
@@ -52,7 +75,7 @@ export default function BookConsultationPage() {
       description: "Almost there!",
       subtitle: "Just a few more questions",
     },
-  ]
+  ];
 
   const restaurantTypes = [
     "Fine Dining",
@@ -67,7 +90,7 @@ export default function BookConsultationPage() {
     "Seafood Restaurant",
     "Steakhouse",
     "Other",
-  ]
+  ];
 
   const budgetRanges = [
     "Under $1,000",
@@ -76,41 +99,64 @@ export default function BookConsultationPage() {
     "$5,000 - $10,000",
     "$10,000+",
     "Let's discuss",
-  ]
+  ];
 
-  const timelines = ["ASAP", "Within 1 month", "1-3 months", "3-6 months", "6+ months", "Just exploring"]
+  const timelines = [
+    "ASAP",
+    "Within 1 month",
+    "1-3 months",
+    "3-6 months",
+    "6+ months",
+    "Just exploring",
+  ];
 
   const packages = [
-    { value: "starter", label: "Starter Package ($800)", description: "Perfect for small cafes" },
-    { value: "pro", label: "Pro Package ($1,500)", description: "Ideal for growing restaurants" },
-    { value: "premium", label: "Premium Package ($2,500+)", description: "For upscale establishments" },
-    { value: "custom", label: "Custom Solution", description: "Let's discuss your unique needs" },
-  ]
+    {
+      value: "starter",
+      label: "Starter Package ($800)",
+      description: "Perfect for small cafes",
+    },
+    {
+      value: "pro",
+      label: "Pro Package ($1,500)",
+      description: "Ideal for growing restaurants",
+    },
+    {
+      value: "premium",
+      label: "Premium Package ($2,500+)",
+      description: "For upscale establishments",
+    },
+    {
+      value: "custom",
+      label: "Custom Solution",
+      description: "Let's discuss your unique needs",
+    },
+  ];
 
   const handleInputChange = (field: string, value: string | boolean) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
   const nextStep = () => {
     if (currentStep < steps.length - 1) {
-      setCurrentStep(currentStep + 1)
-      window.scrollTo(0, 0)
+      setCurrentStep(currentStep + 1);
+      window.scrollTo(0, 0);
     }
-  }
+  };
 
   const prevStep = () => {
     if (currentStep > 0) {
-      setCurrentStep(currentStep - 1)
-      window.scrollTo(0, 0)
+      setCurrentStep(currentStep - 1);
+      window.scrollTo(0, 0);
     }
-  }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission
-    console.log("Form submitted:", formData)
+    console.log("Form submitted:", formData);
     // In a real app, this would send data to your backend
-  }
+  };
 
   const renderStepContent = () => {
     switch (currentStep) {
@@ -123,7 +169,9 @@ export default function BookConsultationPage() {
                 <Input
                   id="firstName"
                   value={formData.firstName}
-                  onChange={(e) => handleInputChange("firstName", e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("firstName", e.target.value)
+                  }
                   required
                 />
               </div>
@@ -132,7 +180,9 @@ export default function BookConsultationPage() {
                 <Input
                   id="lastName"
                   value={formData.lastName}
-                  onChange={(e) => handleInputChange("lastName", e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("lastName", e.target.value)
+                  }
                   required
                 />
               </div>
@@ -160,7 +210,7 @@ export default function BookConsultationPage() {
               </div>
             </div>
           </div>
-        )
+        );
       case 1:
         return (
           <div className="space-y-4">
@@ -170,7 +220,9 @@ export default function BookConsultationPage() {
                 <Input
                   id="restaurantName"
                   value={formData.restaurantName}
-                  onChange={(e) => handleInputChange("restaurantName", e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("restaurantName", e.target.value)
+                  }
                   required
                 />
               </div>
@@ -179,7 +231,9 @@ export default function BookConsultationPage() {
                 <Input
                   id="location"
                   value={formData.location}
-                  onChange={(e) => handleInputChange("location", e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("location", e.target.value)
+                  }
                   placeholder="e.g., San Francisco, CA"
                   required
                 />
@@ -190,7 +244,9 @@ export default function BookConsultationPage() {
                 <Label htmlFor="restaurantType">Restaurant Type *</Label>
                 <Select
                   value={formData.restaurantType}
-                  onValueChange={(value) => handleInputChange("restaurantType", value)}
+                  onValueChange={(value) =>
+                    handleInputChange("restaurantType", value)
+                  }
                 >
                   <SelectTrigger>
                     <SelectValue placeholder="Select restaurant type" />
@@ -215,7 +271,7 @@ export default function BookConsultationPage() {
               </div>
             </div>
           </div>
-        )
+        );
       case 2:
         return (
           <div className="space-y-4">
@@ -223,7 +279,9 @@ export default function BookConsultationPage() {
               <Label htmlFor="package">Interested Package</Label>
               <Select
                 value={formData.selectedPackage}
-                onValueChange={(value) => handleInputChange("selectedPackage", value)}
+                onValueChange={(value) =>
+                  handleInputChange("selectedPackage", value)
+                }
               >
                 <SelectTrigger>
                   <SelectValue placeholder="Select a package or custom solution" />
@@ -233,7 +291,9 @@ export default function BookConsultationPage() {
                     <SelectItem key={pkg.value} value={pkg.value}>
                       <div>
                         <div className="font-medium">{pkg.label}</div>
-                        <div className="text-sm text-gray-500">{pkg.description}</div>
+                        <div className="text-sm text-gray-500">
+                          {pkg.description}
+                        </div>
                       </div>
                     </SelectItem>
                   ))}
@@ -243,7 +303,12 @@ export default function BookConsultationPage() {
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="timeline">Project Timeline</Label>
-                <Select value={formData.timeline} onValueChange={(value) => handleInputChange("timeline", value)}>
+                <Select
+                  value={formData.timeline}
+                  onValueChange={(value) =>
+                    handleInputChange("timeline", value)
+                  }
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="When do you need this?" />
                   </SelectTrigger>
@@ -258,7 +323,10 @@ export default function BookConsultationPage() {
               </div>
               <div>
                 <Label htmlFor="budget">Budget Range</Label>
-                <Select value={formData.budget} onValueChange={(value) => handleInputChange("budget", value)}>
+                <Select
+                  value={formData.budget}
+                  onValueChange={(value) => handleInputChange("budget", value)}
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="Select budget range" />
                   </SelectTrigger>
@@ -277,7 +345,9 @@ export default function BookConsultationPage() {
               <Textarea
                 id="currentChallenges"
                 value={formData.currentChallenges}
-                onChange={(e) => handleInputChange("currentChallenges", e.target.value)}
+                onChange={(e) =>
+                  handleInputChange("currentChallenges", e.target.value)
+                }
                 placeholder="What challenges are you facing with your current online presence?"
                 rows={3}
               />
@@ -293,22 +363,31 @@ export default function BookConsultationPage() {
               />
             </div>
           </div>
-        )
+        );
       case 3:
         return (
           <div className="space-y-4">
             <div>
               <Label htmlFor="hearAboutUs">How did you hear about us?</Label>
-              <Select value={formData.hearAboutUs} onValueChange={(value) => handleInputChange("hearAboutUs", value)}>
+              <Select
+                value={formData.hearAboutUs}
+                onValueChange={(value) =>
+                  handleInputChange("hearAboutUs", value)
+                }
+              >
                 <SelectTrigger>
                   <SelectValue placeholder="Select an option" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="google">Google Search</SelectItem>
                   <SelectItem value="social">Social Media</SelectItem>
-                  <SelectItem value="referral">Referral from another restaurant</SelectItem>
+                  <SelectItem value="referral">
+                    Referral from another restaurant
+                  </SelectItem>
                   <SelectItem value="review">Online Reviews</SelectItem>
-                  <SelectItem value="advertising">Online Advertising</SelectItem>
+                  <SelectItem value="advertising">
+                    Online Advertising
+                  </SelectItem>
                   <SelectItem value="other">Other</SelectItem>
                 </SelectContent>
               </Select>
@@ -317,55 +396,31 @@ export default function BookConsultationPage() {
               <Checkbox
                 id="newsletter"
                 checked={formData.newsletter as boolean}
-                onCheckedChange={(checked) => handleInputChange("newsletter", checked as boolean)}
+                onCheckedChange={(checked) =>
+                  handleInputChange("newsletter", checked as boolean)
+                }
               />
               <Label htmlFor="newsletter" className="text-sm">
-                Subscribe to our newsletter for restaurant marketing tips and industry insights
+                Subscribe to our newsletter for restaurant marketing tips and
+                industry insights
               </Label>
             </div>
             <div className="pt-4">
               <p className="text-sm text-gray-500 mb-6">
-                By submitting this form, you agree to our Terms of Service and Privacy Policy. We'll never share your
-                information with third parties.
+                By submitting this form, you agree to our Terms of Service and
+                Privacy Policy. We'll never share your information with third
+                parties.
               </p>
             </div>
           </div>
-        )
+        );
       default:
-        return null
+        return null;
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <ChefHat className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">QuickPrimeTech</span>
-          </Link>
-          <div className="hidden md:flex items-center space-x-6">
-            <Link href="/process" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Process
-            </Link>
-            <Link href="/#work" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Our Work
-            </Link>
-            <Link href="/pricing" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Pricing
-            </Link>
-            <Link href="/team" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Team
-            </Link>
-            <Link href="/reviews" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Reviews
-            </Link>
-          </div>
-          <Button className="bg-blue-600 hover:bg-blue-700">Call (555) 123-4567</Button>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-red-50 to-red-100">
         <div className="container mx-auto px-4 text-center">
@@ -373,8 +428,9 @@ export default function BookConsultationPage() {
             Book Your <span className="text-blue-600">Free Consultation</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Let's discuss your restaurant's goals and create a custom plan to transform your online presence. No
-            pressure, no sales pitch – just expert advice tailored to your needs.
+            Let's discuss your restaurant's goals and create a custom plan to
+            transform your online presence. No pressure, no sales pitch – just
+            expert advice tailored to your needs.
           </p>
 
           {/* Benefits */}
@@ -404,13 +460,18 @@ export default function BookConsultationPage() {
               <div className="lg:col-span-2">
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-2xl mb-6">Schedule Your Consultation</CardTitle>
+                    <CardTitle className="text-2xl mb-6">
+                      Schedule Your Consultation
+                    </CardTitle>
 
                     {/* Step Indicator */}
                     <div className="bg-gray-50 rounded-2xl p-6 mb-6">
                       <div className="flex items-center justify-between">
                         {steps.map((step, index) => (
-                          <div key={index} className="flex flex-col items-center flex-1">
+                          <div
+                            key={index}
+                            className="flex flex-col items-center flex-1"
+                          >
                             {/* Circle with Number */}
                             <div className="relative">
                               <div
@@ -426,7 +487,9 @@ export default function BookConsultationPage() {
                               {index < steps.length - 1 && (
                                 <div
                                   className={`absolute top-6 left-12 h-0.5 transition-all duration-300 ${
-                                    index < currentStep ? "bg-blue-600" : "bg-gray-200"
+                                    index < currentStep
+                                      ? "bg-blue-600"
+                                      : "bg-gray-200"
                                   }`}
                                   style={{
                                     width: `calc(100vw / ${steps.length} - 3rem)`,
@@ -440,14 +503,18 @@ export default function BookConsultationPage() {
                             <div className="text-center mt-3">
                               <div
                                 className={`text-sm font-semibold transition-colors duration-300 ${
-                                  index <= currentStep ? "text-blue-600" : "text-gray-400"
+                                  index <= currentStep
+                                    ? "text-blue-600"
+                                    : "text-gray-400"
                                 }`}
                               >
                                 {step.title}
                               </div>
                               <div
                                 className={`text-xs mt-1 transition-colors duration-300 ${
-                                  index === currentStep ? "text-gray-600" : "text-gray-400"
+                                  index === currentStep
+                                    ? "text-gray-600"
+                                    : "text-gray-400"
                                 }`}
                               >
                                 {step.description}
@@ -458,7 +525,9 @@ export default function BookConsultationPage() {
                       </div>
                     </div>
 
-                    <CardDescription className="text-lg text-gray-600">{steps[currentStep].subtitle}</CardDescription>
+                    <CardDescription className="text-lg text-gray-600">
+                      {steps[currentStep].subtitle}
+                    </CardDescription>
                   </CardHeader>
 
                   <CardContent>
@@ -471,19 +540,29 @@ export default function BookConsultationPage() {
                       variant="outline"
                       onClick={prevStep}
                       disabled={currentStep === 0}
-                      className={currentStep === 0 ? "opacity-50 cursor-not-allowed" : ""}
+                      className={
+                        currentStep === 0 ? "opacity-50 cursor-not-allowed" : ""
+                      }
                     >
                       <ArrowLeft className="mr-2 h-4 w-4" />
                       Back
                     </Button>
 
                     {currentStep < steps.length - 1 ? (
-                      <Button type="button" onClick={nextStep} className="bg-blue-600 hover:bg-blue-700">
+                      <Button
+                        type="button"
+                        onClick={nextStep}
+                        className="bg-blue-600 hover:bg-blue-700"
+                      >
                         Continue
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     ) : (
-                      <Button type="submit" onClick={handleSubmit} className="bg-blue-600 hover:bg-blue-700">
+                      <Button
+                        type="submit"
+                        onClick={handleSubmit}
+                        className="bg-blue-600 hover:bg-blue-700"
+                      >
                         Schedule My Free Consultation
                         <Calendar className="ml-2 h-4 w-4" />
                       </Button>
@@ -504,14 +583,18 @@ export default function BookConsultationPage() {
                       <Phone className="h-5 w-5 text-blue-600" />
                       <div>
                         <p className="font-medium">(555) 123-4567</p>
-                        <p className="text-sm text-gray-500">Mon-Fri, 9AM-6PM PST</p>
+                        <p className="text-sm text-gray-500">
+                          Mon-Fri, 9AM-6PM PST
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Mail className="h-5 w-5 text-blue-600" />
                       <div>
                         <p className="font-medium">hello@quickprimetech.com</p>
-                        <p className="text-sm text-gray-500">We respond within 24 hours</p>
+                        <p className="text-sm text-gray-500">
+                          We respond within 24 hours
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -527,21 +610,27 @@ export default function BookConsultationPage() {
                       <Calendar className="h-5 w-5 text-blue-600 mt-1" />
                       <div>
                         <p className="font-medium">15-30 Minute Call</p>
-                        <p className="text-sm text-gray-500">We'll discuss your goals and current challenges</p>
+                        <p className="text-sm text-gray-500">
+                          We'll discuss your goals and current challenges
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <Users className="h-5 w-5 text-blue-600 mt-1" />
                       <div>
                         <p className="font-medium">Expert Recommendations</p>
-                        <p className="text-sm text-gray-500">Get personalized advice for your restaurant</p>
+                        <p className="text-sm text-gray-500">
+                          Get personalized advice for your restaurant
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <Globe className="h-5 w-5 text-blue-600 mt-1" />
                       <div>
                         <p className="font-medium">Custom Proposal</p>
-                        <p className="text-sm text-gray-500">Receive a detailed plan and timeline</p>
+                        <p className="text-sm text-gray-500">
+                          Receive a detailed plan and timeline
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -552,16 +641,22 @@ export default function BookConsultationPage() {
                   <CardContent className="p-6">
                     <div className="flex mb-4">
                       {[...Array(5)].map((_, i) => (
-                        <CheckCircle key={i} className="h-4 w-4 text-blue-600" />
+                        <CheckCircle
+                          key={i}
+                          className="h-4 w-4 text-blue-600"
+                        />
                       ))}
                     </div>
                     <p className="text-sm text-gray-700 italic mb-4">
-                      "The consultation was incredibly valuable. They understood our needs immediately and provided
-                      actionable insights even before we hired them."
+                      "The consultation was incredibly valuable. They understood
+                      our needs immediately and provided actionable insights
+                      even before we hired them."
                     </p>
                     <div className="text-sm">
                       <p className="font-medium">Maria Rodriguez</p>
-                      <p className="text-gray-500">Owner, Bella Vista Italian</p>
+                      <p className="text-gray-500">
+                        Owner, Bella Vista Italian
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
@@ -570,32 +665,6 @@ export default function BookConsultationPage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <Link href="/" className="flex items-center space-x-2 mb-4 md:mb-0">
-              <ChefHat className="h-8 w-8 text-blue-600" />
-              <span className="text-xl font-bold">QuickPrimeTech</span>
-            </Link>
-            <div className="flex space-x-6 text-sm text-gray-400">
-              <Link href="#" className="hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="hover:text-white transition-colors">
-                Terms of Service
-              </Link>
-              <Link href="/contact" className="hover:text-white transition-colors">
-                Contact
-              </Link>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2024 QuickPrimeTech. All rights reserved. Specialized in restaurant website development.</p>
-          </div>
-        </div>
-      </footer>
     </div>
-  )
+  );
 }

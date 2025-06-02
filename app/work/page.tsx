@@ -1,12 +1,18 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   Dialog,
   DialogContent,
@@ -14,10 +20,19 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { ChefHat, Search, ExternalLink, Calendar, ArrowRight, Eye, Zap, Target } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+} from "@/components/ui/dialog";
+import {
+  ChefHat,
+  Search,
+  ExternalLink,
+  Calendar,
+  ArrowRight,
+  Eye,
+  Zap,
+  Target,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
@@ -26,7 +41,8 @@ const projects = [
     category: "Fine Dining",
     description:
       "Transformed a family restaurant's outdated site into a modern, reservation-friendly experience that captures the authentic Italian atmosphere.",
-    shortDescription: "Modern Italian restaurant website with reservation system",
+    shortDescription:
+      "Modern Italian restaurant website with reservation system",
     image: "/placeholder.svg?height=400&width=600",
     gallery: [
       "/placeholder.svg?height=400&width=600",
@@ -69,7 +85,11 @@ const projects = [
       "No online reservation system",
       "Poor search engine visibility",
     ],
-    solutions: ["Modern responsive design", "Integrated OpenTable reservations", "Comprehensive SEO optimization"],
+    solutions: [
+      "Modern responsive design",
+      "Integrated OpenTable reservations",
+      "Comprehensive SEO optimization",
+    ],
     tags: ["Restaurant", "Reservations", "Italian", "Family Business"],
   },
   {
@@ -116,8 +136,16 @@ const projects = [
       { label: "Order Value", value: "$24", improvement: "+15%" },
       { label: "Return Visitors", value: "45%", improvement: "+25%" },
     ],
-    challenges: ["No online ordering capability", "Unclear brand messaging", "Limited mobile experience"],
-    solutions: ["Custom ordering system", "Clear sustainability focus", "Mobile-first design approach"],
+    challenges: [
+      "No online ordering capability",
+      "Unclear brand messaging",
+      "Limited mobile experience",
+    ],
+    solutions: [
+      "Custom ordering system",
+      "Clear sustainability focus",
+      "Mobile-first design approach",
+    ],
     tags: ["Cafe", "Health Food", "Online Ordering", "Sustainability"],
   },
   {
@@ -164,8 +192,16 @@ const projects = [
       { label: "Average Booking", value: "$2,500", improvement: "+40%" },
       { label: "Social Engagement", value: "+85%", improvement: "+85%" },
     ],
-    challenges: ["No event booking system", "Poor photo presentation", "Limited social media presence"],
-    solutions: ["Custom event booking flow", "Professional photo galleries", "Social media integration"],
+    challenges: [
+      "No event booking system",
+      "Poor photo presentation",
+      "Limited social media presence",
+    ],
+    solutions: [
+      "Custom event booking flow",
+      "Professional photo galleries",
+      "Social media integration",
+    ],
     tags: ["Bar", "Events", "Upscale", "Private Dining"],
   },
   {
@@ -212,8 +248,16 @@ const projects = [
       { label: "Average Party Size", value: "4.2", improvement: "+20%" },
       { label: "Repeat Customers", value: "65%", improvement: "+30%" },
     ],
-    challenges: ["Outdated reservation system", "Poor mobile experience", "Limited visual appeal"],
-    solutions: ["Modern reservation flow", "Mobile-optimized design", "Stunning visual presentation"],
+    challenges: [
+      "Outdated reservation system",
+      "Poor mobile experience",
+      "Limited visual appeal",
+    ],
+    solutions: [
+      "Modern reservation flow",
+      "Mobile-optimized design",
+      "Stunning visual presentation",
+    ],
     tags: ["Seafood", "Waterfront", "Fine Dining", "Reservations"],
   },
   {
@@ -260,8 +304,16 @@ const projects = [
       { label: "Delivery Orders", value: "+40%", improvement: "+40%" },
       { label: "Newsletter Signups", value: "+60%", improvement: "+60%" },
     ],
-    challenges: ["Poor social media integration", "No delivery options", "Limited customer engagement"],
-    solutions: ["Live social media feeds", "Multiple delivery platforms", "Engaging content strategy"],
+    challenges: [
+      "Poor social media integration",
+      "No delivery options",
+      "Limited customer engagement",
+    ],
+    solutions: [
+      "Live social media feeds",
+      "Multiple delivery platforms",
+      "Engaging content strategy",
+    ],
     tags: ["Bistro", "Urban", "Social Media", "Delivery"],
   },
   {
@@ -308,91 +360,91 @@ const projects = [
       { label: "Private Events", value: "+60%", improvement: "+60%" },
       { label: "Local Engagement", value: "+70%", improvement: "+70%" },
     ],
-    challenges: ["Complex seasonal menu management", "Storytelling about sourcing", "Event booking coordination"],
-    solutions: ["Dynamic menu system", "Farmer partnership pages", "Integrated event calendar"],
+    challenges: [
+      "Complex seasonal menu management",
+      "Storytelling about sourcing",
+      "Event booking coordination",
+    ],
+    solutions: [
+      "Dynamic menu system",
+      "Farmer partnership pages",
+      "Integrated event calendar",
+    ],
     tags: ["Farm-to-Table", "Local", "Seasonal", "Sustainability"],
   },
-]
+];
 
-const categories = ["All", "Fine Dining", "Casual Dining", "Bar & Lounge", "Farm-to-Table"]
-const packages = ["All", "Starter", "Pro", "Premium"]
+const categories = [
+  "All",
+  "Fine Dining",
+  "Casual Dining",
+  "Bar & Lounge",
+  "Farm-to-Table",
+];
+const packages = ["All", "Starter", "Pro", "Premium"];
 
 export default function WorkPage() {
-  const [searchTerm, setSearchTerm] = useState("")
-  const [selectedCategory, setSelectedCategory] = useState("All")
-  const [selectedPackage, setSelectedPackage] = useState("All")
-  const [sortBy, setSortBy] = useState("newest")
-  const [viewMode, setViewMode] = useState("grid")
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedPackage, setSelectedPackage] = useState("All");
+  const [sortBy, setSortBy] = useState("newest");
+  const [viewMode, setViewMode] = useState("grid");
 
   const filteredProjects = projects
     .filter((project) => {
       const matchesSearch =
         project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        project.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-      const matchesCategory = selectedCategory === "All" || project.category === selectedCategory
-      const matchesPackage = selectedPackage === "All" || project.package === selectedPackage
-      return matchesSearch && matchesCategory && matchesPackage
+        project.tags.some((tag) =>
+          tag.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      const matchesCategory =
+        selectedCategory === "All" || project.category === selectedCategory;
+      const matchesPackage =
+        selectedPackage === "All" || project.package === selectedPackage;
+      return matchesSearch && matchesCategory && matchesPackage;
     })
     .sort((a, b) => {
       switch (sortBy) {
         case "newest":
-          return new Date(b.completedDate).getTime() - new Date(a.completedDate).getTime()
+          return (
+            new Date(b.completedDate).getTime() -
+            new Date(a.completedDate).getTime()
+          );
         case "oldest":
-          return new Date(a.completedDate).getTime() - new Date(b.completedDate).getTime()
+          return (
+            new Date(a.completedDate).getTime() -
+            new Date(b.completedDate).getTime()
+          );
         case "name":
-          return a.name.localeCompare(b.name)
+          return a.name.localeCompare(b.name);
         default:
-          return 0
+          return 0;
       }
-    })
+    });
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <ChefHat className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">QuickPrimeTech</span>
-          </Link>
-          <div className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Home
-            </Link>
-            <Link href="/process" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Process
-            </Link>
-            <Link href="/work" className="text-blue-600 font-medium">
-              Our Work
-            </Link>
-            <Link href="/pricing" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Pricing
-            </Link>
-            <Link href="/team" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Team
-            </Link>
-            <Link href="/reviews" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Reviews
-            </Link>
-          </div>
-          <Button className="bg-blue-600 hover:bg-blue-700">Book Free Consultation</Button>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-red-50 to-red-100">
         <div className="container mx-auto px-4 text-center">
-          <Badge className="mb-6 bg-red-100 text-red-800 hover:bg-blue-100">Portfolio Showcase</Badge>
+          <Badge className="mb-6 bg-red-100 text-red-800 hover:bg-blue-100">
+            Portfolio Showcase
+          </Badge>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Our <span className="text-blue-600">Restaurant</span> Success Stories
+            Our <span className="text-blue-600">Restaurant</span> Success
+            Stories
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Discover how we've helped restaurants transform their online presence, increase bookings, and grow their
-            business with custom websites that deliver real results.
+            Discover how we've helped restaurants transform their online
+            presence, increase bookings, and grow their business with custom
+            websites that deliver real results.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3">
+            <Button
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3"
+            >
               View All Projects
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -444,7 +496,10 @@ export default function WorkPage() {
 
             {/* Filters */}
             <div className="flex flex-wrap gap-4 items-center">
-              <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+              <Select
+                value={selectedCategory}
+                onValueChange={setSelectedCategory}
+              >
                 <SelectTrigger className="w-40">
                   <SelectValue placeholder="Category" />
                 </SelectTrigger>
@@ -457,7 +512,10 @@ export default function WorkPage() {
                 </SelectContent>
               </Select>
 
-              <Select value={selectedPackage} onValueChange={setSelectedPackage}>
+              <Select
+                value={selectedPackage}
+                onValueChange={setSelectedPackage}
+              >
                 <SelectTrigger className="w-32">
                   <SelectValue placeholder="Package" />
                 </SelectTrigger>
@@ -484,7 +542,8 @@ export default function WorkPage() {
 
             {/* Results Count */}
             <div className="text-sm text-gray-600">
-              {filteredProjects.length} project{filteredProjects.length !== 1 ? "s" : ""} found
+              {filteredProjects.length} project
+              {filteredProjects.length !== 1 ? "s" : ""} found
             </div>
           </div>
         </div>
@@ -504,13 +563,17 @@ export default function WorkPage() {
               <div className="text-gray-400 mb-4">
                 <Search className="h-16 w-16 mx-auto" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">No projects found</h3>
-              <p className="text-gray-600 mb-6">Try adjusting your search criteria or filters.</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                No projects found
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Try adjusting your search criteria or filters.
+              </p>
               <Button
                 onClick={() => {
-                  setSearchTerm("")
-                  setSelectedCategory("All")
-                  setSelectedPackage("All")
+                  setSearchTerm("");
+                  setSelectedCategory("All");
+                  setSelectedPackage("All");
                 }}
                 variant="outline"
               >
@@ -524,13 +587,19 @@ export default function WorkPage() {
       {/* CTA Section */}
       <section className="py-20 bg-blue-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Join Our Success Stories?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Join Our Success Stories?
+          </h2>
           <p className="text-xl text-orange-100 max-w-2xl mx-auto mb-8">
-            Let's create a website that transforms your restaurant's online presence and drives real business results.
+            Let's create a website that transforms your restaurant's online
+            presence and drives real business results.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/book-consultation">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3">
+              <Button
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3"
+              >
                 Start Your Project
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -548,7 +617,7 @@ export default function WorkPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
 
 function ProjectCard({ project }: { project: (typeof projects)[0] }) {
@@ -567,7 +636,10 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
           <Badge className="bg-blue-600 text-white">{project.package}</Badge>
         </div>
         <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <Button size="sm" className="bg-white/90 text-gray-900 hover:bg-white">
+          <Button
+            size="sm"
+            className="bg-white/90 text-gray-900 hover:bg-white"
+          >
             <Eye className="h-4 w-4" />
           </Button>
         </div>
@@ -587,7 +659,9 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
         <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
           {project.name}
         </h3>
-        <p className="text-gray-600 mb-4 text-sm leading-relaxed">{project.shortDescription}</p>
+        <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+          {project.shortDescription}
+        </p>
 
         {/* Key Results */}
         <div className="grid grid-cols-2 gap-3 mb-4">
@@ -614,7 +688,9 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
         <div className="flex gap-2">
           <Dialog>
             <DialogTrigger asChild>
-              <Button className="bg-blue-600 hover:bg-blue-700 flex-1">View Details</Button>
+              <Button className="bg-blue-600 hover:bg-blue-700 flex-1">
+                View Details
+              </Button>
             </DialogTrigger>
             <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
               <ProjectModal project={project} />
@@ -628,7 +704,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
 
 function ProjectModal({ project }: { project: (typeof projects)[0] }) {
@@ -637,19 +713,26 @@ function ProjectModal({ project }: { project: (typeof projects)[0] }) {
       <DialogHeader>
         <div className="flex items-center justify-between">
           <div>
-            <DialogTitle className="text-2xl font-bold">{project.name}</DialogTitle>
+            <DialogTitle className="text-2xl font-bold">
+              {project.name}
+            </DialogTitle>
             <DialogDescription className="text-lg mt-1">
               {project.category} • {project.location}
             </DialogDescription>
           </div>
-          <Badge className="bg-blue-600 text-white">{project.package} Package</Badge>
+          <Badge className="bg-blue-600 text-white">
+            {project.package} Package
+          </Badge>
         </div>
       </DialogHeader>
 
       {/* Image Gallery */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {project.gallery.map((image, index) => (
-          <div key={index} className="relative aspect-video rounded-lg overflow-hidden">
+          <div
+            key={index}
+            className="relative aspect-video rounded-lg overflow-hidden"
+          >
             <Image
               src={image || "/placeholder.svg"}
               alt={`${project.name} screenshot ${index + 1}`}
@@ -671,8 +754,12 @@ function ProjectModal({ project }: { project: (typeof projects)[0] }) {
         <TabsContent value="overview" className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h3 className="text-lg font-semibold mb-3">Project Description</h3>
-              <p className="text-gray-600 leading-relaxed">{project.description}</p>
+              <h3 className="text-lg font-semibold mb-3">
+                Project Description
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {project.description}
+              </p>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-3">Project Details</h3>
@@ -687,7 +774,9 @@ function ProjectModal({ project }: { project: (typeof projects)[0] }) {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Completed:</span>
-                  <span className="font-medium">{new Date(project.completedDate).toLocaleDateString()}</span>
+                  <span className="font-medium">
+                    {new Date(project.completedDate).toLocaleDateString()}
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Package:</span>
@@ -712,10 +801,16 @@ function ProjectModal({ project }: { project: (typeof projects)[0] }) {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <p className="text-gray-700 italic mb-3">"{project.testimonial.text}"</p>
+                  <p className="text-gray-700 italic mb-3">
+                    "{project.testimonial.text}"
+                  </p>
                   <div>
-                    <p className="font-semibold text-gray-900">{project.testimonial.author}</p>
-                    <p className="text-sm text-gray-600">{project.testimonial.role}</p>
+                    <p className="font-semibold text-gray-900">
+                      {project.testimonial.author}
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      {project.testimonial.role}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -731,8 +826,12 @@ function ProjectModal({ project }: { project: (typeof projects)[0] }) {
               {Object.entries(project.results).map(([key, value]) => (
                 <Card key={key}>
                   <CardContent className="p-4 text-center">
-                    <div className="text-2xl font-bold text-blue-600 mb-1">{value}</div>
-                    <div className="text-sm text-gray-600 capitalize">{key}</div>
+                    <div className="text-2xl font-bold text-blue-600 mb-1">
+                      {value}
+                    </div>
+                    <div className="text-sm text-gray-600 capitalize">
+                      {key}
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -741,18 +840,27 @@ function ProjectModal({ project }: { project: (typeof projects)[0] }) {
 
           {/* Performance Metrics */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Performance Improvements</h3>
+            <h3 className="text-lg font-semibold mb-4">
+              Performance Improvements
+            </h3>
             <div className="grid md:grid-cols-3 gap-4">
               {project.metrics.map((metric, index) => (
                 <Card key={index}>
                   <CardContent className="p-4">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-gray-600">{metric.label}</span>
-                      <Badge variant="secondary" className="text-xs bg-green-100 text-green-800">
+                      <span className="text-sm text-gray-600">
+                        {metric.label}
+                      </span>
+                      <Badge
+                        variant="secondary"
+                        className="text-xs bg-green-100 text-green-800"
+                      >
                         {metric.improvement}
                       </Badge>
                     </div>
-                    <div className="text-xl font-bold text-gray-900">{metric.value}</div>
+                    <div className="text-xl font-bold text-gray-900">
+                      {metric.value}
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -833,5 +941,5 @@ function ProjectModal({ project }: { project: (typeof projects)[0] }) {
         </Link>
       </div>
     </div>
-  )
+  );
 }

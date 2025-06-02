@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import React from "react"
-import { Button } from "@/components/ui/button"
-import { ChefHat, Users, Star, Award, TrendingUp } from "lucide-react"
-import Link from "next/link"
-import { ReviewCard } from "@/components/review-card"
-import { FilterBar } from "@/components/filter-bar"
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { ChefHat, Users, Star, Award, TrendingUp } from "lucide-react";
+import Link from "next/link";
+import { ReviewCard } from "@/components/review-card";
+import { FilterBar } from "@/components/filter-bar";
 
 export default function ReviewsPage() {
-  const [searchTerm, setSearchTerm] = React.useState("")
-  const [ratingFilter, setRatingFilter] = React.useState("all")
-  const [categoryFilter, setCategoryFilter] = React.useState("all")
-  const [sortBy, setSortBy] = React.useState("newest")
-  const [currentPage, setCurrentPage] = React.useState(1)
+  const [searchTerm, setSearchTerm] = React.useState("");
+  const [ratingFilter, setRatingFilter] = React.useState("all");
+  const [categoryFilter, setCategoryFilter] = React.useState("all");
+  const [sortBy, setSortBy] = React.useState("newest");
+  const [currentPage, setCurrentPage] = React.useState(1);
 
   const reviews = [
     {
@@ -80,14 +80,14 @@ export default function ReviewsPage() {
       response: null,
     },
     // Add more reviews as needed...
-  ]
+  ];
 
   const stats = [
     { label: "Total Reviews", value: "150+", icon: Users },
     { label: "Average Rating", value: "4.9", icon: Star },
     { label: "Verified Reviews", value: "98%", icon: Award },
     { label: "Business Growth", value: "45%", icon: TrendingUp },
-  ]
+  ];
 
   // Filter and sort reviews
   const filteredReviews = reviews
@@ -95,34 +95,39 @@ export default function ReviewsPage() {
       const matchesSearch =
         review.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         review.restaurant.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        review.review.toLowerCase().includes(searchTerm.toLowerCase())
+        review.review.toLowerCase().includes(searchTerm.toLowerCase());
 
-      const matchesRating = ratingFilter === "all" || review.rating.toString() === ratingFilter
-      const matchesCategory = categoryFilter === "all" || review.category === categoryFilter
+      const matchesRating =
+        ratingFilter === "all" || review.rating.toString() === ratingFilter;
+      const matchesCategory =
+        categoryFilter === "all" || review.category === categoryFilter;
 
-      return matchesSearch && matchesRating && matchesCategory
+      return matchesSearch && matchesRating && matchesCategory;
     })
     .sort((a, b) => {
       switch (sortBy) {
         case "newest":
-          return new Date(b.date).getTime() - new Date(a.date).getTime()
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
         case "oldest":
-          return new Date(a.date).getTime() - new Date(b.date).getTime()
+          return new Date(a.date).getTime() - new Date(b.date).getTime();
         case "highest":
-          return b.rating - a.rating
+          return b.rating - a.rating;
         case "lowest":
-          return a.rating - b.rating
+          return a.rating - b.rating;
         case "helpful":
-          return (b.helpful || 0) - (a.helpful || 0)
+          return (b.helpful || 0) - (a.helpful || 0);
         default:
-          return 0
+          return 0;
       }
-    })
+    });
 
-  const reviewsPerPage = 6
-  const totalPages = Math.ceil(filteredReviews.length / reviewsPerPage)
-  const startIndex = (currentPage - 1) * reviewsPerPage
-  const paginatedReviews = filteredReviews.slice(startIndex, startIndex + reviewsPerPage)
+  const reviewsPerPage = 6;
+  const totalPages = Math.ceil(filteredReviews.length / reviewsPerPage);
+  const startIndex = (currentPage - 1) * reviewsPerPage;
+  const paginatedReviews = filteredReviews.slice(
+    startIndex,
+    startIndex + reviewsPerPage
+  );
 
   const filterOptions = {
     rating: [
@@ -149,48 +154,20 @@ export default function ReviewsPage() {
       { value: "lowest", label: "Lowest Rated" },
       { value: "helpful", label: "Most Helpful" },
     ],
-  }
+  };
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <ChefHat className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">QuickPrimeTech</span>
-          </Link>
-          <div className="hidden md:flex items-center space-x-6">
-            <Link href="/process" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Process
-            </Link>
-            <Link href="/#work" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Our Work
-            </Link>
-            <Link href="/pricing" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Pricing
-            </Link>
-            <Link href="/team" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Team
-            </Link>
-            <Link href="/reviews" className="text-blue-600 font-medium">
-              Reviews
-            </Link>
-          </div>
-          <Link href="/book-consultation">
-            <Button className="bg-blue-600 hover:bg-blue-700">Book Free Consultation</Button>
-          </Link>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-red-50 to-red-100">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            What Our <span className="text-blue-600">Restaurant Partners</span> Say
+            What Our <span className="text-blue-600">Restaurant Partners</span>{" "}
+            Say
           </h1>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-            Real reviews from real restaurant owners who've transformed their online presence with QuickPrimeTech.
+            Real reviews from real restaurant owners who've transformed their
+            online presence with QuickPrimeTech.
           </p>
 
           {/* Review Stats */}
@@ -200,7 +177,9 @@ export default function ReviewsPage() {
                 <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="h-8 w-8 text-blue-600" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">
+                  {stat.value}
+                </div>
                 <div className="text-gray-600">{stat.label}</div>
               </div>
             ))}
@@ -242,7 +221,8 @@ export default function ReviewsPage() {
           {/* Results count */}
           <div className="text-center mt-6">
             <p className="text-gray-600">
-              Showing {paginatedReviews.length} of {filteredReviews.length} reviews
+              Showing {paginatedReviews.length} of {filteredReviews.length}{" "}
+              reviews
             </p>
           </div>
         </div>
@@ -273,14 +253,20 @@ export default function ReviewsPage() {
                     key={i + 1}
                     variant={currentPage === i + 1 ? "default" : "outline"}
                     onClick={() => setCurrentPage(i + 1)}
-                    className={currentPage === i + 1 ? "bg-blue-600 hover:bg-blue-700" : ""}
+                    className={
+                      currentPage === i + 1
+                        ? "bg-blue-600 hover:bg-blue-700"
+                        : ""
+                    }
                   >
                     {i + 1}
                   </Button>
                 ))}
                 <Button
                   variant="outline"
-                  onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
+                  onClick={() =>
+                    setCurrentPage(Math.min(totalPages, currentPage + 1))
+                  }
                   disabled={currentPage === totalPages}
                 >
                   Next
@@ -294,43 +280,23 @@ export default function ReviewsPage() {
       {/* CTA Section */}
       <section className="py-20 bg-blue-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Join Our Success Stories?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Join Our Success Stories?
+          </h2>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-            See why restaurant owners consistently rate us 5 stars. Let's create your success story next.
+            See why restaurant owners consistently rate us 5 stars. Let's create
+            your success story next.
           </p>
           <Link href="/book-consultation">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3">
+            <Button
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3"
+            >
               Book Free Consultation
             </Button>
           </Link>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <Link href="/" className="flex items-center space-x-2 mb-4 md:mb-0">
-              <ChefHat className="h-8 w-8 text-blue-600" />
-              <span className="text-xl font-bold">QuickPrimeTech</span>
-            </Link>
-            <div className="flex space-x-6 text-sm text-gray-400">
-              <Link href="#" className="hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="hover:text-white transition-colors">
-                Terms of Service
-              </Link>
-              <Link href="/contact" className="hover:text-white transition-colors">
-                Contact
-              </Link>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2024 QuickPrimeTech. All rights reserved. Specialized in restaurant website development.</p>
-          </div>
-        </div>
-      </footer>
     </div>
-  )
+  );
 }

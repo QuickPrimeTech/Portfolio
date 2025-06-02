@@ -1,7 +1,7 @@
-"use client"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+"use client";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   ChefHat,
   MapPin,
@@ -15,9 +15,9 @@ import {
   Users,
   Camera,
   Smartphone,
-} from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function TeamPage() {
   const teamMembers = [
@@ -34,7 +34,11 @@ export default function TeamPage() {
         github: "#",
         email: "sarah@quickprimetech.com",
       },
-      achievements: ["50+ Restaurant Websites", "Google Certified", "AWS Solutions Architect"],
+      achievements: [
+        "50+ Restaurant Websites",
+        "Google Certified",
+        "AWS Solutions Architect",
+      ],
     },
     {
       name: "Marcus Rodriguez",
@@ -48,7 +52,11 @@ export default function TeamPage() {
         twitter: "#",
         email: "marcus@quickprimetech.com",
       },
-      achievements: ["Design Awards Winner", "Brand Strategy Expert", "Restaurant Photography"],
+      achievements: [
+        "Design Awards Winner",
+        "Brand Strategy Expert",
+        "Restaurant Photography",
+      ],
     },
     {
       name: "Emily Watson",
@@ -56,12 +64,21 @@ export default function TeamPage() {
       location: "Chicago, IL",
       image: "/placeholder.svg?height=300&width=300",
       bio: "Former restaurant operations manager turned tech project manager. Understands both sides of the business and ensures smooth project delivery.",
-      skills: ["Project Management", "Client Relations", "Restaurant Operations", "Agile"],
+      skills: [
+        "Project Management",
+        "Client Relations",
+        "Restaurant Operations",
+        "Agile",
+      ],
       social: {
         linkedin: "#",
         email: "emily@quickprimetech.com",
       },
-      achievements: ["PMP Certified", "Restaurant Industry Expert", "100% On-Time Delivery"],
+      achievements: [
+        "PMP Certified",
+        "Restaurant Industry Expert",
+        "100% On-Time Delivery",
+      ],
     },
     {
       name: "David Kim",
@@ -75,7 +92,11 @@ export default function TeamPage() {
         github: "#",
         email: "david@quickprimetech.com",
       },
-      achievements: ["Integration Specialist", "Performance Optimization", "Security Expert"],
+      achievements: [
+        "Integration Specialist",
+        "Performance Optimization",
+        "Security Expert",
+      ],
     },
     {
       name: "Lisa Thompson",
@@ -89,7 +110,11 @@ export default function TeamPage() {
         twitter: "#",
         email: "lisa@quickprimetech.com",
       },
-      achievements: ["Google Ads Certified", "Local SEO Expert", "Conversion Optimization"],
+      achievements: [
+        "Google Ads Certified",
+        "Local SEO Expert",
+        "Conversion Optimization",
+      ],
     },
     {
       name: "James Park",
@@ -97,54 +122,33 @@ export default function TeamPage() {
       location: "Portland, OR",
       image: "/placeholder.svg?height=300&width=300",
       bio: "Ensures every website meets our high standards for performance, accessibility, and user experience. Leads our customer support team.",
-      skills: ["Quality Assurance", "Customer Support", "Accessibility", "Performance Testing"],
+      skills: [
+        "Quality Assurance",
+        "Customer Support",
+        "Accessibility",
+        "Performance Testing",
+      ],
       social: {
         linkedin: "#",
         email: "james@quickprimetech.com",
       },
-      achievements: ["Accessibility Expert", "Customer Success", "Quality Standards"],
+      achievements: [
+        "Accessibility Expert",
+        "Customer Success",
+        "Quality Standards",
+      ],
     },
-  ]
+  ];
 
   const stats = [
     { label: "Team Members", value: "6", icon: Users },
     { label: "Years Experience", value: "40+", icon: BarChart3 },
     { label: "Projects Completed", value: "200+", icon: Code },
     { label: "Client Satisfaction", value: "99%", icon: Smartphone },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <ChefHat className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">QuickPrimeTech</span>
-          </Link>
-          <div className="hidden md:flex items-center space-x-6">
-            <Link href="/#process" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Process
-            </Link>
-            <Link href="/#work" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Our Work
-            </Link>
-            <Link href="/pricing" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Pricing
-            </Link>
-            <Link href="/team" className="text-blue-600 font-medium">
-              Team
-            </Link>
-            <Link href="/reviews" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Reviews
-            </Link>
-          </div>
-          <Link href="/book-consultation">
-            <Button className="bg-blue-600 hover:bg-blue-700">Book Free Consultation</Button>
-          </Link>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-red-50 to-red-100">
         <div className="container mx-auto px-4 text-center">
@@ -152,8 +156,9 @@ export default function TeamPage() {
             Meet the <span className="text-blue-600">QuickPrimeTech</span> Team
           </h1>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-            We're a passionate team of designers, developers, and restaurant industry experts dedicated to helping your
-            restaurant succeed online.
+            We're a passionate team of designers, developers, and restaurant
+            industry experts dedicated to helping your restaurant succeed
+            online.
           </p>
 
           {/* Team Stats */}
@@ -163,7 +168,9 @@ export default function TeamPage() {
                 <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="h-8 w-8 text-blue-600" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">
+                  {stat.value}
+                </div>
                 <div className="text-gray-600">{stat.label}</div>
               </div>
             ))}
@@ -175,15 +182,21 @@ export default function TeamPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Expert Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Expert Team
+            </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Each team member brings unique expertise to ensure your restaurant website exceeds expectations.
+              Each team member brings unique expertise to ensure your restaurant
+              website exceeds expectations.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {teamMembers.map((member) => (
-              <Card key={member.name} className="overflow-hidden hover:shadow-lg transition-shadow">
+              <Card
+                key={member.name}
+                className="overflow-hidden hover:shadow-lg transition-shadow"
+              >
                 <div className="aspect-square bg-gradient-to-br from-red-100 to-red-100 flex items-center justify-center">
                   <Image
                     src={member.image || "/placeholder.svg"}
@@ -196,8 +209,12 @@ export default function TeamPage() {
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                      <p className="text-blue-600 font-medium mb-2">{member.role}</p>
+                      <h3 className="text-xl font-bold text-gray-900 mb-1">
+                        {member.name}
+                      </h3>
+                      <p className="text-blue-600 font-medium mb-2">
+                        {member.role}
+                      </p>
                       <div className="flex items-center text-gray-500 text-sm">
                         <MapPin className="h-4 w-4 mr-1" />
                         {member.location}
@@ -205,13 +222,19 @@ export default function TeamPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{member.bio}</p>
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                    {member.bio}
+                  </p>
 
                   {/* Skills */}
                   <div className="mb-4">
                     <div className="flex flex-wrap gap-2">
                       {member.skills.map((skill) => (
-                        <Badge key={skill} variant="secondary" className="bg-red-50 text-red-700 text-xs">
+                        <Badge
+                          key={skill}
+                          variant="secondary"
+                          className="bg-red-50 text-red-700 text-xs"
+                        >
                           {skill}
                         </Badge>
                       ))}
@@ -220,7 +243,9 @@ export default function TeamPage() {
 
                   {/* Achievements */}
                   <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-gray-900 mb-2">Key Achievements</h4>
+                    <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                      Key Achievements
+                    </h4>
                     <ul className="text-xs text-gray-600 space-y-1">
                       {member.achievements.map((achievement) => (
                         <li key={achievement} className="flex items-center">
@@ -234,17 +259,26 @@ export default function TeamPage() {
                   {/* Social Links */}
                   <div className="flex space-x-3 pt-4 border-t border-gray-100">
                     {member.social.linkedin && (
-                      <a href={member.social.linkedin} className="text-gray-400 hover:text-blue-600 transition-colors">
+                      <a
+                        href={member.social.linkedin}
+                        className="text-gray-400 hover:text-blue-600 transition-colors"
+                      >
                         <Linkedin className="h-5 w-5" />
                       </a>
                     )}
                     {member.social.twitter && (
-                      <a href={member.social.twitter} className="text-gray-400 hover:text-blue-600 transition-colors">
+                      <a
+                        href={member.social.twitter}
+                        className="text-gray-400 hover:text-blue-600 transition-colors"
+                      >
                         <Twitter className="h-5 w-5" />
                       </a>
                     )}
                     {member.social.github && (
-                      <a href={member.social.github} className="text-gray-400 hover:text-blue-600 transition-colors">
+                      <a
+                        href={member.social.github}
+                        className="text-gray-400 hover:text-blue-600 transition-colors"
+                      >
                         <Github className="h-5 w-5" />
                       </a>
                     )}
@@ -266,9 +300,12 @@ export default function TeamPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Values</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Values
+            </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The principles that guide everything we do and how we work with our restaurant partners.
+              The principles that guide everything we do and how we work with
+              our restaurant partners.
             </p>
           </div>
 
@@ -277,10 +314,12 @@ export default function TeamPage() {
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <ChefHat className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Restaurant-First</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Restaurant-First
+              </h3>
               <p className="text-gray-600">
-                We only work with restaurants, so we understand your unique challenges and opportunities better than
-                anyone.
+                We only work with restaurants, so we understand your unique
+                challenges and opportunities better than anyone.
               </p>
             </Card>
 
@@ -288,10 +327,12 @@ export default function TeamPage() {
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Partnership</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Partnership
+              </h3>
               <p className="text-gray-600">
-                We're not just vendors – we're partners in your success. Your growth is our success, and we're committed
-                for the long term.
+                We're not just vendors – we're partners in your success. Your
+                growth is our success, and we're committed for the long term.
               </p>
             </Card>
 
@@ -299,10 +340,12 @@ export default function TeamPage() {
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <BarChart3 className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Results-Driven</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Results-Driven
+              </h3>
               <p className="text-gray-600">
-                Every decision we make is focused on driving real business results – more customers, more bookings, more
-                revenue.
+                Every decision we make is focused on driving real business
+                results – more customers, more bookings, more revenue.
               </p>
             </Card>
 
@@ -310,10 +353,12 @@ export default function TeamPage() {
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Palette className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Craftsmanship</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Craftsmanship
+              </h3>
               <p className="text-gray-600">
-                We take pride in our work and attention to detail. Every pixel, every line of code, every interaction is
-                carefully crafted.
+                We take pride in our work and attention to detail. Every pixel,
+                every line of code, every interaction is carefully crafted.
               </p>
             </Card>
 
@@ -321,10 +366,12 @@ export default function TeamPage() {
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Smartphone className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Innovation</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Innovation
+              </h3>
               <p className="text-gray-600">
-                We stay ahead of technology trends and continuously improve our processes to deliver better results
-                faster.
+                We stay ahead of technology trends and continuously improve our
+                processes to deliver better results faster.
               </p>
             </Card>
 
@@ -332,10 +379,12 @@ export default function TeamPage() {
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Camera className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Transparency</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Transparency
+              </h3>
               <p className="text-gray-600">
-                Clear communication, honest timelines, and transparent pricing. No surprises, no hidden fees, no
-                confusion.
+                Clear communication, honest timelines, and transparent pricing.
+                No surprises, no hidden fees, no confusion.
               </p>
             </Card>
           </div>
@@ -345,44 +394,23 @@ export default function TeamPage() {
       {/* CTA Section */}
       <section className="py-20 bg-blue-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Work with Our Team?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Work with Our Team?
+          </h2>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-            Let's discuss your restaurant's goals and how our team can help you achieve them. Book a free consultation
-            today.
+            Let's discuss your restaurant's goals and how our team can help you
+            achieve them. Book a free consultation today.
           </p>
           <Link href="/book-consultation">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3">
+            <Button
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3"
+            >
               Book Free Consultation
             </Button>
           </Link>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <Link href="/" className="flex items-center space-x-2 mb-4 md:mb-0">
-              <ChefHat className="h-8 w-8 text-blue-600" />
-              <span className="text-xl font-bold">QuickPrimeTech</span>
-            </Link>
-            <div className="flex space-x-6 text-sm text-gray-400">
-              <Link href="#" className="hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="hover:text-white transition-colors">
-                Terms of Service
-              </Link>
-              <Link href="/contact" className="hover:text-white transition-colors">
-                Contact
-              </Link>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2024 QuickPrimeTech. All rights reserved. Specialized in restaurant website development.</p>
-          </div>
-        </div>
-      </footer>
     </div>
-  )
+  );
 }

@@ -1,9 +1,14 @@
-"use client"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Textarea } from "@/components/ui/textarea"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+"use client";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
   MoreHorizontal,
   Reply,
@@ -17,51 +22,51 @@ import {
   MapPin,
   Calendar,
   Users,
-} from "lucide-react"
-import Image from "next/image"
-import { StarRating } from "./star-rating"
-import { StatusBadge } from "./status-badge"
+} from "lucide-react";
+import Image from "next/image";
+import { StarRating } from "./star-rating";
+import { StatusBadge } from "./status-badge";
 
 interface Review {
-  id: number
-  name?: string
-  client?: string
-  restaurant: string
-  location?: string
-  rating: number
-  date: string
-  category?: string
-  package?: string
-  helpful?: number
-  verified?: boolean
-  image?: string
-  review?: string
-  comment?: string
-  businessImpact?: string
-  projectDuration?: string
-  reply?: string
-  status?: string
+  id: number;
+  name?: string;
+  client?: string;
+  restaurant: string;
+  location?: string;
+  rating: number;
+  date: string;
+  category?: string;
+  package?: string;
+  helpful?: number;
+  verified?: boolean;
+  image?: string;
+  review?: string;
+  comment?: string;
+  businessImpact?: string;
+  projectDuration?: string;
+  reply?: string;
+  status?: string;
   response?: {
-    author: string
-    role: string
-    date: string
-    text: string
-  }
+    author: string;
+    role: string;
+    date: string;
+    text: string;
+  } | null;
 }
 
 interface ReviewCardProps {
-  review: Review
-  variant?: "public" | "dashboard"
-  onReply?: (review: Review) => void
-  onEdit?: (review: Review) => void
-  onFlag?: (review: Review) => void
-  onDelete?: (review: Review) => void
-  showInlineReply?: boolean
-  onToggleInlineReply?: (reviewId: number) => void
-  expandedReplyIds?: number[]
-  replyText?: string
-  onReplyTextChange?: (text: string) => void
-  onSubmitInlineReply?: (reviewId: number) => void
+  review: Review;
+  variant?: "public" | "dashboard";
+  onReply?: (review: Review) => void;
+  onEdit?: (review: Review) => void;
+  onFlag?: (review: Review) => void;
+  onDelete?: (review: Review) => void;
+  showInlineReply?: boolean;
+  onToggleInlineReply?: (reviewId: number) => void;
+  expandedReplyIds?: number[];
+  replyText?: string;
+  onReplyTextChange?: (text: string) => void;
+  onSubmitInlineReply?: (reviewId: number) => void;
 }
 
 export function ReviewCard({
@@ -83,12 +88,12 @@ export function ReviewCard({
       year: "numeric",
       month: "long",
       day: "numeric",
-    })
-  }
+    });
+  };
 
-  const displayName = review.name || review.client || "Anonymous"
-  const reviewText = review.review || review.comment || ""
-  const isInlineReplyExpanded = expandedReplyIds.includes(review.id)
+  const displayName = review.name || review.client || "Anonymous";
+  const reviewText = review.review || review.comment || "";
+  const isInlineReplyExpanded = expandedReplyIds.includes(review.id);
 
   return (
     <Card className="hover:shadow-lg transition-shadow">
@@ -123,12 +128,22 @@ export function ReviewCard({
                   {review.location}
                 </div>
               )}
-              {variant === "dashboard" && <p className="text-xs text-gray-500">{formatDate(review.date)}</p>}
+              {variant === "dashboard" && (
+                <p className="text-xs text-gray-500">
+                  {formatDate(review.date)}
+                </p>
+              )}
             </div>
           </div>
           <div className="text-right">
-            {review.verified && <Badge className="bg-green-100 text-green-800 mb-2">Verified</Badge>}
-            {review.status && variant === "dashboard" && <StatusBadge status={review.status} className="mb-2" />}
+            {review.verified && (
+              <Badge className="bg-green-100 text-green-800 mb-2">
+                Verified
+              </Badge>
+            )}
+            {review.status && variant === "dashboard" && (
+              <StatusBadge status={review.status} className="mb-2" />
+            )}
             <StarRating rating={review.rating} />
             {variant === "dashboard" && (
               <DropdownMenu>
@@ -153,7 +168,10 @@ export function ReviewCard({
                     <Flag className="h-4 w-4 mr-2" />
                     Flag
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="text-red-600" onClick={() => onDelete?.(review)}>
+                  <DropdownMenuItem
+                    className="text-red-600"
+                    onClick={() => onDelete?.(review)}
+                  >
                     <Trash2 className="h-4 w-4 mr-2" />
                     Delete
                   </DropdownMenuItem>
@@ -171,7 +189,9 @@ export function ReviewCard({
           <div className="bg-red-50 rounded-lg p-4 mb-6">
             <div className="flex items-center mb-2">
               <TrendingUp className="h-5 w-5 text-red-600 mr-2" />
-              <span className="font-semibold text-red-800">Business Impact</span>
+              <span className="font-semibold text-red-800">
+                Business Impact
+              </span>
             </div>
             <p className="text-red-700 font-medium">{review.businessImpact}</p>
           </div>
@@ -182,14 +202,18 @@ export function ReviewCard({
           <div className="bg-blue-50 rounded-lg p-4 mb-6 border-l-4 border-blue-500">
             <div className="flex items-center mb-2">
               <Reply className="h-5 w-5 text-blue-600 mr-2" />
-              <span className="font-semibold text-blue-800">Response from QuickPrimeTech</span>
+              <span className="font-semibold text-blue-800">
+                Response from QuickPrimeTech
+              </span>
             </div>
             <p className="text-gray-700 mb-3 italic">{review.response.text}</p>
             <div className="flex items-center justify-between text-sm">
               <div className="text-blue-700 font-medium">
                 {review.response.author}, {review.response.role}
               </div>
-              <div className="text-gray-500">{formatDate(review.response.date)}</div>
+              <div className="text-gray-500">
+                {formatDate(review.response.date)}
+              </div>
             </div>
           </div>
         )}
@@ -200,7 +224,9 @@ export function ReviewCard({
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center">
                 <Reply className="h-4 w-4 text-blue-600 mr-2" />
-                <span className="text-sm font-medium text-blue-800">Your Reply</span>
+                <span className="text-sm font-medium text-blue-800">
+                  Your Reply
+                </span>
               </div>
               <Button
                 variant="ghost"
@@ -238,7 +264,11 @@ export function ReviewCard({
               onChange={(e) => onReplyTextChange?.(e.target.value)}
             />
             <div className="flex justify-end space-x-2">
-              <Button variant="outline" size="sm" onClick={() => onToggleInlineReply?.(review.id)}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => onToggleInlineReply?.(review.id)}
+              >
                 Cancel
               </Button>
               <Button
@@ -254,32 +284,35 @@ export function ReviewCard({
         )}
 
         {/* Project Details (Public variant only) */}
-        {variant === "public" && (review.package || review.projectDuration || review.category) && (
-          <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
-            {review.package && (
-              <div>
-                <span className="text-gray-500">Package:</span>
-                <span className="ml-2 font-medium">{review.package}</span>
+        {variant === "public" &&
+          (review.package || review.projectDuration || review.category) && (
+            <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+              {review.package && (
+                <div>
+                  <span className="text-gray-500">Package:</span>
+                  <span className="ml-2 font-medium">{review.package}</span>
+                </div>
+              )}
+              {review.projectDuration && (
+                <div>
+                  <span className="text-gray-500">Duration:</span>
+                  <span className="ml-2 font-medium">
+                    {review.projectDuration}
+                  </span>
+                </div>
+              )}
+              {review.category && (
+                <div>
+                  <span className="text-gray-500">Category:</span>
+                  <span className="ml-2 font-medium">{review.category}</span>
+                </div>
+              )}
+              <div className="flex items-center">
+                <Calendar className="h-4 w-4 text-gray-400 mr-1" />
+                <span className="text-gray-500">{formatDate(review.date)}</span>
               </div>
-            )}
-            {review.projectDuration && (
-              <div>
-                <span className="text-gray-500">Duration:</span>
-                <span className="ml-2 font-medium">{review.projectDuration}</span>
-              </div>
-            )}
-            {review.category && (
-              <div>
-                <span className="text-gray-500">Category:</span>
-                <span className="ml-2 font-medium">{review.category}</span>
-              </div>
-            )}
-            <div className="flex items-center">
-              <Calendar className="h-4 w-4 text-gray-400 mr-1" />
-              <span className="text-gray-500">{formatDate(review.date)}</span>
             </div>
-          </div>
-        )}
+          )}
 
         {/* Review Footer */}
         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
@@ -303,23 +336,29 @@ export function ReviewCard({
             )}
           </div>
           {variant === "public" && (
-            <Button variant="outline" size="sm" className="text-blue-600 border-blue-600 hover:bg-blue-50">
+            <Button
+              variant="outline"
+              size="sm"
+              className="text-blue-600 border-blue-600 hover:bg-blue-50"
+            >
               <ExternalLink className="h-4 w-4 mr-2" />
               View Project
             </Button>
           )}
-          {variant === "dashboard" && !review.reply && !isInlineReplyExpanded && (
-            <Button
-              size="sm"
-              className="bg-blue-600 hover:bg-blue-700"
-              onClick={() => onToggleInlineReply?.(review.id)}
-            >
-              <Reply className="h-4 w-4 mr-1" />
-              Reply
-            </Button>
-          )}
+          {variant === "dashboard" &&
+            !review.reply &&
+            !isInlineReplyExpanded && (
+              <Button
+                size="sm"
+                className="bg-blue-600 hover:bg-blue-700"
+                onClick={() => onToggleInlineReply?.(review.id)}
+              >
+                <Reply className="h-4 w-4 mr-1" />
+                Reply
+              </Button>
+            )}
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
