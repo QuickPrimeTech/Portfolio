@@ -165,13 +165,13 @@ export function NotificationDropdown({
                 onClick={() => onMarkAsRead?.(notification.id)}
               >
                 <div className="flex items-start space-x-3 w-full">
-                  <div className="flex-shrink-0 mt-0.5">{notification.icon}</div>
+                  <div className="shrink-0 mt-0.5">{notification.icon}</div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
                       <p className={`text-sm font-medium ${!notification.read ? "text-gray-900" : "text-gray-600"}`}>
                         {notification.title}
                       </p>
-                      {!notification.read && <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0" />}
+                      {!notification.read && <div className="w-2 h-2 bg-blue-500 rounded-full shrink-0" />}
                     </div>
                     <p className="text-xs text-gray-500 mt-1 line-clamp-2">{notification.message}</p>
                     <p className="text-xs text-gray-400 mt-1">{notification.time}</p>

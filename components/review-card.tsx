@@ -101,7 +101,7 @@ export function ReviewCard({
         {/* Review Header */}
         <div className="flex items-start justify-between mb-6">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-red-100 to-red-100 rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 bg-linear-to-br from-red-100 to-red-100 rounded-full flex items-center justify-center">
               {review.image ? (
                 <Image
                   src={review.image || "/placeholder.svg"}

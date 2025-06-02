@@ -105,13 +105,13 @@ function ProjectCarousel() {
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {projects.map((project) => (
-            <div key={project.id} className="w-full flex-shrink-0 px-4">
+            <div key={project.id} className="w-full shrink-0 px-4">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* Main Featured Project */}
                 <div className="lg:col-span-2">
                   <Card className="overflow-hidden hover:shadow-xl transition-shadow h-full">
                     <div
-                      className={`aspect-video bg-gradient-to-br ${project.gradient} flex items-center justify-center`}
+                      className={`aspect-video bg-linear-to-br ${project.gradient} flex items-center justify-center`}
                     >
                       <Image
                         src={project.image || "/placeholder.svg"}

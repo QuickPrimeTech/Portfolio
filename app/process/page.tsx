@@ -276,7 +276,7 @@ export default function ProcessPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-red-50 to-red-100">
+      <section className="py-20 bg-linear-to-br from-red-50 to-red-100">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our <span className="text-blue-600">Proven Process</span>
@@ -367,7 +367,7 @@ export default function ProcessPage() {
                               <ul className="space-y-1">
                                 {step.deliverables.map((deliverable, idx) => (
                                   <li key={idx} className="flex items-center text-sm text-gray-600">
-                                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 shrink-0" />
                                     {deliverable}
                                   </li>
                                 ))}

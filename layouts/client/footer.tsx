@@ -1,14 +1,16 @@
 import Link from "next/link";
-import { ChefHat } from "lucide-react";
+import Logo from "@/components/logo";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center space-x-2 mb-4 md:mb-0">
-            <ChefHat className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold">QuickPrimeTech</span>
+          <div className="flex items-center space-x-2">
+            <Logo className="text-blue-600" />
+            <Link className="text-xl font-bold text-primary" href={"/"}>
+              QuickPrimeTech
+            </Link>
           </div>
           <div className="flex space-x-6 text-sm text-gray-400">
             <Link href="#" className="hover:text-white transition-colors">

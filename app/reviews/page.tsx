@@ -159,7 +159,7 @@ export default function ReviewsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-red-50 to-red-100">
+      <section className="py-20 bg-linear-to-br from-red-50 to-red-100">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             What Our <span className="text-blue-600">Restaurant Partners</span>{" "}

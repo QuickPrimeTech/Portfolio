@@ -116,7 +116,7 @@ export default function ReviewsPage() {
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         {reviewStats.map((stat) => (
-          <div key={stat.title} className="relative overflow-hidden rounded-lg bg-card p-6 shadow-sm">
+          <div key={stat.title} className="relative overflow-hidden rounded-lg bg-card p-6 shadow-xs">
             <div className="flex items-start justify-between">
               <div className="space-y-2">
                 <span className="text-sm font-medium">{stat.title}</span>

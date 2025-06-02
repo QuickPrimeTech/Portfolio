@@ -19,7 +19,7 @@ export const ClientCard: React.FC<ClientCardProps> = ({ name, description, image
             href={websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 border border-blue-600 rounded-md shadow-sm text-sm font-medium text-blue-600 bg-white hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            className="inline-flex items-center px-4 py-2 border border-blue-600 rounded-md shadow-xs text-sm font-medium text-blue-600 bg-white hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
           >
             Visit Website
           </a>

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Logo from "@/components/logo";
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b">
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-xs border-b">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <Logo className="text-blue-600" />

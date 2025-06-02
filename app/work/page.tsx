@@ -426,7 +426,7 @@ export default function WorkPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-red-50 to-red-100">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <Badge className="mb-6 bg-red-100 text-red-800 hover:bg-blue-100">
             Portfolio Showcase
@@ -652,7 +652,6 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
           </Badge>
           <div className="flex items-center text-sm text-gray-500">
             <Calendar className="h-3 w-3 mr-1" />
-            {new Date(project.completedDate).toLocaleDateString()}
           </div>
         </div>
 
@@ -790,7 +789,7 @@ function ProjectModal({ project }: { project: (typeof projects)[0] }) {
           <Card className="bg-red-50 border-red-200">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                   <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
                     <span className="text-white font-semibold text-lg">
                       {project.testimonial.author
@@ -901,7 +900,7 @@ function ProjectModal({ project }: { project: (typeof projects)[0] }) {
               <div className="space-y-3">
                 {project.challenges.map((challenge, index) => (
                   <div key={index} className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
                       <Target className="h-3 w-3 text-red-600" />
                     </div>
                     <span className="text-gray-700 text-sm">{challenge}</span>
@@ -914,7 +913,7 @@ function ProjectModal({ project }: { project: (typeof projects)[0] }) {
               <div className="space-y-3">
                 {project.solutions.map((solution, index) => (
                   <div key={index} className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
                       <Zap className="h-3 w-3 text-green-600" />
                     </div>
                     <span className="text-gray-700 text-sm">{solution}</span>

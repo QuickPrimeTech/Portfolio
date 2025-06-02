@@ -150,7 +150,7 @@ export default function TeamPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-red-50 to-red-100">
+      <section className="py-20 bg-linear-to-br from-red-50 to-red-100">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Meet the <span className="text-blue-600">QuickPrimeTech</span> Team
@@ -197,7 +197,7 @@ export default function TeamPage() {
                 key={member.name}
                 className="overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <div className="aspect-square bg-gradient-to-br from-red-100 to-red-100 flex items-center justify-center">
+                <div className="aspect-square bg-linear-to-br from-red-100 to-red-100 flex items-center justify-center">
                   <Image
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
