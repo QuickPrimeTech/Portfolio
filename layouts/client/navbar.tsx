@@ -1,55 +1,128 @@
+"use client";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Logo from "@/components/logo";
+import { Menu } from "lucide-react";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetHeader,
+  SheetContent,
+  SheetTitle,
+  SheetClose,
+} from "@/components/ui/sheet";
+import Brand from "@/components/brand";
+import { ClassName } from "@/types";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
+
+//List of navigation links for the navigation
+const links = [
+  {
+    id: 1,
+    link: "Home",
+    href: "/",
+  },
+  {
+    id: 2,
+    link: "Process",
+    href: "/process",
+  },
+  {
+    id: 3,
+    link: "Our work",
+    href: "/work",
+  },
+  {
+    id: 4,
+    link: "Pricing",
+    href: "/pricing",
+  },
+  {
+    id: 5,
+    link: "Team",
+    href: "/team",
+  },
+  {
+    id: 6,
+    link: "Reviews",
+    href: "/reviews",
+  },
+];
+
 const Navbar = () => {
+  const pathname = usePathname();
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-xs border-b">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center space-x-2">
-          <Logo className="text-blue-600" />
-          <Link className="text-xl font-bold text-primary" href={"/"}>
-            QuickPrimeTech
-          </Link>
+        <Brand />
+        <div className="hidden lg:flex items-center space-x-6">
+          {links.map((link) => (
+            <Link
+              key={link.id}
+              href={link.href}
+              className={cn(
+                "text-gray-600 hover:text-blue-600 transition-colors",
+                pathname === link.href && "text-primary"
+              )}
+            >
+              {link.link}
+            </Link>
+          ))}
         </div>
-        <div className="hidden md:flex items-center space-x-6">
-          <Link
-            href="/process"
-            className="text-gray-600 hover:text-blue-600 transition-colors"
-          >
-            Process
-          </Link>
-          <Link
-            href="/work"
-            className="text-gray-600 hover:text-blue-600 transition-colors"
-          >
-            Our Work
-          </Link>
-          <Link
-            href="/pricing"
-            className="text-gray-600 hover:text-blue-600 transition-colors"
-          >
-            Pricing
-          </Link>
-          <Link
-            href="/team"
-            className="text-gray-600 hover:text-blue-600 transition-colors"
-          >
-            Team
-          </Link>
-          <Link
-            href="/reviews"
-            className="text-gray-600 hover:text-blue-600 transition-colors"
-          >
-            Reviews
-          </Link>
-        </div>
-        <Link href="/book-consultation">
-          <Button className="bg-blue-600 hover:bg-blue-700">
-            Book Free Consultation
-          </Button>
-        </Link>
+        <SideNavigation />
       </div>
     </nav>
+  );
+};
+
+const SideNavigation = () => {
+  return (
+    <>
+      <NavButton className="hidden lg:inline-flex" />
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button
+            variant="ghost"
+            className="lg:hidden"
+            aria-label="Open navigation menu"
+          >
+            <Menu className="!size-6" />
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="right" className="w-[300px] sm:w-[350px]">
+          <SheetHeader className="border-b pb-4 mb-4">
+            <SheetTitle className="flex items-center">
+              <Brand />
+            </SheetTitle>
+          </SheetHeader>
+          <div className="flex flex-col space-y-4 py-4">
+            {links.map((link) => (
+              <SheetClose asChild key={link.id}>
+                <Link
+                  href={link.href}
+                  className="flex items-center py-2 px-4 rounded-md hover:bg-gray-100 text-gray-700 hover:text-blue-600 transition-colors"
+                >
+                  {link.link}
+                </Link>
+              </SheetClose>
+            ))}
+          </div>
+          <div className="mt-auto pt-4 border-t">
+            <SheetClose asChild>
+              <NavButton />
+            </SheetClose>
+          </div>
+        </SheetContent>
+      </Sheet>
+    </>
+  );
+};
+
+const NavButton = ({ className }: ClassName) => {
+  return (
+    <Button className={cn(className)} asChild>
+      <Link href="/book-consultation">Book Free Consultation</Link>
+    </Button>
   );
 };
 
