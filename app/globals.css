@@ -1,5 +1,5 @@
 @import "tailwindcss";
-/* @import "tailwindcss-animate"; */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @source '../*.{js,ts,jsx,tsx,mdx}';
 
@@ -8,6 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --font-primary: "DM Sans", sans-serif;
+  --font-secondary: "Roboto", sans-serif;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
