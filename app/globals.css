@@ -1,4 +1,5 @@
 @import "tailwindcss";
+/* @import "tailwindcss-animate"; */
 
 @source '../*.{js,ts,jsx,tsx,mdx}';
 
@@ -44,25 +45,8 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-@keyframes accordion-down {
-  from {
-    height: 0;
-  }
-  to {
-    height: var(--radix-accordion-content-height);
-  }
-}
-@keyframes accordion-up {
-  from {
-    height: var(--radix-accordion-content-height);
-  }
-  to {
-    height: 0;
-  }
-}
-
 :root {
-  --radius: 0;
+  --radius: 0rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
@@ -127,7 +111,7 @@
   --sidebar-accent: oklch(0.274 0.006 286.033);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --sidebar-ring: oklch(0.488 0.243 <264.376);
 }
 
 @layer base {
