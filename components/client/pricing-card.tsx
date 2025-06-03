@@ -61,7 +61,7 @@ const PricingCardFeature = ({ children }: Children) => {
   return (
     <ul className="space-y-3 mb-6">
       <li className="flex items-center">
-        <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+        <CheckCircle className="size-5 text-green-500 mr-3 shrink-0" />
         {children}
       </li>
     </ul>
