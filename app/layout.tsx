@@ -8,8 +8,11 @@ export const metadata: Metadata = {
   description:
     "We design high-converting, custom restaurant websites at no upfront cost. Our expert team builds tailored websites that showcase your brand, attract more customers, and help grow your business — fast. Get your free restaurant website today and give your business the online presence it deserves.",
   generator: "QuickPrimeTech Agency",
+  other: {
+    "google-site-verification": "svtKqX6-WvwK1_3MBBYLIFz6HNAWrnX6U7VaNZnd2CE",
+  },
   icons: {
-    icon: [
+    icon: [ 
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },

@@ -1,4 +1,3 @@
-// pages/process/steps.tsx
 "use client";
 
 import React from "react";
