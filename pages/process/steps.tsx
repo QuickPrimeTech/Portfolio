@@ -1,3 +1,7 @@
+// pages/process/steps.tsx
+"use client";
+
+import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Card,
@@ -24,6 +28,7 @@ import {
   Clock,
   CheckCircle,
   LucideIcon,
+  Lightbulb,
 } from "lucide-react";
 
 // Define the type for a single phase object
@@ -31,7 +36,7 @@ interface Phase {
   id: string;
   name: string;
   duration: string;
-  icon: LucideIcon; // Use LucideIcon for consistency and type safety
+  icon: LucideIcon;
   color: string;
   description: string;
   progress: number;
@@ -43,21 +48,21 @@ interface ProcessStep {
   description: string;
   deliverables: string[];
   duration: string;
-  icon: LucideIcon; // Use LucideIcon for consistency and type safety
+  icon: LucideIcon;
 }
 
 // Define the type for the processSteps object
 interface ProcessSteps {
-  [key: string]: ProcessStep[]; // A dynamic object where keys are phase IDs and values are arrays of ProcessStep
+  [key: string]: ProcessStep[];
 }
 
 interface StepsProps {
   activePhase: string;
   setActivePhase: (phase: string) => void;
-  phases: Phase[]; // Now phases is an array of Phase objects
+  phases: Phase[]; // This prop is correctly passed from ProcessPage
 }
 
-const processSteps = {
+const processSteps: ProcessSteps = {
   discovery: [
     {
       title: "Initial Consultation",
@@ -260,15 +265,18 @@ const processSteps = {
 };
 
 const Steps = ({ activePhase, setActivePhase, phases }: StepsProps) => {
-  // Removed 'steps' from destructuring here as it's causing conflict later
+  // Ensure phases is an array from the start within the component's scope
+  // This makes subsequent uses of phases.find() safer.
+  const safePhases = phases || [];
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <Tabs value={activePhase} onValueChange={setActivePhase}>
             <TabsList className="grid w-full grid-cols-5 mb-12">
-              {/* Ensure `phase` is typed within map if not already done by `phases: Phase[]` */}
-              {phases.map((phase: Phase) => (
+              {/* Using safePhases here */}
+              {safePhases.map((phase: Phase) => (
                 <TabsTrigger
                   key={phase.id}
                   value={phase.id}
@@ -280,21 +288,24 @@ const Steps = ({ activePhase, setActivePhase, phases }: StepsProps) => {
             </TabsList>
 
             {Object.entries(processSteps).map(
-              ([phaseId, currentPhaseSteps]) => (
+              ([phaseId, currentPhaseStepsArray]) => (
                 <TabsContent key={phaseId} value={phaseId}>
                   <div className="mb-12">
                     <div className="text-center mb-8">
                       <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                        {phases.find((p) => p.id === phaseId)?.name}
+                        {/* Using safePhases here */}
+                        {safePhases.find((p) => p.id === phaseId)?.name ||
+                          "Unknown Phase"}
                       </h2>
                       <p className="text-xl text-gray-600">
-                        {phases.find((p) => p.id === phaseId)?.description}
+                        {/* Using safePhases here */}
+                        {safePhases.find((p) => p.id === phaseId)
+                          ?.description || ""}
                       </p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                      {/* Ensure `step` is typed as ProcessStep */}
-                      {currentPhaseSteps.map(
+                      {(currentPhaseStepsArray || []).map(
                         (step: ProcessStep, index: number) => (
                           <Card
                             key={index}
@@ -303,8 +314,9 @@ const Steps = ({ activePhase, setActivePhase, phases }: StepsProps) => {
                             <CardHeader>
                               <div className="flex items-center space-x-4">
                                 <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                                  {/* `step.icon` is now correctly typed as LucideIcon */}
-                                  <step.icon className="h-6 w-6 text-blue-600" />
+                                  {step.icon && (
+                                    <step.icon className="h-6 w-6 text-blue-600" />
+                                  )}
                                 </div>
                                 <div>
                                   <CardTitle className="text-lg">
@@ -326,7 +338,7 @@ const Steps = ({ activePhase, setActivePhase, phases }: StepsProps) => {
                                   Deliverables:
                                 </h4>
                                 <ul className="space-y-1">
-                                  {step.deliverables.map(
+                                  {(step.deliverables || []).map(
                                     (deliverable: string, idx: number) => (
                                       <li
                                         key={idx}
