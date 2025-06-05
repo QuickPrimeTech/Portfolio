@@ -66,7 +66,7 @@ const Hero = ({ activePhase, setActivePhase }: OverviewProps) => {
     <section className="py-20 bg-muted">
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Our <span className="text-blue-600">Proven Process</span>
+          Our <span className="text-secondary">Proven Process</span>
         </h1>
         <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
           From initial consultation to ongoing support, we've refined our

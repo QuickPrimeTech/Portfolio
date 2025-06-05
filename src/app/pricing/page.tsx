@@ -28,7 +28,7 @@ import {
   Headphones,
 } from "lucide-react";
 import Link from "next/link";
-import Pricing from "@/pages/home/pricing";
+import Pricing from "@/sections/home/pricing";
 
 export default function PricingPage() {
   const [billingCycle, setBillingCycle] = React.useState<"monthly" | "annual">(

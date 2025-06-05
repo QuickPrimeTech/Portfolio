@@ -1,5 +1,6 @@
 import { BarChart3, Users, Search, Shield, CheckCircle } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Feature, FeaturesContainer } from "@/components/client/feature";
 
 const qualityStandards = [
   {
@@ -52,22 +53,16 @@ const Standards = () => {
               key={index}
               className="p-8 text-center hover:shadow-lg transition-shadow"
             >
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <standard.icon className="h-8 w-8 text-blue-600" />
+              <div className="w-16 h-16 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <standard.icon className="h-8 w-8 text-secondary" />
               </div>
               <h3 className="text-xl font-bold mb-4">{standard.title}</h3>
               <p className="text-gray-600 mb-6">{standard.description}</p>
-              <ul className="space-y-2">
-                {standard.metrics.map((metric, idx) => (
-                  <li
-                    key={idx}
-                    className="flex items-center justify-center text-sm text-gray-500"
-                  >
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    {metric}
-                  </li>
+              <FeaturesContainer>
+                {standard.metrics.map((metric, index) => (
+                  <Feature key={index}>{metric}</Feature>
                 ))}
-              </ul>
+              </FeaturesContainer>
             </Card>
           ))}
         </div>

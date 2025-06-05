@@ -27,13 +27,13 @@ import {
 } from "lucide-react";
 
 import Link from "next/link";
-import Hero from "@/pages/process/overview";
-import Steps from "@/pages/process/steps";
-import Communication from "@/pages/process/communication";
-import Tools from "@/pages/process/tools";
-import Standards from "@/pages/process/standards";
-import Timeline from "@/pages/process/timeline";
-import CTA from "@/pages/process/cta";
+import Hero from "@/sections/process/overview";
+import Steps from "@/sections/process/steps";
+import Communication from "@/sections/process/communication";
+import Tools from "@/sections/process/tools";
+import Standards from "@/sections/process/standards";
+import Timeline from "@/sections/process/timeline";
+import CTA from "@/sections/process/cta";
 
 export default function ProcessPage() {
   const [activePhase, setActivePhase] = React.useState("discovery");
