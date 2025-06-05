@@ -1,5 +1,7 @@
+"use client";
+
 import { FilterBar } from "@/components/filter-bar";
-import { FilterSectionProps } from "@/types";
+import { FilterSectionProps, FilterConfig } from "@/types"; // Updated import path for types
 
 export default function FilterSection({
   searchTerm,
@@ -12,8 +14,23 @@ export default function FilterSection({
   setSortBy,
   filterOptions,
   filteredLength,
-  currentLength,
+  currentLength, // This will now typically be the same as filteredLength
 }: FilterSectionProps) {
+  const filterConfigs: FilterConfig[] = [
+    {
+      label: "Rating",
+      value: ratingFilter,
+      options: filterOptions.rating,
+      onChange: setRatingFilter,
+    },
+    {
+      label: "Sort",
+      value: sortBy,
+      options: filterOptions.sort,
+      onChange: setSortBy,
+    },
+  ];
+
   return (
     <section className="py-12 bg-white border-b">
       <div className="container mx-auto px-4">
@@ -22,26 +39,7 @@ export default function FilterSection({
             searchTerm={searchTerm}
             onSearchChange={onSearchChange}
             searchPlaceholder="Search reviews, restaurants, or owners..."
-            filters={[
-              {
-                label: "Rating",
-                value: ratingFilter,
-                options: filterOptions.rating,
-                onChange: setRatingFilter,
-              },
-              {
-                label: "Category",
-                value: categoryFilter,
-                options: filterOptions.category,
-                onChange: setCategoryFilter,
-              },
-              {
-                label: "Sort",
-                value: sortBy,
-                options: filterOptions.sort,
-                onChange: setSortBy,
-              },
-            ]}
+            filters={filterConfigs}
           />
         </div>
 

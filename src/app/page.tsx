@@ -1,11 +1,11 @@
-import Hero from "@/pages/home/hero";
-import Process from "@/pages/home/process";
-import FeaturedProjects from "@/pages/home/projects";
-import Pricing from "@/pages/home/pricing";
-import ClientExperience from "@/pages/home/testimonials";
-import WhyChooseUs from "@/pages/home/why-choose-us";
-import Faqs from "@/pages/home/faqs";
-import Contact from "@/pages/home/contact";
+import Hero from "@/sections/home/hero";
+import Process from "@/sections/home/process";
+import FeaturedProjects from "@/sections/home/projects";
+import Pricing from "@/sections/home/pricing";
+import ClientExperience from "@/sections/home/testimonials";
+import WhyChooseUs from "@/sections/home/why-choose-us";
+import Faqs from "@/sections/home/faqs";
+import Contact from "@/sections/home/contact";
 
 function Portfolio() {
   return (

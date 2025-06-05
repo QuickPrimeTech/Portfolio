@@ -4,11 +4,11 @@ interface HeroSectionProps {
   stats: ReviewStat[];
 }
 
-export default function Hero({ stats }: HeroSectionProps) {
+export default function Hero({ stats = [] }: HeroSectionProps) {
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-primary">
           What Our <span className="text-secondary">Restaurant Partners</span>{" "}
           Say
         </h1>
@@ -17,8 +17,7 @@ export default function Hero({ stats }: HeroSectionProps) {
           online presence with QuickPrimeTech.
         </p>
 
-        {/* Review Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -30,7 +29,7 @@ export default function Hero({ stats }: HeroSectionProps) {
               <div className="text-gray-600">{stat.label}</div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

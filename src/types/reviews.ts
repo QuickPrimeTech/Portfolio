@@ -42,7 +42,6 @@ export interface FilterSectionProps {
   setSortBy: (value: string) => void;
   filterOptions: {
     rating: { value: string; label: string }[];
-    category: { value: string; label: string }[];
     sort: { value: string; label: string }[];
   };
   filteredLength: number;
