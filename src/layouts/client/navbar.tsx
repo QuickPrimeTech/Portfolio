@@ -28,8 +28,8 @@ const Navbar = () => {
               key={link.id}
               href={link.href}
               className={cn(
-                "text-gray-600 hover:text-blue-600 transition-colors",
-                pathname === link.href && "text-primary"
+                "text-gray-600 hover:text-secondary transition-colors",
+                pathname === link.href && "text-secondary"
               )}
             >
               {link.link}
@@ -67,7 +67,7 @@ const SideNavigation = () => {
               <SheetClose asChild key={link.id}>
                 <Link
                   href={link.href}
-                  className="flex items-center py-2 px-4 rounded-md hover:bg-gray-100 text-gray-700 hover:text-blue-600 transition-colors"
+                  className="flex items-center py-2 px-4 rounded-md hover:bg-gray-100 text-gray-700 hover:text-secondary transition-colors"
                 >
                   {link.link}
                 </Link>

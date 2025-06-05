@@ -61,7 +61,7 @@ const Tools = () => {
           {tools.map((tool, index) => (
             <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
               <div className="text-center">
-                <Badge className="mb-4 bg-red-100 text-red-800">
+                <Badge className="mb-4 bg-secondary/10 text-secondary">
                   {tool.category}
                 </Badge>
                 <h3 className="text-lg font-bold mb-2">{tool.name}</h3>

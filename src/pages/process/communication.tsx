@@ -1,6 +1,34 @@
 import { Card } from "@/components/ui/card";
 import { FileText, MessageSquare, Users } from "lucide-react";
 
+const communicationItems = [
+  {
+    icon: MessageSquare,
+    title: "Regular Check-ins",
+    description:
+      "Weekly progress calls and milestone reviews to ensure we're on track and aligned with your vision.",
+    points: [
+      "Weekly progress calls",
+      "Milestone presentations",
+      "Real-time project updates",
+    ],
+  },
+  {
+    icon: Users,
+    title: "Dedicated Team",
+    description:
+      "Your project gets a dedicated team including a project manager, designer, and developer.",
+    points: ["Project manager", "UI/UX designer", "Frontend developer"],
+  },
+  {
+    icon: FileText,
+    title: "Shared Workspace",
+    description:
+      "Access to our project workspace where you can track progress, provide feedback, and access files.",
+    points: ["Project dashboard", "File sharing", "Feedback system"],
+  },
+];
+
 const Communication = () => {
   return (
     <section className="py-20 bg-gray-50">
@@ -14,55 +42,23 @@ const Communication = () => {
             throughout the entire process.
           </p>
         </div>
-
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <Card className="text-center p-8">
-            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <MessageSquare className="h-8 w-8 text-blue-600" />
-            </div>
-            <h3 className="text-xl font-bold mb-4">Regular Check-ins</h3>
-            <p className="text-gray-600 mb-4">
-              Weekly progress calls and milestone reviews to ensure we're on
-              track and aligned with your vision.
-            </p>
-            <ul className="text-sm text-gray-500 space-y-1">
-              <li>• Weekly progress calls</li>
-              <li>• Milestone presentations</li>
-              <li>• Real-time project updates</li>
-            </ul>
-          </Card>
-
-          <Card className="text-center p-8">
-            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Users className="h-8 w-8 text-blue-600" />
-            </div>
-            <h3 className="text-xl font-bold mb-4">Dedicated Team</h3>
-            <p className="text-gray-600 mb-4">
-              Your project gets a dedicated team including a project manager,
-              designer, and developer.
-            </p>
-            <ul className="text-sm text-gray-500 space-y-1">
-              <li>• Project manager</li>
-              <li>• UI/UX designer</li>
-              <li>• Frontend developer</li>
-            </ul>
-          </Card>
-
-          <Card className="text-center p-8">
-            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <FileText className="h-8 w-8 text-blue-600" />
-            </div>
-            <h3 className="text-xl font-bold mb-4">Shared Workspace</h3>
-            <p className="text-gray-600 mb-4">
-              Access to our project workspace where you can track progress,
-              provide feedback, and access files.
-            </p>
-            <ul className="text-sm text-gray-500 space-y-1">
-              <li>• Project dashboard</li>
-              <li>• File sharing</li>
-              <li>• Feedback system</li>
-            </ul>
-          </Card>
+          {communicationItems.map(
+            ({ icon: Icon, title, description, points }, idx) => (
+              <Card key={idx} className="text-center p-8">
+                <div className="w-16 h-16 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
+                  <Icon className="h-8 w-8 text-secondary" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">{title}</h3>
+                <p className="text-gray-600 mb-4">{description}</p>
+                <ul className="text-sm text-gray-500 space-y-1">
+                  {points.map((point, index) => (
+                    <li key={index}>• {point}</li>
+                  ))}
+                </ul>
+              </Card>
+            )
+          )}
         </div>
       </div>
     </section>

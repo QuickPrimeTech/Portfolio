@@ -23,8 +23,8 @@ const WavePattern = ({ className }: ClassName) => {
           y2="-361.217"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.528846" stopColor="#DC2626" />
-          <stop offset="1" stopColor="#3B82F6" />
+          <stop offset="0.528846" stopColor="var(--secondary)" />
+          <stop offset="1" stopColor="var(--primary)" />
         </linearGradient>
       </defs>
     </svg>

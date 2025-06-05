@@ -1,4 +1,4 @@
-import React from "react";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   PaymentDialog,
@@ -15,10 +15,19 @@ import {
   PricingCard,
   PricingCardHeader,
   PricingCardContent,
-  PricingCardFeature,
+  PricingCardTitle,
+  PricingCardDescription,
+  PricingCardPrice,
 } from "@/components/client/pricing-card";
 import { ArrowRight } from "lucide-react";
 import PaypalSubscriptionButton from "@/components/client/paypal-button";
+import { Feature, FeaturesContainer } from "@/components/client/feature";
+
+interface PricingProps {
+  title: string;
+  price: string | number;
+  planId: string;
+}
 
 const pricingCards = [
   {
@@ -36,7 +45,7 @@ const pricingCards = [
       "Basic website analytics (monthly report)",
       "Maintenance & support",
     ],
-    variant: "default",
+    popular: false,
     planId: "P-2XU60119GU648443YNA64AEA",
   },
   {
@@ -54,7 +63,7 @@ const pricingCards = [
       "Unlimited gallery images",
       "Social media feed integration on website",
     ],
-    variant: "popular",
+    popular: true,
     planId: "P-02876306HE3896415NA7AZGQ",
   },
   {
@@ -70,7 +79,7 @@ const pricingCards = [
       "24/7 priority support (phone + email)",
       "Google My Business management & optimization",
     ],
-    variant: "default",
+    popular: false,
     planId: "P-44256660A5342815BNA7A5VY",
   },
 ];
@@ -91,45 +100,36 @@ const Pricing = () => {
 
         <div className="grid md:grid-cols-3 gap-8 mx-auto">
           {/* Starter */}
-          {pricingCards.map((card, index) => (
-            <PricingCard key={index} variant={card.variant as any}>
-              <PricingCardHeader
-                title={card.title}
-                description={card.description}
-                price={card.price}
-              />
-              <PricingCardContent>
-                {card.features.map((feature, index) => (
-                  <PricingCardFeature key={index}>{feature}</PricingCardFeature>
-                ))}
-                <PaymentDialog>
-                  <PaymentDialogTrigger>
-                    <Button className="w-full">Get Started</Button>
-                  </PaymentDialogTrigger>
-                  <PaymentDialogContent>
-                    <PaymentDialogHeader>
-                      <PaymentDialogTitle>{card.title}</PaymentDialogTitle>
-                      <PaymentDialogDescription>
-                        This will include all the {card.title} features as
-                        listed
-                      </PaymentDialogDescription>
-                    </PaymentDialogHeader>
-                    <PaymentDialogPlan>
-                      <PaymentDialogPrice>{card.price}</PaymentDialogPrice>
-                    </PaymentDialogPlan>
-                    <PaymentDialogFooter>
-                      <PaypalSubscriptionButton planId={card.planId} />
-                    </PaymentDialogFooter>
-
-                    <p className="text-xs text-gray-500 text-center">
-                      By subscribing, you agree to our Terms of Service and
-                      Privacy Policy
-                    </p>
-                  </PaymentDialogContent>
-                </PaymentDialog>
-              </PricingCardContent>
-            </PricingCard>
-          ))}
+          {pricingCards.map(
+            (
+              { title, description, price, features, popular, planId },
+              index
+            ) => (
+              <PricingCard key={index} popular={popular}>
+                <PricingCardHeader>
+                  <PricingCardTitle className={cn(popular && "text-secondary")}>
+                    {title}
+                  </PricingCardTitle>
+                  <PricingCardDescription>{description}</PricingCardDescription>
+                  <PricingCardPrice className={cn(popular && "text-secondary")}>
+                    {price}
+                  </PricingCardPrice>
+                </PricingCardHeader>
+                <PricingCardContent>
+                  <FeaturesContainer>
+                    {features.map((feature, index) => (
+                      <Feature key={index}>{feature}</Feature>
+                    ))}
+                  </FeaturesContainer>
+                  <PricingPaymentDialog
+                    title={title}
+                    price={price}
+                    planId={planId}
+                  />
+                </PricingCardContent>
+              </PricingCard>
+            )
+          )}
         </div>
         <div className="text-center mt-8">
           <Button size="lg" variant={"outline"}>
@@ -142,4 +142,31 @@ const Pricing = () => {
   );
 };
 
+const PricingPaymentDialog = ({ title, price, planId }: PricingProps) => {
+  return (
+    <PaymentDialog>
+      <PaymentDialogTrigger>
+        <Button className="w-full">Get Started</Button>
+      </PaymentDialogTrigger>
+      <PaymentDialogContent>
+        <PaymentDialogHeader>
+          <PaymentDialogTitle>{title}</PaymentDialogTitle>
+          <PaymentDialogDescription>
+            This will include all the {title} features as listed
+          </PaymentDialogDescription>
+        </PaymentDialogHeader>
+        <PaymentDialogPlan>
+          <PaymentDialogPrice>{price}</PaymentDialogPrice>
+        </PaymentDialogPlan>
+        <PaymentDialogFooter>
+          <PaypalSubscriptionButton planId={planId} />
+        </PaymentDialogFooter>
+
+        <p className="text-xs text-gray-500 text-center">
+          By subscribing, you agree to our Terms of Service and Privacy Policy
+        </p>
+      </PaymentDialogContent>
+    </PaymentDialog>
+  );
+};
 export default Pricing;

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Children } from "@/types";
 import Image from "next/image";
+import { FeaturesContainer, Feature } from "@/components/client/feature";
 
 const points = [
   "No setup fees",
@@ -10,6 +11,7 @@ const points = [
   "Custom website that will boost your revenue",
   "Low monthly subscription to keep your website secure and modern",
 ];
+
 const Hero = () => {
   return (
     <section className="py-8 h-screen lg:py-12 relative bg-gray-50 overflow-hidden">
@@ -19,14 +21,14 @@ const Hero = () => {
         <div className="relative z-10 flex flex-col gap-6 grow-1 shrink-1">
           <h1 className="text-3xl md:text-5xl font-medium text-gray-900 leading-tight font-primary">
             Get Your Restaurant’s Website That{" "}
-            <span className="text-blue-600">Grow</span> Your{" "}
-            <span className="text-blue-600">Revenue</span>.
+            <span className="text-secondary">Grow</span> Your{" "}
+            <span className="text-secondary">Revenue</span>.
           </h1>
-          <div className="flex flex-col gap-4">
+          <FeaturesContainer>
             {points.map((point, index) => (
-              <Point key={index}>{point}</Point>
+              <Feature key={index}>{point}</Feature>
             ))}
-          </div>
+          </FeaturesContainer>
           <div className="flex gap-4">
             <Button size="lg">
               Get Free Website
@@ -43,31 +45,20 @@ const Hero = () => {
   );
 };
 
-const Point = ({ children }: Children) => {
-  return (
-    <div className="flex gap-2">
-      <CheckCircle className="w-6 h-6 text-primary shrink-0" />
-      {children}
-    </div>
-  );
-};
-
 const Mockups = () => {
   return (
     <div className="relative z-10 flex -space-x-8">
-      {" "}
-      {/* Removed w-fit for better control if needed */}
       <Image
         width={430}
         height={900}
-        src="/mockup1.png"
+        src="https://res.cloudinary.com/dhlyei79o/image/upload/v1749112634/mockup1_xvblxz.png"
         alt="Image of a quickprimetech restaurant website mockup"
         className="relative z-10 shadow-sm w-1/2"
       />
       <Image
         width={430}
         height={900}
-        src="/mockup2.png"
+        src="https://res.cloudinary.com/dhlyei79o/image/upload/v1749112635/mockup2_hfwijf.png"
         alt="Image of a quickprimetech restaurant website mockup"
         className="w-1/2"
       />
