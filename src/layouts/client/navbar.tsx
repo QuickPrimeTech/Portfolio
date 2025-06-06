@@ -88,7 +88,13 @@ const SideNavigation = () => {
 const NavButton = ({ className }: ClassName) => {
   return (
     <Button className={cn(className)} asChild>
-      <Link href="/book-consultation">Book Free Consultation</Link>
+      <Link
+        href="https://api.whatsapp.com/send/?phone=254717448835&text&type=phone_number&app_absent=0"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Contact Us
+      </Link>
     </Button>
   );
 };

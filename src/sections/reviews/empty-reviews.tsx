@@ -40,11 +40,11 @@ export default function EmptyReviews() {
               </Badge>
             </div>
             <h4 className="text-lg font-semibold text-gray-900mb-2">
-              Special Free add-ons for the first 5 clients
+              Exclusive free add-ons for our first 5 clients!
             </h4>
             <p className="text-sm text-muted-foreground mb-4">
-              Get advanced SEO and priority up to 6 months of technincal support
-              from our team
+              Get advanced SEO and up to 6 months of technical support from our
+              team.
             </p>
             <div className="flex items-center justify-center space-x-2 text-sm text-secondary">
               <span className="font-medium">Only 5 spots available</span>

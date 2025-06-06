@@ -1,9 +1,9 @@
 import { WavePattern, LinePattern } from "@/components/ui/background-pattern";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle } from "lucide-react";
-import { Children } from "@/types";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { FeaturesContainer, Feature } from "@/components/client/feature";
+import Link from "next/link";
 
 const points = [
   "No setup fees",
@@ -30,12 +30,21 @@ const Hero = () => {
             ))}
           </FeaturesContainer>
           <div className="flex gap-4">
-            <Button size="lg">
-              Get Free Website
-              <ArrowRight className="h-5 w-5" />
+            <Button size="lg" asChild>
+              <Link
+                href={
+                  "https://api.whatsapp.com/send/?phone=254717448835&text&type=phone_number&app_absent=0"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {" "}
+                Get Free Website
+                <ArrowRight className="h-5 w-5" />
+              </Link>
             </Button>
             <Button size="lg" variant="outline">
-              See Work
+              <Link href={"/work"}>See Work</Link>
             </Button>
           </div>
         </div>
