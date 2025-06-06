@@ -1,0 +1,94 @@
+import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
+const teamMembers = [
+  {
+    name: "Derick Kibiwott",
+    role: "Designer and Front-end Developer",
+    image:
+      "https://res.cloudinary.com/dhlyei79o/image/upload/v1749222987/20240524_141146_ivt1e1.jpg",
+    bio: "I'm a Designer and Front-end Developer who helps businesses grow with clean, modern websites. I focus on designs that look great, work well, and turn visitors into loyal customers. ",
+    skills: ["Customer Service", "Restaurant Tech", "UX Design"],
+  },
+  {
+    name: "Meshack Kipkemoi",
+    role: "Front-end & Back-end Developer",
+    image:
+      "https://res.cloudinary.com/dhlyei79o/image/upload/v1749244431/cropped-face_2_iiznfp.jpg",
+    bio: "Ensures every website meets our high standards for performance, accessibility, and user experience. Leads our customer support team.",
+    skills: [
+      "React Js",
+      "Customer Support",
+      "Accessibility",
+      "Performance Testing",
+    ],
+  },
+];
+
+const Team = () => {
+  return (
+    <section className="py-20 bg-white" aria-labelledby="team-heading">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2
+            id="team-heading"
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+          >
+            Our <span className="text-secondary">Expert</span> Team
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Each team member brings unique expertise to ensure your restaurant
+            website exceeds expectations.
+          </p>
+        </div>
+        <div className="flex justify-center gap-8 max-w-7xl mx-auto">
+          {teamMembers.map((member) => (
+            <Card
+              key={member.name}
+              className="overflow-hidden hover:shadow-lg transition-shadow max-w-96"
+            >
+              <Image
+                src={member.image || "/placeholder.svg"}
+                alt={`Photo of ${member.name}`}
+                width={300}
+                height={300}
+                className="object-cover aspect-square w-full"
+              />
+              <CardContent className="p-6">
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-blue-600 font-medium mb-2">
+                    {member.role}
+                  </p>
+                </div>
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  {member.bio}
+                </p>
+                {/* Skills */}
+                <div
+                  className="mb-4 flex flex-wrap gap-2"
+                  aria-label={`${member.name}'s skills`}
+                >
+                  {member.skills.map((skill) => (
+                    <Badge
+                      key={skill}
+                      variant="secondary"
+                      className="bg-secondary text-secondary-foreground text-xs"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Team;
