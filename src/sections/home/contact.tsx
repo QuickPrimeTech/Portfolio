@@ -1,8 +1,7 @@
+import ContactForm from "@/components/client/contact-form";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, Instagram, Send } from "lucide-react";
 import Link from "next/link";
 
@@ -21,54 +20,20 @@ const Contact = () => {
           <Button
             size="lg"
             className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3 mb-8"
+            asChild
           >
-            <Link href="/book-consultation">Schedule a Free 15-Min Call</Link>
+            <Link href={`${process.env.NEXT_PUBLIC_CONTACT_ME_URL}`}>
+              Contact Us
+            </Link>
           </Button>
         </div>
 
         <div className="flex flex-col lg:flex-row items-stretch justify-center gap-8">
-          <MessageCard />
+          <ContactForm />
           <ContactCard />
         </div>
       </div>
     </section>
-  );
-};
-
-const MessageCard = () => {
-  return (
-    <Card className="bg-white/10 border border-white/20 rounded-xl shadow-lg w-full max-w-xl">
-      <CardHeader>
-        <CardTitle className="text-white text-center">
-          Send Us a Message
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        <div className="grid md:grid-cols-2 gap-4">
-          <Input
-            placeholder="Your Name"
-            className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
-          />
-          <Input
-            placeholder="Email Address"
-            type="email"
-            className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
-          />
-        </div>
-        <Input
-          placeholder="Restaurant Name"
-          className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
-        />
-        <Textarea
-          placeholder="Tell us about your project..."
-          className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
-          rows={4}
-        />
-        <Button className="w-full bg-white text-blue-600 hover:bg-gray-100">
-          Send Message
-        </Button>
-      </CardContent>
-    </Card>
   );
 };
 
@@ -114,7 +79,7 @@ const ContactCard = () => {
           className="w-full bg-white text-blue-600 hover:bg-gray-100"
           asChild
         >
-          <Link href={"https://wa.me/254717448835"}>
+          <Link href={`${process.env.NEXT_PUBLIC_CONTACT_ME_URL}`}>
             Text Us On Whatsapp
             <Send />
           </Link>
