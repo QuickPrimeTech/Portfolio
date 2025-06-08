@@ -42,14 +42,14 @@ const Team = () => {
             website exceeds expectations.
           </p>
         </div>
-        <div className="flex justify-center gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-8 max-w-7xl mx-auto">
           {teamMembers.map((member) => (
             <Card
               key={member.name}
-              className="overflow-hidden hover:shadow-lg transition-shadow max-w-96"
+              className="overflow-hidden hover:shadow-lg transition-shadow w-full"
             >
               <Image
-                src={member.image || "/placeholder.svg"}
+                src={member.image}
                 alt={`Photo of ${member.name}`}
                 width={300}
                 height={300}
@@ -60,7 +60,7 @@ const Team = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-blue-600 font-medium mb-2">
+                  <p className="text-secondary font-medium mb-2">
                     {member.role}
                   </p>
                 </div>
