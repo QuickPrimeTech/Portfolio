@@ -24,9 +24,3 @@ export interface ProcessStep {
 export interface ProcessSteps {
   [key: string]: ProcessStep[];
 }
-
-export interface StepsProps {
-  activePhase: string;
-  setActivePhase: (phase: string) => void;
-  phases: Phase[]; // This prop is correctly passed from ProcessPage
-}

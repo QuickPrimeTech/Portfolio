@@ -1,5 +1,5 @@
 "use client";
-
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Card,
@@ -10,9 +10,11 @@ import {
 } from "@/components/ui/card";
 import { Clock, CheckCircle } from "lucide-react";
 import { processSteps } from "@/data/process";
-import { ProcessStep, StepsProps, Phase } from "@/types";
+import { ProcessStep, Phase } from "@/types";
+import { phases } from "@/data/process";
 
-const Steps = ({ activePhase, setActivePhase, phases }: StepsProps) => {
+const Steps = () => {
+  const [activePhase, setActivePhase] = useState("discovery");
   const safePhases = phases || [];
 
   return (
