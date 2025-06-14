@@ -18,6 +18,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import { Section, Header, Title, SubTitle } from "@/components/typography";
 
 const projects = [
   {
@@ -57,27 +58,16 @@ const projects = [
 
 const FeaturedProjects = () => {
   return (
-    <section id="work" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Featured Projects
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            See how we've helped restaurants transform their online presence and
-            grow their business.
-          </p>
-        </div>
-
-        <ProjectCarousel />
-      </div>
-      <Button asChild>
-        <Link href={`/work`}>
-          See All Projects
-          <ExternalLink className="h-4 w-4 ml-2" />
-        </Link>
+    <Section id="work" aria-labelledby="work-header" className="bg-gray-50">
+      <Header>
+        <Title id="work-header">Featured Projects</Title>
+        <SubTitle>Showcasing my latest work</SubTitle>
+      </Header>
+      <ProjectCarousel />
+      <Button variant={"outline"} asChild>
+        <Link href={`/work`}>See All Projects</Link>
       </Button>
-    </section>
+    </Section>
   );
 };
 

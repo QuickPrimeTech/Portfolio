@@ -3,7 +3,12 @@ import { cn } from "@/lib/utils";
 
 const Section = ({ children, className }: WithChildrenAndClass) => {
   return (
-    <section className={cn("section-x section-y space-y-12", className)}>
+    <section
+      className={cn(
+        "section-x section-y gap-12 flex flex-col items-center justify-center",
+        className
+      )}
+    >
       {children}
     </section>
   );

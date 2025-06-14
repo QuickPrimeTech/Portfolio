@@ -210,6 +210,12 @@
   * {
     @apply border-border outline-ring/50;
   }
+  .section-x {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+  .section-y {
+    @apply py-20 md:py-20 lg:py-24;
+  }
   body {
     @apply bg-background text-foreground;
   }
