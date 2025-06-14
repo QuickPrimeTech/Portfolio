@@ -33,7 +33,7 @@ export function ReviewCard({ review }: ReviewCardProps) {
             </Avatar>
             <div>
               <h3 className="font-semibold text-gray-900">{displayName}</h3>
-              <p className="text-blue-600 font-medium">{review.restaurant}</p>
+              <p className="text-primary font-medium">{review.restaurant}</p>
               {review.location && (
                 <div className="flex items-center text-gray-500 text-sm mt-1">
                   <MapPin className="h-4 w-4 mr-1" />

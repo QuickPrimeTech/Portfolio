@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Section, Header, Title, SubTitle } from "@/components/typography";
 
 const teamMembers = [
   {
@@ -28,66 +29,59 @@ const teamMembers = [
 
 const Team = () => {
   return (
-    <section className="py-20 bg-white" aria-labelledby="team-heading">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2
-            id="team-heading"
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+    <Section className="bg-white" aria-labelledby="team-heading">
+      <Header>
+        <Title id="team-heading">
+          Our <span className="text-secondary">Expert</span> Team
+        </Title>
+        <SubTitle>
+          Each team member brings unique expertise to ensure your restaurant
+          website exceeds expectations.
+        </SubTitle>
+      </Header>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-8 max-w-7xl mx-auto">
+        {teamMembers.map((member) => (
+          <Card
+            key={member.name}
+            className="overflow-hidden hover:shadow-lg transition-shadow w-full py-0"
           >
-            Our <span className="text-secondary">Expert</span> Team
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Each team member brings unique expertise to ensure your restaurant
-            website exceeds expectations.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-8 max-w-7xl mx-auto">
-          {teamMembers.map((member) => (
-            <Card
-              key={member.name}
-              className="overflow-hidden hover:shadow-lg transition-shadow w-full py-0"
-            >
-              <Image
-                src={member.image}
-                alt={`Photo of ${member.name}`}
-                width={300}
-                height={300}
-                className="object-cover aspect-square w-full"
-              />
-              <CardContent className="p-6">
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-secondary font-medium mb-2">
-                    {member.role}
-                  </p>
-                </div>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  {member.bio}
-                </p>
-                {/* Skills */}
-                <div
-                  className="mb-4 flex flex-wrap gap-2"
-                  aria-label={`${member.name}'s skills`}
-                >
-                  {member.skills.map((skill) => (
-                    <Badge
-                      key={skill}
-                      variant="secondary"
-                      className="bg-secondary text-secondary-foreground text-xs"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+            <Image
+              src={member.image}
+              alt={`Photo of ${member.name}`}
+              width={300}
+              height={300}
+              className="object-cover aspect-square w-full"
+            />
+            <CardContent className="p-6">
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-gray-900 mb-1">
+                  {member.name}
+                </h3>
+                <p className="text-secondary font-medium mb-2">{member.role}</p>
+              </div>
+              <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                {member.bio}
+              </p>
+              {/* Skills */}
+              <div
+                className="mb-4 flex flex-wrap gap-2"
+                aria-label={`${member.name}'s skills`}
+              >
+                {member.skills.map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="secondary"
+                    className="bg-secondary text-secondary-foreground text-xs"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 };
 

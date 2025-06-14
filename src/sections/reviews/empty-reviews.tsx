@@ -1,4 +1,4 @@
-import { Star, Users, Gift } from "lucide-react";
+import { Star, Users, Gift, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -56,7 +56,9 @@ export default function EmptyReviews() {
           {/* Call to Action */}
           <div className="flex flex-col sm:flex-row gap-3 w-full max-w-sm">
             <Button className="flex-1" asChild>
-              <Link href={"/pricing"}>Claim Your Spot</Link>
+              <Link href={`${process.env.NEXT_PUBLIC_CONTACT_ME_URL}`}>
+                Claim Your Spot <ExternalLink />
+              </Link>
             </Button>
           </div>
 

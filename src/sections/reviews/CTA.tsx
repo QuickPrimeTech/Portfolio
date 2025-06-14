@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
 export default function CTA() {
   return (
@@ -12,11 +13,12 @@ export default function CTA() {
           See why restaurant owners consistently rate us 5 stars. Let's create
           your success story next.
         </p>
-        <Link href="/book-consultation">
-          <Button size="lg" variant={"outline"}>
-            Book Free Consultation
-          </Button>
-        </Link>
+        <Button size="lg" variant={"outline"} asChild>
+          <Link href={`${process.env.NEXT_PUBLIC_CONTACT_ME_URL}`}>
+            Contact Us
+            <ExternalLink />
+          </Link>
+        </Button>
       </div>
     </section>
   );
