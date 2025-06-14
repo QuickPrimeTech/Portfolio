@@ -46,7 +46,7 @@ const Team = () => {
           {teamMembers.map((member) => (
             <Card
               key={member.name}
-              className="overflow-hidden hover:shadow-lg transition-shadow w-full"
+              className="overflow-hidden hover:shadow-lg transition-shadow w-full py-0"
             >
               <Image
                 src={member.image}
