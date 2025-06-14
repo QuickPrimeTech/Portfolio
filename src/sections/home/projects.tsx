@@ -71,9 +71,9 @@ const FeaturedProjects = () => {
 
         <ProjectCarousel />
       </div>
-      <Button className="mx-auto" asChild>
-        <Link href={`/projects`} target="_blank" rel="noopener noreferrer">
-          See All Project
+      <Button asChild>
+        <Link href={`/work`}>
+          See All Projects
           <ExternalLink className="h-4 w-4 ml-2" />
         </Link>
       </Button>
