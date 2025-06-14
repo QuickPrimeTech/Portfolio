@@ -29,6 +29,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import PaypalSubscriptionButton from "@/components/client/paypal-button";
 import { Feature, FeaturesContainer } from "@/components/client/feature";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
+import Link from "next/link";
 
 interface PricingProps {
   title: string;
@@ -135,9 +136,11 @@ const Pricing = () => {
           )
         )}
       </div>
-      <Button size="lg" variant={"outline"}>
-        Compare All Plans
-        <ArrowRight />
+      <Button size="lg" variant={"outline"} asChild>
+        <Link href="/pricing/compare">
+          Compare All Plans
+          <ArrowRight />
+        </Link>
       </Button>
     </Section>
   );
