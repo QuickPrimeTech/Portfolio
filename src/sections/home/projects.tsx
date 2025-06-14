@@ -44,14 +44,14 @@ const projects = [
   },
   {
     id: 3,
-    name: "The Green Fork",
-    category: "Vegan",
+    name: "The Obsidian Plate",
+    category: "Ethiopian Cusine",
     description:
-      "Built a vibrant and interactive menu system for a trendy vegan café with seamless integrations for delivery and loyalty.",
-    shortDescription: "Interactive vegan café site",
+      "Built a vibrant and interactive menu system for a trendy Ethiopian restaurant with seamless integrations for reservations and menu access.",
+    shortDescription: "Interactive Ethiopian restaurant site",
     image:
-      "https://res.cloudinary.com/demo/image/upload/v1712345678/greenfork.jpg",
-    liveUrl: "https://greenfork.vercel.app/",
+      "https://res.cloudinary.com/dhlyei79o/image/upload/v1749892416/Thumbnail_xnwpt9.png",
+    liveUrl: "https://third-restaurant.vercel.app/",
   },
 ];
 

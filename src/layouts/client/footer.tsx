@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-2">
-            <Logo className="text-blue-600" />
+            <Logo className="text-primary" />
             <Link className="text-xl font-bold text-primary" href={"/"}>
               QuickPrimeTech
             </Link>
