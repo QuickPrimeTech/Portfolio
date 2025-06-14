@@ -137,7 +137,7 @@ const Pricing = () => {
         )}
       </div>
       <Button size="lg" variant={"outline"} asChild>
-        <Link href="/pricing/compare">
+        <Link href="/pricing">
           Compare All Plans
           <ArrowRight />
         </Link>
