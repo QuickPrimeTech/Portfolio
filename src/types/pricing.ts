@@ -1,4 +1,3 @@
-// Types
 export type PlanKey = "starter" | "pro" | "premium";
 
 export interface FeatureItem {
