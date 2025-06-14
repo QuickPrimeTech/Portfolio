@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { BarChart3, Calendar, Headphones, Mail } from "lucide-react";
+import { Section, Header, Title, SubTitle } from "@/components/typography";
 
 const addOns = [
   {
@@ -32,40 +33,33 @@ const addOns = [
 
 const AddOns = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Optional Add-ons
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Enhance your website with these additional services available for
-            any package.
-          </p>
-        </div>
+    <Section className="py-20 bg-white">
+      <Header>
+        <Title>Optional Add-ons</Title>
+        <SubTitle>
+          {" "}
+          Enhance your website with these additional services available for any
+          package.
+        </SubTitle>
+      </Header>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {addOns.map((addon, index) => {
-            const Icon = addon.icon;
-            return (
-              <Card
-                key={index}
-                className="text-center p-6 hover:shadow-lg transition-shadow flex flex-col justify-between"
-              >
-                <Icon className="h-12 w-12 text-secondary mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">{addon.title}</h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  {addon.description}
-                </p>
-                <p className="text-2xl font-bold text-secondary">
-                  {addon.price}
-                </p>
-              </Card>
-            );
-          })}
-        </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {addOns.map((addon, index) => {
+          const Icon = addon.icon;
+          return (
+            <Card
+              key={index}
+              className="text-center px-4 hover:shadow-lg transition-shadow flex flex-col"
+            >
+              <Icon className="h-12 w-12 text-secondary mx-auto mb-4" />
+              <h3 className="text-lg font-semibold mb-2">{addon.title}</h3>
+              <p className="text-gray-600 text-sm mb-4">{addon.description}</p>
+              <p className="text-2xl font-bold text-secondary">{addon.price}</p>
+            </Card>
+          );
+        })}
       </div>
-    </section>
+    </Section>
   );
 };
 

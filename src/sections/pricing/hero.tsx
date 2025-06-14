@@ -1,17 +1,19 @@
+import { Section, Header, H1, SubTitle } from "@/components/typography";
+
 const Hero = () => {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+    <Section className="bg-gray-50">
+      <Header>
+        <H1>
           <span className="text-secondary">Transparent Pricing</span> for Every
           Restaurant
-        </h1>
-        <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        </H1>
+        <SubTitle>
           Choose the perfect package for your restaurant. No hidden fees, no
           surprises. All prices include design, development, and launch.
-        </p>
-      </div>
-    </section>
+        </SubTitle>
+      </Header>
+    </Section>
   );
 };
 
