@@ -1,32 +1,8 @@
 "use client";
-
 import React from "react";
-import { Button } from "@/components/ui/button";
 
-import { Badge } from "@/components/ui/badge";
+import { Lightbulb, Palette, Code, Rocket, Headphones } from "lucide-react";
 
-import {
-  Lightbulb,
-  Palette,
-  Code,
-  Rocket,
-  Users,
-  CheckCircle,
-  MessageSquare,
-  FileText,
-  Monitor,
-  Smartphone,
-  Search,
-  Camera,
-  Settings,
-  BarChart3,
-  Shield,
-  Headphones,
-  Calendar,
-  Phone,
-} from "lucide-react";
-
-import Link from "next/link";
 import Hero from "@/sections/process/overview";
 import Steps from "@/sections/process/steps";
 import Communication from "@/sections/process/communication";
@@ -88,7 +64,7 @@ export default function ProcessPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Hero activePhase={activePhase} setActivePhase={setActivePhase} />
+      <Hero />
       <Steps
         activePhase={activePhase}
         setActivePhase={setActivePhase}
