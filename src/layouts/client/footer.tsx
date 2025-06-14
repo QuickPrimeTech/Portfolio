@@ -24,7 +24,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+        <div className="border-t border-purple-800 mt-8 pt-8 text-center text-gray-400 text-sm">
           <p>
             &copy; {new Date().getFullYear()} QuickPrimeTech. All rights
             reserved. Specialized in restaurant website development.

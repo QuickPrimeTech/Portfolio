@@ -1,47 +1,106 @@
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink } from "lucide-react";
-import { Project } from "@/types/projects";
+import { WithChildrenAndClass } from "@/types";
+import { cn } from "@/lib/utils";
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ children, className }: WithChildrenAndClass) {
   return (
-    <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between">
-      <Image
-        src={project.image}
-        alt={project.name}
-        width={600}
-        height={400}
-        className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
-      />
-
-      <CardContent className="p-6">
-        <Badge variant="secondary" className="text-xs">
-          {project.category}
-        </Badge>
-        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-          {project.name}
-        </h3>
-        <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-          {project.description}
-        </p>
-      </CardContent>
-      <CardFooter>
-        <Button className="w-full" asChild>
-          <Link
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            See Live Demo
-            <ExternalLink className="h-4 w-4" />
-          </Link>
-        </Button>
-      </CardFooter>
+    <Card
+      className={cn(
+        "group hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between py-0 pb-3",
+        className
+      )}
+    >
+      {children}
     </Card>
   );
 }
 
-export { ProjectCard };
+function ProjectCardImage({ image, alt }: { image: string; alt: string }) {
+  return (
+    <Image
+      src={image}
+      alt={alt}
+      width={600}
+      height={400}
+      className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
+    />
+  );
+}
+
+function ProjectCardContent({
+  children,
+  className,
+  ...props
+}: WithChildrenAndClass) {
+  return (
+    <div className={cn("p-6", className)} {...props}>
+      {children}
+    </div>
+  );
+}
+
+function ProjectCardBadge({
+  children,
+  className,
+  ...props
+}: WithChildrenAndClass) {
+  return (
+    <Badge variant="secondary" className={cn("text-xs", className)} {...props}>
+      {children}
+    </Badge>
+  );
+}
+
+function ProjectCardTitle({
+  children,
+  className,
+  ...props
+}: WithChildrenAndClass) {
+  return (
+    <h3
+      className={cn("text-xl font-bold text-gray-900 mb-2", className)}
+      {...props}
+    >
+      {children}
+    </h3>
+  );
+}
+
+function ProjectCardDescription({
+  children,
+  className,
+  ...props
+}: WithChildrenAndClass) {
+  return (
+    <p
+      className={cn("text-gray-600 mb-4 text-sm leading-relaxed", className)}
+      {...props}
+    >
+      {children}
+    </p>
+  );
+}
+
+function ProjectCardFooter({
+  children,
+  className,
+  ...props
+}: WithChildrenAndClass) {
+  return (
+    <div className={cn("px-6 pb-6", className)} {...props}>
+      {children}
+    </div>
+  );
+}
+
+export {
+  ProjectCard,
+  ProjectCardImage,
+  ProjectCardContent,
+  ProjectCardBadge,
+  ProjectCardTitle,
+  ProjectCardDescription,
+  ProjectCardFooter,
+};

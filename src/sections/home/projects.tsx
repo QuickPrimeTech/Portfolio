@@ -1,7 +1,59 @@
-"use client";
-import React from "react";
-import { ArrowRight } from "lucide-react";
-import { ProjectCard } from "@/components/client/project-card";
+import {
+  ProjectCard,
+  ProjectCardImage,
+  ProjectCardContent,
+  ProjectCardBadge,
+  ProjectCardTitle,
+  ProjectCardDescription,
+  ProjectCardFooter,
+} from "@/components/client/project-card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ExternalLink } from "lucide-react";
+
+const projects = [
+  {
+    id: 1,
+    name: "Open Karen",
+    category: "Fine Dining",
+    description:
+      "Transformed a family restaurant's outdated site into a modern, reservation-friendly experience that captures the authentic Indian atmosphere.",
+    shortDescription: "Modern Indian restaurant website",
+    image:
+      "https://res.cloudinary.com/dhlyei79o/image/upload/v1749234158/OpenKaren_tmjjte.png",
+    liveUrl: "https://first-restaurant-five.vercel.app/",
+  },
+  {
+    id: 2,
+    name: "Savoria",
+    category: "Russian Cuisine",
+    description:
+      "Transformed a family restaurant's outdated site into a modern, reservation-friendly experience that captures the authentic Indian atmosphere.",
+    shortDescription: "Authentic Russian restaurant website",
+    image:
+      "https://res.cloudinary.com/dhlyei79o/image/upload/v1749888453/Thumbnail1_jsvp41.png",
+    liveUrl: "http://savoria-swart.vercel.app/",
+  },
+  {
+    id: 3,
+    name: "The Green Fork",
+    category: "Vegan",
+    description:
+      "Built a vibrant and interactive menu system for a trendy vegan café with seamless integrations for delivery and loyalty.",
+    shortDescription: "Interactive vegan café site",
+    image:
+      "https://res.cloudinary.com/demo/image/upload/v1712345678/greenfork.jpg",
+    liveUrl: "https://greenfork.vercel.app/",
+  },
+];
 
 const FeaturedProjects = () => {
   return (
@@ -19,93 +71,71 @@ const FeaturedProjects = () => {
 
         <ProjectCarousel />
       </div>
+      <Button className="mx-auto" asChild>
+        <Link href={`/projects`} target="_blank" rel="noopener noreferrer">
+          See All Project
+          <ExternalLink className="h-4 w-4 ml-2" />
+        </Link>
+      </Button>
     </section>
   );
 };
 
 function ProjectCarousel() {
-  const [currentSlide, setCurrentSlide] = React.useState(0);
-
-  const projects = [
-    {
-      id: 1,
-      name: "Open Karen",
-      category: "Fine Dining",
-      description:
-        "Transformed a family restaurant's outdated site into a modern, reservation-friendly experience that captures the authentic Indian atmosphere.",
-      shortDescription: "Modern Indian restaurant website",
-      image:
-        "https://res.cloudinary.com/dhlyei79o/image/upload/v1749234158/OpenKaren_tmjjte.png",
-      liveUrl: "https://first-restaurant-five.vercel.app/",
-    },
-  ];
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % projects.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + projects.length) % projects.length);
-  };
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-
   return (
-    <div className="relative max-w-4xl mx-auto">
-      {/* Carousel Container */}
-      <div className="relative overflow-hidden rounded-xl">
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
-          {projects.map((project) => (
-            <div key={project.id} className="w-full shrink-0 px-4">
-              <ProjectCard key={project.id} project={project} />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all z-10"
-        aria-label="Previous project"
-      >
-        <ArrowRight className="h-6 w-6 text-gray-700 rotate-180" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all z-10"
-        aria-label="Next project"
-      >
-        <ArrowRight className="h-6 w-6 text-gray-700" />
-      </button>
-
-      {/* Dot Indicators */}
-      <div className="flex justify-center mt-8 space-x-2">
-        {projects.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === currentSlide
-                ? "bg-blue-600 w-8"
-                : "bg-gray-300 hover:bg-gray-400"
-            }`}
-            aria-label={`Go to project ${index + 1}`}
-          />
-        ))}
-      </div>
-
-      {/* Project Counter */}
-      <div className="text-center mt-4">
-        <span className="text-sm text-gray-500">
-          {currentSlide + 1} of {projects.length} projects
-        </span>
-      </div>
+    <div className="relative max-w-6xl mx-auto">
+      <Carousel opts={{ align: "start" }} className="w-full">
+        <CarouselContent className="-ml-4 md:-ml-6">
+          {projects.map(
+            (
+              {
+                id,
+                name,
+                category,
+                description,
+                shortDescription,
+                image,
+                liveUrl,
+              },
+              index
+            ) => (
+              <CarouselItem
+                key={id}
+                className="pl-4 md:pl-6 basis-full md:basis-1/2 lg:basis-1/3"
+              >
+                <ProjectCard>
+                  <ProjectCardImage image={image} alt={name} />
+                  <ProjectCardContent>
+                    <ProjectCardBadge>{category}</ProjectCardBadge>
+                    <ProjectCardTitle>{name}</ProjectCardTitle>
+                    <ProjectCardDescription>
+                      {shortDescription}
+                    </ProjectCardDescription>
+                    <p className="text-sm text-gray-600 mt-2">{description}</p>
+                  </ProjectCardContent>
+                  <ProjectCardFooter>
+                    <Button className="w-full" asChild>
+                      <Link
+                        href={liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        See Live Demo
+                        <ExternalLink className="h-4 w-4 ml-2" />
+                      </Link>
+                    </Button>
+                  </ProjectCardFooter>
+                </ProjectCard>
+                <div className="text-center mt-2 text-sm text-muted-foreground">
+                  {index + 1} of {projects.length} projects
+                </div>
+              </CarouselItem>
+            )
+          )}
+        </CarouselContent>
+        <CarouselPrevious className="-left-6" />
+        <CarouselNext className="-right-6" />
+      </Carousel>
     </div>
   );
 }
