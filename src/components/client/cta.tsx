@@ -75,15 +75,7 @@ function CtaSecondaryButton({
   href,
 }: WithChildrenAndClass & Href) {
   return (
-    <Button
-      size="lg"
-      variant="outline"
-      className={cn(
-        "bg-transparent text-secondary-foreground hover:text-secondary-foreground/90 hover:bg-transparent",
-        className
-      )}
-      asChild
-    >
+    <Button size="lg" variant="outline" className={cn(className)} asChild>
       <Link href={href}>{children}</Link>
     </Button>
   );

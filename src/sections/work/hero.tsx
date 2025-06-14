@@ -1,36 +1,28 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { Section, Header, H1, SubTitle } from "@/components/typography";
+import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight font-primary">
+    <Section className="py-20 bg-gray-50" aria-labelledby="work-header">
+      <Header>
+        <H1 id="work-header">
           Our <span className="text-secondary">Restaurant</span> Success Stories
-        </h1>
-        <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+        </H1>
+        <SubTitle>
           Discover how we've helped restaurants transform their online presence,
           increase bookings, and grow their business with custom websites that
           deliver real results.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button
-            size="lg"
-            className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3"
-          >
-            View All Projects
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-blue-600 text-blue-600 hover:bg-blue-50 text-lg px-8 py-3"
-          >
-            Start Your Project
-          </Button>
-        </div>
-      </div>
-    </section>
+        </SubTitle>
+      </Header>
+      <Button size="lg" asChild>
+        <Link href={`${process.env.NEXT_PUBLIC_CONTACT_ME_URL}`}>
+          Start Your Project
+          <ExternalLink />
+        </Link>
+      </Button>
+    </Section>
   );
 };
 

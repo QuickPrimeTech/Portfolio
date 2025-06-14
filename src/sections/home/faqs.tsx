@@ -4,6 +4,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+import { Section, Header, Title, SubTitle } from "@/components/typography";
 
 const faqs = [
   {
@@ -40,35 +41,26 @@ const faqs = [
 
 const Faqs = () => {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Got questions? We've got answers.
-          </p>
-        </div>
-
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map(({ id, question, answer }) => (
-              <AccordionItem
-                key={id}
-                value={id}
-                className="bg-white rounded-lg px-6"
-              >
-                <AccordionTrigger className="text-left">
-                  {question}
-                </AccordionTrigger>
-                <AccordionContent>{answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+    <Section className="bg-gray-50" id="faqs" aria-labelledby="faqs-title">
+      <Header>
+        <Title id="faqs-title"> Frequently Asked Questions</Title>
+        <SubTitle>Get all of your doubts clarified</SubTitle>
+      </Header>
+      <div className="max-w-4xl w-full">
+        <Accordion type="single" collapsible className="space-y-4">
+          {faqs.map(({ id, question, answer }) => (
+            <AccordionItem
+              key={id}
+              value={id}
+              className="bg-white rounded-lg px-6"
+            >
+              <AccordionTrigger>{question}</AccordionTrigger>
+              <AccordionContent>{answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
-    </section>
+    </Section>
   );
 };
 

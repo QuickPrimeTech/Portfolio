@@ -1,5 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
+import { Section, Header, Title, SubTitle } from "@/components/typography";
 
 const steps = [
   {
@@ -26,34 +25,45 @@ const steps = [
 
 const ClientExperience = () => {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            The Client Experience
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            No tech experience needed – we handle everything from start to
-            finish.
-          </p>
-        </div>
+    <Section className="bg-gray-50">
+      <Header>
+        <Title>The Client Experience</Title>
+        <SubTitle>
+          No tech experience needed – we handle everything from start to finish.
+        </SubTitle>
+      </Header>
+      <div className="max-w-6xl">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-start relative">
+          {steps.map((step, index) => (
+            <div
+              key={step.number}
+              className="relative flex-1 flex md:block items-start md:items-center text-center md:text-left mb-10 md:mb-0"
+            >
+              {/* Connector line - horizontal (desktop) */}
+              {index !== steps.length - 1 && (
+                <div className="hidden md:block absolute top-6  w-full h-0.5 bg-secondary transform translate-x-1/2" />
+              )}
 
-        {/* Timeline */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="grid md:grid-cols-4 gap-8">
-            {steps.map((step) => (
-              <div key={step.number} className="text-center">
-                <div className="w-12 h-12 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-lg font-bold">
+              {/* Connector line - vertical (mobile/tablet) */}
+              {index !== steps.length - 1 && (
+                <div className="block md:hidden absolute left-6 top-12 h-full w-0.5 bg-secondary z-0" />
+              )}
+
+              {/* Step Content */}
+              <div className="relative z-10 flex md:flex-col md:items-center gap-2">
+                <div className="w-12 h-12 shrink-0 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center font-bold text-lg shadow-md">
                   {step.number}
                 </div>
-                <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
-                <p className="text-gray-600 text-sm">{step.description}</p>
+                <div className="text-start md:text-center">
+                  <h3 className="font-semibold text-lg">{step.title}</h3>
+                  <p className="text-gray-600 text-sm">{step.description}</p>
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

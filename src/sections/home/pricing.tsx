@@ -22,6 +22,7 @@ import {
 import { ArrowRight } from "lucide-react";
 import PaypalSubscriptionButton from "@/components/client/paypal-button";
 import { Feature, FeaturesContainer } from "@/components/client/feature";
+import { Section, Header, Title, SubTitle } from "@/components/typography";
 
 interface PricingProps {
   title: string;
@@ -86,59 +87,50 @@ const pricingCards = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Maintenance Pricing
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Choose the perfect package for your restaurant. No hidden fees, no
-            surprises.
-          </p>
-        </div>
+    <Section id="pricing" aria-labelledby="pricing-header">
+      <Header>
+        <Title id="pricing-header"> Maintenance Pricing</Title>
+        <SubTitle>
+          Choose the perfect package for your restaurant. No hidden fees, no
+          surprises.
+        </SubTitle>
+      </Header>
 
-        <div className="grid md:grid-cols-3 gap-8 mx-auto">
-          {/* Starter */}
-          {pricingCards.map(
-            (
-              { title, description, price, features, popular, planId },
-              index
-            ) => (
-              <PricingCard key={index} popular={popular}>
-                <PricingCardHeader>
-                  <PricingCardTitle className={cn(popular && "text-secondary")}>
-                    {title}
-                  </PricingCardTitle>
-                  <PricingCardDescription>{description}</PricingCardDescription>
-                  <PricingCardPrice className={cn(popular && "text-secondary")}>
-                    {price}
-                  </PricingCardPrice>
-                </PricingCardHeader>
-                <PricingCardContent>
-                  <FeaturesContainer>
-                    {features.map((feature, index) => (
-                      <Feature key={index}>{feature}</Feature>
-                    ))}
-                  </FeaturesContainer>
-                  <PricingPaymentDialog
-                    title={title}
-                    price={price}
-                    planId={planId}
-                  />
-                </PricingCardContent>
-              </PricingCard>
-            )
-          )}
-        </div>
-        <div className="text-center mt-8">
-          <Button size="lg" variant={"outline"}>
-            Compare All Plans
-            <ArrowRight />
-          </Button>
-        </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Starter */}
+        {pricingCards.map(
+          ({ title, description, price, features, popular, planId }, index) => (
+            <PricingCard key={index} popular={popular}>
+              <PricingCardHeader>
+                <PricingCardTitle className={cn(popular && "text-secondary")}>
+                  {title}
+                </PricingCardTitle>
+                <PricingCardDescription>{description}</PricingCardDescription>
+                <PricingCardPrice className={cn(popular && "text-secondary")}>
+                  {price}
+                </PricingCardPrice>
+              </PricingCardHeader>
+              <PricingCardContent>
+                <FeaturesContainer>
+                  {features.map((feature, index) => (
+                    <Feature key={index}>{feature}</Feature>
+                  ))}
+                </FeaturesContainer>
+                <PricingPaymentDialog
+                  title={title}
+                  price={price}
+                  planId={planId}
+                />
+              </PricingCardContent>
+            </PricingCard>
+          )
+        )}
       </div>
-    </section>
+      <Button size="lg" variant={"outline"}>
+        Compare All Plans
+        <ArrowRight />
+      </Button>
+    </Section>
   );
 };
 

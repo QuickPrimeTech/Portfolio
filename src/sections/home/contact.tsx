@@ -4,36 +4,23 @@ import { Card } from "@/components/ui/card";
 import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, Instagram, Send } from "lucide-react";
 import Link from "next/link";
+import { Section, Header, Title, SubTitle } from "@/components/typography";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-blue-600 text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Let's Build a Site That Feeds Your Growth
-          </h2>
-          <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-            Ready to transform your restaurant's online presence? Let's start
-            with a free consultation.
-          </p>
-          <Button
-            size="lg"
-            className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3 mb-8"
-            asChild
-          >
-            <Link href={`${process.env.NEXT_PUBLIC_CONTACT_ME_URL}`}>
-              Contact Us
-            </Link>
-          </Button>
-        </div>
-
-        <div className="flex flex-col lg:flex-row items-stretch justify-center gap-8">
-          <ContactForm />
-          <ContactCard />
-        </div>
+    <Section id="contact" className="py-20 bg-blue-600 text-white">
+      <Header>
+        <Title>Let's Build a Site That Feeds Your Growth</Title>
+        <SubTitle className="text-white">
+          Ready to transform your restaurant's online presence? Let's start with
+          a free consultation.
+        </SubTitle>
+      </Header>
+      <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-8">
+        <ContactForm />
+        <ContactCard />
       </div>
-    </section>
+    </Section>
   );
 };
 

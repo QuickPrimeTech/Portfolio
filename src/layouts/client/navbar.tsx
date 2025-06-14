@@ -53,16 +53,16 @@ const SideNavigation = () => {
             className="lg:hidden"
             aria-label="Open navigation menu"
           >
-            <Menu className="!size-6" />
+            <Menu className="size-6" />
           </Button>
         </SheetTrigger>
-        <SheetContent side="right" className="w-[300px] sm:w-[350px]">
+        <SheetContent side="right" className="w-3/4 md:w-1/2 section-x">
           <SheetHeader className="border-b pb-4 mb-4">
             <SheetTitle className="flex items-center">
               <Brand />
             </SheetTitle>
           </SheetHeader>
-          <div className="flex flex-col space-y-4 py-4">
+          <div className="flex flex-col space-y-4">
             {links.map((link) => (
               <SheetClose asChild key={link.id}>
                 <Link
@@ -74,7 +74,7 @@ const SideNavigation = () => {
               </SheetClose>
             ))}
           </div>
-          <div className="mt-auto pt-4 border-t">
+          <div className="pt-4 border-t">
             <SheetClose asChild>
               <NavButton />
             </SheetClose>

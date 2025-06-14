@@ -38,7 +38,6 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {" "}
                 Get Free Website
                 <ArrowRight className="h-5 w-5" />
               </Link>
