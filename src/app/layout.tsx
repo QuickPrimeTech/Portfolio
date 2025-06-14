@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/layouts/client/navbar";
 import Footer from "@/layouts/client/footer";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "QuickPrimeTech - Get your website running with no upfront cost",
@@ -54,6 +55,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Toaster position="top-left" richColors />
       </body>
     </html>
   );
