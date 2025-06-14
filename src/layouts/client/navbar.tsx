@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { ExternalLink, Menu } from "lucide-react";
 import {
   Sheet,
   SheetTrigger,
@@ -19,25 +19,23 @@ import { links } from "@/config/navigation";
 const Navbar = () => {
   const pathname = usePathname();
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-xs border-b">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Brand />
-        <div className="hidden lg:flex items-center space-x-6">
-          {links.map((link) => (
-            <Link
-              key={link.id}
-              href={link.href}
-              className={cn(
-                "text-gray-600 hover:text-secondary transition-colors",
-                pathname === link.href && "text-secondary"
-              )}
-            >
-              {link.link}
-            </Link>
-          ))}
-        </div>
-        <SideNavigation />
+    <nav className="flex items-center justify-between sticky top-0 z-50 bg-white/95 backdrop-blur-xs border-b section-x py-4">
+      <Brand />
+      <div className="hidden lg:flex items-center space-x-6">
+        {links.map((link) => (
+          <Link
+            key={link.id}
+            href={link.href}
+            className={cn(
+              "text-gray-600 hover:text-secondary transition-colors",
+              pathname === link.href && "text-secondary"
+            )}
+          >
+            {link.link}
+          </Link>
+        ))}
       </div>
+      <SideNavigation />
     </nav>
   );
 };
@@ -94,6 +92,7 @@ const NavButton = ({ className }: ClassName) => {
         rel="noopener noreferrer"
       >
         Contact Us
+        <ExternalLink className="size-4" />
       </Link>
     </Button>
   );

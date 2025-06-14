@@ -1,6 +1,7 @@
-import { BarChart3, Users, Search, Shield, CheckCircle } from "lucide-react";
+import { BarChart3, Users, Search, Shield } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Feature, FeaturesContainer } from "@/components/client/feature";
+import { Section, Header, Title, SubTitle } from "@/components/typography";
 
 const qualityStandards = [
   {
@@ -35,39 +36,35 @@ const qualityStandards = [
 
 const Standards = () => {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Quality Standards
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Every website we deliver meets our rigorous quality standards for
-            performance, accessibility, and user experience.
-          </p>
-        </div>
+    <Section className="py-20 bg-gray-50">
+      <Header>
+        <Title>Quality Standards</Title>
+        <SubTitle>
+          Every website we deliver meets our rigorous quality standards for
+          performance, accessibility, and user experience.
+        </SubTitle>
+      </Header>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          {qualityStandards.map((standard, index) => (
-            <Card
-              key={index}
-              className="p-8 text-center hover:shadow-lg transition-shadow"
-            >
-              <div className="w-16 h-16 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
-                <standard.icon className="h-8 w-8 text-secondary" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">{standard.title}</h3>
-              <p className="text-gray-600 mb-6">{standard.description}</p>
-              <FeaturesContainer>
-                {standard.metrics.map((metric, index) => (
-                  <Feature key={index}>{metric}</Feature>
-                ))}
-              </FeaturesContainer>
-            </Card>
-          ))}
-        </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mx-auto">
+        {qualityStandards.map((standard, index) => (
+          <Card
+            key={index}
+            className="p-8 text-center hover:shadow-lg transition-shadow"
+          >
+            <div className="w-16 h-16 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
+              <standard.icon className="h-8 w-8 text-secondary" />
+            </div>
+            <h3 className="text-xl font-bold mb-4">{standard.title}</h3>
+            <p className="text-gray-600 mb-6">{standard.description}</p>
+            <FeaturesContainer>
+              {standard.metrics.map((metric, index) => (
+                <Feature key={index}>{metric}</Feature>
+              ))}
+            </FeaturesContainer>
+          </Card>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 };
 

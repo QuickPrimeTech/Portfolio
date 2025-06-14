@@ -12,13 +12,14 @@ import { Clock, CheckCircle } from "lucide-react";
 import { processSteps } from "@/data/process";
 import { ProcessStep, Phase } from "@/types";
 import { phases } from "@/data/process";
+import { Section, Header, Title, SubTitle } from "@/components/typography";
 
 const Steps = () => {
   const [activePhase, setActivePhase] = useState("discovery");
   const safePhases = phases || [];
 
   return (
-    <section className="py-20 bg-white">
+    <Section className="bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <Tabs value={activePhase} onValueChange={setActivePhase}>
@@ -106,7 +107,7 @@ const Steps = () => {
           </Tabs>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 
