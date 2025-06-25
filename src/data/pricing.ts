@@ -192,13 +192,13 @@ export const features = [
 ];
 
 export const plans: Plan[] = [
-  { name: "Starter", price: "$800", key: "starter" },
+  { name: "Basic", price: "$69.99/month", key: "starter" },
   {
     name: "Pro",
-    price: "$1,500",
+    price: "$99.99/month",
     key: "pro",
     badge: "Most Popular",
     highlight: true,
   },
-  { name: "Premium", price: "$2,500+", key: "premium" },
+  { name: "Premium", price: "$149.99/month", key: "premium" },
 ];
