@@ -1,33 +1,75 @@
 import Link from "next/link";
 import Logo from "@/components/logo";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { links } from "@/config/navigation";
+
+const socialLinks = [
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/quickprimetech/",
+    icon: Instagram,
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61577138158760",
+    icon: Facebook,
+  },
+];
 
 const Footer = () => {
   return (
-    <footer className="bg-purple-950 text-white py-12 section-x space-y-6">
-      <div className="flex flex-col gap-4 md:flex-row justify-between">
-        <div className="flex items-center space-x-2">
-          <Logo className="text-primary" />
-          <Link className="text-xl font-bold text-primary" href={"/"}>
-            QuickPrimeTech
-          </Link>
+    <footer className="bg-gradient-to-br from-secondary to-primary text-white pt-12 pb-6">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-3 gap-8 items-start">
+          {/* Brand */}
+          <div className="flex gap-3">
+            <Logo className="text-white size-8" />
+            <Link href="/" className="text-2xl font-bold text-white">
+              QuickPrimeTech
+            </Link>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-gray-200">
+              {links.map((item) => (
+                <li key={item.id}>
+                  <Link href={item.href} className="hover:underline">
+                    {item.link}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Socials */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Connect with us</h3>
+            <ul className="flex gap-3">
+              {socialLinks.map((social) => (
+                <li key={social.name}>
+                  <Link
+                    href={social.href}
+                    className="inline-flex p-3 rounded-full bg-black/10"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {<social.icon className="size-6" />}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className="flex space-x-6 text-sm text-gray-300">
-          <Link href="#" className="hover:text-white transition-colors">
-            Privacy Policy
-          </Link>
-          <Link href="#" className="hover:text-white transition-colors">
-            Terms of Service
-          </Link>
-          <Link href="#" className="hover:text-white transition-colors">
-            Contact
-          </Link>
+
+        {/* Divider */}
+        <div className="border-t border-white/20 mt-10 pt-6 text-center text-sm text-gray-300">
+          <p>
+            &copy; {new Date().getFullYear()} QuickPrimeTech. All rights
+            reserved. Specialized in restaurant website development.
+          </p>
         </div>
-      </div>
-      <div className="border-t border-purple-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-        <p>
-          &copy; {new Date().getFullYear()} QuickPrimeTech. All rights reserved.
-          Specialized in restaurant website development.
-        </p>
       </div>
     </footer>
   );
