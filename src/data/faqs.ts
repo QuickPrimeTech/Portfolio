@@ -1,5 +1,10 @@
 export const pricingFaqs = [
   {
+    question: "What's happens when I subscribe to a package?",
+    answer:
+      "Once you subscribe, we’ll contact you within 2 hours to get started. If not, feel free to call us — we’ll begin your project right away. Every package includes full design, development, testing, launch, 30 days of support, training, and basic SEO. No hidden fees.",
+  },
+  {
     question: "What's included in the base price?",
     answer:
       "All packages include complete design, development, testing, and launch of your website. You also get 30 days of free support, content management training, and basic SEO setup. No hidden fees or surprises.",
