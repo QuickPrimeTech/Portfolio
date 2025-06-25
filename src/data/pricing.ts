@@ -1,5 +1,60 @@
 import { Plan } from "@/types";
 
+export const pricingCardsInfo = [
+  {
+    title: "Basic",
+    description: "For small cafes or takeout spots",
+    price: "69.99",
+    features: [
+      "3-page custom website (Homepage, Menu, Contact)",
+      "Unlimited menu items",
+      "Third-party reservation system integration",
+      "Basic SEO setup",
+      "2 changes per month",
+      "Dashboard for content management",
+      "Secure hosting (SSL included)",
+      "Basic website analytics (monthly report)",
+      "Maintenance & support",
+    ],
+    popular: false,
+    planId: "P-2XU60119GU648443YNA64AEA",
+  },
+  {
+    title: "Pro",
+    description: "For growing restaurants",
+    price: "99.99",
+    features: [
+      "Everything in Basic",
+      "Custom branding",
+      "8-10 page custom website",
+      "Advanced SEO",
+      "6 content updates per month",
+      "Advanced website analytics",
+      "Gallery, Private Dining, Private Events Pages (optional)",
+      "Unlimited gallery images",
+      "Social media feed integration on website",
+    ],
+    popular: true,
+    planId: "P-02876306HE3896415NA7AZGQ",
+  },
+  {
+    title: "Premium",
+    description: "For upscale brands",
+    price: "149.99",
+    features: [
+      "Everything in Pro",
+      "10-20 page custom website",
+      "Unlimited page updates",
+      "Custom feature requests",
+      "Event booking system",
+      "24/7 priority support (phone + email)",
+      "Google My Business management & optimization",
+    ],
+    popular: false,
+    planId: "P-44256660A5342815BNA7A5VY",
+  },
+];
+
 export const features = [
   {
     category: "Design & Development",

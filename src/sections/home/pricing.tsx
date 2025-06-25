@@ -29,6 +29,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import PaypalSubscriptionButton from "@/components/client/paypal-button";
 import { Feature, FeaturesContainer } from "@/components/client/feature";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
+import { pricingCardsInfo } from "@/data/pricing";
 import Link from "next/link";
 
 interface PricingProps {
@@ -36,61 +37,6 @@ interface PricingProps {
   price: string | number;
   planId: string;
 }
-
-const pricingCards = [
-  {
-    title: "Basic",
-    description: "For small cafes or takeout spots",
-    price: "69.99",
-    features: [
-      "3-page custom website (Homepage, Menu, Contact)",
-      "Unlimited menu items",
-      "Third-party reservation system integration",
-      "Basic SEO setup",
-      "2 changes per month",
-      "Dashboard for content management",
-      "Secure hosting (SSL included)",
-      "Basic website analytics (monthly report)",
-      "Maintenance & support",
-    ],
-    popular: false,
-    planId: "P-2XU60119GU648443YNA64AEA",
-  },
-  {
-    title: "Pro",
-    description: "For growing restaurants",
-    price: "99.99",
-    features: [
-      "Everything in Basic",
-      "Custom branding",
-      "8-10 page custom website",
-      "Advanced SEO",
-      "6 content updates per month",
-      "Advanced website analytics",
-      "Gallery, Private Dining, Private Events Pages (optional)",
-      "Unlimited gallery images",
-      "Social media feed integration on website",
-    ],
-    popular: true,
-    planId: "P-02876306HE3896415NA7AZGQ",
-  },
-  {
-    title: "Premium",
-    description: "For upscale brands",
-    price: "149.99",
-    features: [
-      "Everything in Pro",
-      "10-20 page custom website",
-      "Unlimited page updates",
-      "Custom feature requests",
-      "Event booking system",
-      "24/7 priority support (phone + email)",
-      "Google My Business management & optimization",
-    ],
-    popular: false,
-    planId: "P-44256660A5342815BNA7A5VY",
-  },
-];
 
 const Pricing = () => {
   return (
@@ -102,40 +48,7 @@ const Pricing = () => {
           surprises.
         </SubTitle>
       </Header>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-        {/* Starter */}
-        {pricingCards.map(
-          ({ title, description, price, features, popular, planId }, index) => (
-            <PricingCard key={index} popular={popular}>
-              <PricingCardHeader>
-                <PricingCardTitle className={cn(popular && "text-secondary")}>
-                  {title}
-                </PricingCardTitle>
-                <PricingCardDescription>{description}</PricingCardDescription>
-                <PricingCardPrice className={cn(popular && "text-secondary")}>
-                  {price}
-                </PricingCardPrice>
-              </PricingCardHeader>
-              <PricingCardContent>
-                <div className="hidden md:block">
-                  <FeaturesContainer>
-                    {features.map((feature, index) => (
-                      <Feature key={index}>{feature}</Feature>
-                    ))}
-                  </FeaturesContainer>
-                </div>
-                <PricingPaymentDialog
-                  title={title}
-                  price={price}
-                  planId={planId}
-                />
-                <PricingFeatures features={features} />
-              </PricingCardContent>
-            </PricingCard>
-          )
-        )}
-      </div>
+      <PricingCards />
       <Button size="lg" variant={"outline"} asChild>
         <Link href="/pricing">
           Compare All Plans
@@ -143,6 +56,43 @@ const Pricing = () => {
         </Link>
       </Button>
     </Section>
+  );
+};
+
+const PricingCards = () => {
+  return (
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+      {pricingCardsInfo.map(
+        ({ title, description, price, features, popular, planId }, index) => (
+          <PricingCard key={index} popular={popular}>
+            <PricingCardHeader>
+              <PricingCardTitle className={cn(popular && "text-secondary")}>
+                {title}
+              </PricingCardTitle>
+              <PricingCardDescription>{description}</PricingCardDescription>
+              <PricingCardPrice className={cn(popular && "text-secondary")}>
+                {price}
+              </PricingCardPrice>
+            </PricingCardHeader>
+            <PricingCardContent>
+              <div className="hidden md:block">
+                <FeaturesContainer>
+                  {features.map((feature, index) => (
+                    <Feature key={index}>{feature}</Feature>
+                  ))}
+                </FeaturesContainer>
+              </div>
+              <PricingPaymentDialog
+                title={title}
+                price={price}
+                planId={planId}
+              />
+              <PricingFeatures features={features} />
+            </PricingCardContent>
+          </PricingCard>
+        )
+      )}
+    </div>
   );
 };
 
@@ -198,4 +148,4 @@ const PricingFeatures = ({ features }: { features: string[] }) => {
     </div>
   );
 };
-export default Pricing;
+export { Pricing as default, PricingCards };

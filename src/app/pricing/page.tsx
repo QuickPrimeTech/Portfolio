@@ -1,4 +1,4 @@
-import Pricing from "@/sections/home/pricing";
+import { PricingCards } from "@/sections/home/pricing";
 import CTA from "@/sections/pricing/cta";
 import AddOns from "@/sections/pricing/add-ons";
 import Faqs from "@/sections/pricing/faqs";
@@ -9,7 +9,7 @@ export default function PricingPage() {
   return (
     <main className="bg-background">
       <Hero />
-      <Pricing />
+      <PricingCards />
       <MorePricing />
       <AddOns />
       <Faqs />

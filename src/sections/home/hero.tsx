@@ -1,15 +1,27 @@
 import { WavePattern, LinePattern } from "@/components/ui/background-pattern";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Lightbulb, CheckCircle, Lock, Rocket } from "lucide-react";
 import Image from "next/image";
-import { FeaturesContainer, Feature } from "@/components/client/feature";
+import { FeaturesContainer } from "@/components/client/feature";
 import Link from "next/link";
 
 const points = [
-  "No setup fees or large upfront costs",
-  "Tailored website built to drive more orders & bookings",
-  "Low monthly fee — includes security, updates, and ongoing support",
-  "Optimized to help you grow faster with less hassle",
+  {
+    icon: CheckCircle,
+    text: "No setup fees or large upfront costs",
+  },
+  {
+    icon: Lightbulb,
+    text: "Tailored website built to drive more orders & bookings",
+  },
+  {
+    icon: Lock,
+    text: "Low monthly fee — includes security, updates, and ongoing support",
+  },
+  {
+    icon: Rocket,
+    text: "Optimized to help you grow faster with less hassle",
+  },
 ];
 
 const Hero = () => {
@@ -25,7 +37,10 @@ const Hero = () => {
           </h1>
           <FeaturesContainer>
             {points.map((point, index) => (
-              <Feature key={index}>{point}</Feature>
+              <li className="flex items-center" key={index}>
+                <point.icon className="size-5 text-secondary mr-3 shrink-0" />
+                {point.text}
+              </li>
             ))}
           </FeaturesContainer>
           <div className="flex gap-4">
