@@ -6,10 +6,10 @@ import { FeaturesContainer, Feature } from "@/components/client/feature";
 import Link from "next/link";
 
 const points = [
-  "No setup fees",
-  "No big upfront costs",
-  "Custom website that will boost your revenue",
-  "Low monthly subscription to keep your website secure and modern",
+  "No setup fees or large upfront costs",
+  "Tailored website built to drive more orders & bookings",
+  "Low monthly fee — includes security, updates, and ongoing support",
+  "Optimized to help you grow faster with less hassle",
 ];
 
 const Hero = () => {
@@ -20,9 +20,8 @@ const Hero = () => {
       <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-8">
         <div className="relative z-10 flex flex-col gap-6 grow-1 shrink-1">
           <h1 className="text-3xl md:text-5xl font-medium text-gray-900 leading-tight font-primary">
-            Get Your Restaurant’s Website That{" "}
-            <span className="text-secondary">Grow</span> Your{" "}
-            <span className="text-secondary">Revenue</span>.
+            <span className="text-secondary">Supercharge</span> Your Restaurant{" "}
+            <span className="text-secondary">Sales</span> With a Smart Website.
           </h1>
           <FeaturesContainer>
             {points.map((point, index) => (
