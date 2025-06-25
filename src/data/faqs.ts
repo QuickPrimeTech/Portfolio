@@ -1,5 +1,10 @@
 export const pricingFaqs = [
   {
+    question: "Can I pay just once instead of a monthly subscription?",
+    answer:
+      "Yes, one-time payment is available. In this case, you'll pay a larger upfront fee to cover the full design, development, and launch of your website. After that, there’s just a small annual fee (around $60) for hosting and your domain name. Please note, this option doesn’t include ongoing updates or support — it's a one-time setup.",
+  },
+  {
     question: "What's happens when I subscribe to a package?",
     answer:
       "Once you subscribe, we’ll contact you within 2 hours to get started. If not, feel free to call us — we’ll begin your project right away. Every package includes full design, development, testing, launch, 30 days of support, training, and basic SEO. No hidden fees.",
