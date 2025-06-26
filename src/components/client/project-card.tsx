@@ -21,7 +21,7 @@ function ProjectCardImage({ image, alt }: { image: string; alt: string }) {
   return (
     <Image
       src={image}
-      alt={alt}
+      alt={`${alt} by Quick Prime Tech`}
       width={600}
       height={400}
       className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
