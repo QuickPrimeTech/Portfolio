@@ -6,7 +6,7 @@ import {
   CtaContent,
   CtaPrimaryButton,
   CtaSecondaryButton,
-} from "@/components/client/cta";
+} from "@/components/ui/cta";
 
 const CTA = () => {
   return (
@@ -21,9 +21,7 @@ const CTA = () => {
           Start Your Project
           <ArrowRight className="ml-2 h-5 w-5" />
         </CtaPrimaryButton>
-        <CtaSecondaryButton href="/pricing">
-          View Pricing
-        </CtaSecondaryButton>
+        <CtaSecondaryButton href="/pricing">View Pricing</CtaSecondaryButton>
       </CtaContent>
     </Cta>
   );

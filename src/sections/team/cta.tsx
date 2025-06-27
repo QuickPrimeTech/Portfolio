@@ -5,7 +5,7 @@ import {
   CtaDescription,
   CtaTitle,
   CtaPrimaryButton,
-} from "@/components/client/cta";
+} from "@/components/ui/cta";
 
 const CTA = () => {
   return (

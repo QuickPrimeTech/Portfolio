@@ -2,7 +2,7 @@ import { WavePattern, LinePattern } from "@/components/ui/background-pattern";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Lightbulb, CheckCircle, Lock, Rocket } from "lucide-react";
 import Image from "next/image";
-import { FeaturesContainer } from "@/components/client/feature";
+import { FeaturesContainer } from "@/components/ui/feature";
 import Link from "next/link";
 
 const points = [

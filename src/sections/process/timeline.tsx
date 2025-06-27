@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Feature, FeaturesContainer } from "@/components/client/feature";
+import { Feature, FeaturesContainer } from "@/components/ui/feature";
 import { cn } from "@/lib/utils";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
 

@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { WithChildrenAndClass } from "@/types";
-import { ArrowRight } from "lucide-react";
 
 interface Href {
   href: string;
