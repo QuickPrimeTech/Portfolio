@@ -1,6 +1,6 @@
 import { BarChart3, Users, Search, Shield } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { Feature, FeaturesContainer } from "@/components/client/feature";
+import { Feature, FeaturesContainer } from "@/components/ui/feature";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
 
 const qualityStandards = [

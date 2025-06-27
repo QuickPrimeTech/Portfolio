@@ -38,10 +38,10 @@ const PricingCardDescription = ({ children }: Children) => {
 const PricingCardPrice = ({ children, className }: WithChildrenAndClass) => {
   return (
     <p className={cn("text-3xl font-bold text-gray-900 mt-4", className)}>
-      ${children}
-      <span className="text-lg font-semibold text-muted-foreground">
-        /month
+      <span className="text-lg font-semibold text-muted-foreground mr-2 block">
+        Ksh
       </span>
+      {children}
     </p>
   );
 };
@@ -57,6 +57,7 @@ const PopularBadge = ({ children }: Children) => {
     </Badge>
   );
 };
+
 export {
   PricingCard,
   PricingCardHeader,

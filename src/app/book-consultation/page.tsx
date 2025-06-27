@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -22,7 +21,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import {
-  ChefHat,
   Calendar,
   Phone,
   Mail,
@@ -32,7 +30,6 @@ import {
   ArrowRight,
   ArrowLeft,
 } from "lucide-react";
-import Link from "next/link";
 
 export default function BookConsultationPage() {
   const [currentStep, setCurrentStep] = React.useState(0);

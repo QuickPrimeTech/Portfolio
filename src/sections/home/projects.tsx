@@ -6,7 +6,7 @@ import {
   ProjectCardTitle,
   ProjectCardDescription,
   ProjectCardFooter,
-} from "@/components/client/project-card";
+} from "@/components/ui/project-card";
 import {
   Carousel,
   CarouselContent,

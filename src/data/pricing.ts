@@ -4,7 +4,7 @@ export const pricingCardsInfo = [
   {
     title: "Basic",
     description: "For small cafes or takeout spots",
-    price: "69.99",
+    price: "40,000",
     features: [
       "3-page custom website (Homepage, Menu, Contact)",
       "Unlimited menu items",
@@ -22,7 +22,7 @@ export const pricingCardsInfo = [
   {
     title: "Pro",
     description: "For growing restaurants",
-    price: "99.99",
+    price: "60,000",
     features: [
       "Everything in Basic",
       "Custom branding",
@@ -40,7 +40,7 @@ export const pricingCardsInfo = [
   {
     title: "Premium",
     description: "For upscale brands",
-    price: "149.99",
+    price: "80,000",
     features: [
       "Everything in Pro",
       "10-20 page custom website",

@@ -1,6 +1,5 @@
-export type PlanKey = "starter" | "pro" | "premium";
-
-export interface FeatureItem {
+type PlanKey = "starter" | "pro" | "premium";
+interface FeatureItem {
   name: string;
   starter: boolean;
   pro: boolean;

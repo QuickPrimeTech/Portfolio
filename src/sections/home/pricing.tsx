@@ -1,17 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
-  PaymentDialog,
-  PaymentDialogTrigger,
-  PaymentDialogContent,
-  PaymentDialogHeader,
-  PaymentDialogFooter,
-  PaymentDialogTitle,
-  PaymentDialogDescription,
-  PaymentDialogPlan,
-  PaymentDialogPrice,
-} from "@/components/client/payment-dialog";
-import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
@@ -24,19 +13,12 @@ import {
   PricingCardTitle,
   PricingCardDescription,
   PricingCardPrice,
-} from "@/components/client/pricing-card";
-import { ArrowRight, ChevronDown } from "lucide-react";
-import PaypalSubscriptionButton from "@/components/client/paypal-button";
-import { Feature, FeaturesContainer } from "@/components/client/feature";
+} from "@/components/ui/pricing-card";
+import { ArrowRight, ChevronDown, ExternalLink } from "lucide-react";
+import { Feature, FeaturesContainer } from "@/components/ui/feature";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
 import { pricingCardsInfo } from "@/data/pricing";
 import Link from "next/link";
-
-interface PricingProps {
-  title: string;
-  price: string | number;
-  planId: string;
-}
 
 const Pricing = () => {
   return (
@@ -82,45 +64,21 @@ const PricingCards = () => {
                   ))}
                 </FeaturesContainer>
               </div>
-              <PricingPaymentDialog
-                title={title}
-                price={price}
-                planId={planId}
-              />
+              <Button asChild size="lg" className="w-full">
+                <Link
+                  href={process.env.NEXT_PUBLIC_CONTACT_ME_URL!}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Get Started <ExternalLink />
+                </Link>
+              </Button>
               <PricingFeatures features={features} />
             </PricingCardContent>
           </PricingCard>
         )
       )}
     </div>
-  );
-};
-
-const PricingPaymentDialog = ({ title, price, planId }: PricingProps) => {
-  return (
-    <PaymentDialog>
-      <PaymentDialogTrigger>
-        <Button className="w-full">Get Started</Button>
-      </PaymentDialogTrigger>
-      <PaymentDialogContent>
-        <PaymentDialogHeader>
-          <PaymentDialogTitle>{title}</PaymentDialogTitle>
-          <PaymentDialogDescription>
-            This will include all the {title} features as listed
-          </PaymentDialogDescription>
-        </PaymentDialogHeader>
-        <PaymentDialogPlan>
-          <PaymentDialogPrice>{price}</PaymentDialogPrice>
-        </PaymentDialogPlan>
-        <PaymentDialogFooter>
-          <PaypalSubscriptionButton planId={planId} />
-        </PaymentDialogFooter>
-
-        <p className="text-xs text-gray-500 text-center">
-          By subscribing, you agree to our Terms of Service and Privacy Policy
-        </p>
-      </PaymentDialogContent>
-    </PaymentDialog>
   );
 };
 

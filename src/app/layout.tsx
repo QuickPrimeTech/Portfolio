@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/layouts/client/navbar";
-import Footer from "@/layouts/client/footer";
+import Navbar from "@/layouts/navbar";
+import Footer from "@/layouts/footer";
 import { Toaster } from "sonner";
 import { PostHogProvider } from "./providers";
 

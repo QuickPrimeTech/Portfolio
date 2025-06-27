@@ -1,4 +1,4 @@
-import ContactForm from "@/components/client/contact-form";
+import ContactForm from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
