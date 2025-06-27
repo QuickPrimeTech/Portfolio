@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/layouts/client/navbar";
 import Footer from "@/layouts/client/footer";
 import { Toaster } from "sonner";
+import { PostHogProvider } from "./providers";
 
 export const metadata: Metadata = {
   title: "QuickPrimeTech - Get your website running with no upfront cost",
@@ -52,10 +53,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-secondary">
-        <Navbar />
-        {children}
-        <Footer />
-        <Toaster position="top-right" richColors />
+        <PostHogProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <Toaster position="top-right" richColors />
+        </PostHogProvider>
       </body>
     </html>
   );
