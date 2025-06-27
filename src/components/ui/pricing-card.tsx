@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { Children, WithChildrenAndClass } from "@/types";
+import { currency } from "@/data/pricing";
 
 interface PricingCardProps extends Children {
   popular?: boolean;
@@ -39,7 +40,7 @@ const PricingCardPrice = ({ children, className }: WithChildrenAndClass) => {
   return (
     <p className={cn("text-3xl font-bold text-gray-900 mt-4", className)}>
       <span className="text-lg font-semibold text-muted-foreground mr-2 block">
-        Ksh
+        {currency}
       </span>
       {children}
     </p>

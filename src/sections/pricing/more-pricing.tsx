@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
 import { FeatureCategory } from "@/types";
 import { features, plans } from "@/data/pricing";
+import { currency } from "@/data/pricing";
 
 const MorePricing = () => {
   return (
@@ -39,7 +40,12 @@ const FeatureTable = ({ features }: { features: FeatureCategory[] }) => {
             }`}
           >
             <h3 className="text-lg font-semibold">{plan.name}</h3>
-            <p className="text-secondary font-bold">{plan.price}</p>
+            <p className="text-secondary font-bold">
+              <span className="text-muted-foreground text-sm block">
+                {currency}
+              </span>
+              {plan.price}
+            </p>
             {plan.badge && (
               <Badge className="mt-1 bg-secondary text-white">
                 {plan.badge}
@@ -61,7 +67,7 @@ const FeatureTable = ({ features }: { features: FeatureCategory[] }) => {
                 key={item.name}
                 className="grid grid-cols-4 items-center text-center py-4"
               >
-                <div className="text-left px-4 text-gray-700 font-medium sticky left-0 z-10 bg-gray-50 border-r border-gray-200 backdrop-blur-md">
+                <div className="text-left px-4 text-gray-700 font-medium sticky left-0 z-10 bg-gray-50 backdrop-blur-md">
                   {item.name}
                 </div>
                 {plans.map((plan) => (
