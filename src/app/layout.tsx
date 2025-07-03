@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DM_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/layouts/navbar";
 import Footer from "@/layouts/footer";
@@ -44,6 +45,18 @@ export const metadata: Metadata = {
     "google-site-verification": "svtKqX6-WvwK1_3MBBYLIFz6HNAWrnX6U7VaNZnd2CE",
   },
 };
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+const roboto = Poppins({
+  subsets: ["latin"],
+  variable: "--font-roboto",
+  weight: ["100", "300", "400", "500", "700"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -52,7 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-secondary">
+      <body className={`${roboto.variable} ${dmSans.variable} font-secondary`}>
         <PostHogProvider>
           <Navbar />
           {children}
