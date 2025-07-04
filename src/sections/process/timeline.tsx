@@ -15,7 +15,7 @@ const packages = [
     name: "Starter",
     description: "Perfect for small cafes",
     duration: "1-2 Weeks",
-    price: "From $69.99/month",
+    price: "From Ksh 40,000",
     features: [
       "Streamlined 3-week process",
       "Essential features only",
@@ -28,7 +28,7 @@ const packages = [
     name: "Pro",
     description: "Ideal for growing restaurants",
     duration: "2-3 Weeks",
-    price: "From $99.99/month",
+    price: "From Ksh 60,000",
     features: [
       "Full 4-week process",
       "Advanced features included",
@@ -41,7 +41,7 @@ const packages = [
     name: "Premium",
     description: "For upscale establishments",
     duration: "4-6 Weeks",
-    price: "From $149.99/month",
+    price: "From Ksh 80,000",
     features: [
       "Extended 6-week process",
       "Custom features & integrations",
