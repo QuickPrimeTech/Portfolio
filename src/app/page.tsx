@@ -3,7 +3,7 @@ import Process from "@/sections/home/process";
 import FeaturedProjects from "@/sections/home/projects";
 import Pricing from "@/sections/home/pricing";
 import ClientExperience from "@/sections/home/testimonials";
-import WhyChooseUs from "@/sections/home/why-choose-us";
+import { Features } from "@/sections/home/features";
 import Faqs from "@/sections/home/faqs";
 import Contact from "@/sections/home/contact";
 
@@ -11,7 +11,7 @@ function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
       <Hero />
-      <WhyChooseUs />
+      <Features />
       <FeaturedProjects />
       <Pricing />
       <ClientExperience />

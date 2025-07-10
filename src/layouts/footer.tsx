@@ -38,7 +38,7 @@ const footerSections = [
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-white pt-16 pb-8 section-x">
+    <footer className="bg-gradient-to-b from-indigo-950 to-black text-white pt-16 pb-8 section-x">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
         {/* Logo and Description */}
         <div className="flex flex-col gap-6">
