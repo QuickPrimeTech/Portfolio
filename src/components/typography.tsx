@@ -22,7 +22,10 @@ const Header = ({ children, className }: WithChildrenAndClass) => {
 const Title = ({ children, className, ...props }: WithChildrenAndClass) => {
   return (
     <h2
-      className={cn("font-bold text-2xl md:text-3xl lg:text-4xl", className)}
+      className={cn(
+        "text-2xl md:text-3xl lg:text-4xl font-bold font-primary",
+        className
+      )}
       {...props}
     >
       {children}
