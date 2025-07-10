@@ -1,114 +1,77 @@
-import Link from "next/link";
-import { Lightbulb, Palette, Code, ArrowRight } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { MonitorSmartphone, PencilRuler, Code2, Rocket } from "lucide-react";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
+import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const steps = [
   {
-    id: 1,
-    title: "Step 1: Ideation",
+    number: 1,
+    title: "Discovery",
+    icon: MonitorSmartphone,
+    gradient: "from-blue-500 to-indigo-600",
     description:
-      "Short discovery session to understand your brand, menu, and clientele.",
-    quote: "We listen before we create.",
-    icon: Lightbulb,
-    iconBg: "bg-blue-600",
-    iconColor: "text-white",
-    cardBg: "bg-blue-50",
-    borderColor: "border-blue-100",
-    quoteColor: "bg-blue-100 text-blue-700",
+      "We start by chatting with you to understand your restaurant’s goals, style, and what makes it special. This helps us build a website that truly represents your brand.",
   },
   {
-    id: 2,
-    title: "Step 2: Design",
+    number: 2,
+    title: "Design",
+    icon: PencilRuler,
+    gradient: "from-purple-500 to-pink-500",
     description:
-      "Wireframes and modern design tailored to your restaurant's vibe — elegant, rustic, modern, or chic.",
-    quote: "Every pixel reflects your brand.",
-    icon: Palette,
-    iconBg: "bg-red-200",
-    iconColor: "text-red-700",
-    cardBg: "bg-red-50",
-    borderColor: "border-red-200",
-    quoteColor: "bg-red-100 text-red-700",
+      "We create a visual preview of your website—like a sketch. You’ll see what the pages look like, where your menu goes, and how customers will interact with it.",
   },
   {
-    id: 3,
-    title: "Step 3: Development",
+    number: 3,
+    title: "Build",
+    icon: Code2,
+    gradient: "from-emerald-500 to-teal-600",
     description:
-      "Fast, mobile-first websites with online menus, reservation systems, and social media integrations.",
-    quote: "Built to impress on every device.",
-    icon: Code,
-    iconBg: "bg-gray-300",
-    iconColor: "text-gray-600",
-    cardBg: "bg-gray-50",
-    borderColor: "border-gray-200",
-    quoteColor: "bg-gray-100 text-gray-700",
+      "We take the approved design and turn it into a real, working website. We connect all the features like menu browsing, booking, or ordering if needed.",
+  },
+  {
+    number: 4,
+    title: "Launch",
+    icon: Rocket,
+    gradient: "from-amber-500 to-orange-600",
+    description:
+      "After testing everything, we launch your site and make it live for customers. We’ll also show you how to use it—or manage it for you if you prefer.",
   },
 ];
 
-const Process = () => {
+export const Process = () => {
   return (
-    <Section id="process" aria-labelledby="process-title">
-      <Header id="process-title">
-        <Title>
-          Our <span className="text-secondary">Proven</span> Process
-        </Title>
+    <Section className="bg-gray-50">
+      <Header className="text-center mb-12">
+        <Title>Our Process</Title>
         <SubTitle>
-          From concept to launch, we make building your restaurant website
-          simple and stress-free.
+          This is a very smooth process that doesn&apos;t require any technical
+          expertise from your end.
         </SubTitle>
       </Header>
-      {/* Timeline */}
-      <div className="max-w-4xl mx-auto">
-        {/* Mobile Timeline */}
-        <div className="relative">
-          {/* Vertical Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-secondary"></div>
-          <div className="absolute left-8 top-0 h-32 w-0.5 bg-blue-600"></div>
-          <div className="space-y-12">
-            {/* Step 1: Ideation */}
-            {steps.map((step) => (
-              <div className="relative flex items-start" key={step.id}>
-                <div
-                  className={cn(
-                    "w-16 h-16",
-                    step.iconBg,
-                    "rounded-full flex items-center justify-center relative z-10 shadow-lg mr-6"
-                  )}
-                >
-                  <step.icon className={cn("h-8 w-8", step.iconColor)} />
-                </div>
-                <div className="flex-1">
-                  <div className="bg-blue-50 rounded-lg p-6 border-2 border-blue-100">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 text-sm">
-                      {step.description}
-                    </p>
-                    <Badge
-                      variant="secondary"
-                      className={cn("bg-secondary/10", step.quoteColor)}
-                    >
-                      "{step.quote}"
-                    </Badge>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      <Link href="/process">
-        <Button variant="outline" size="lg">
-          View Detailed Process
-          <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
-      </Link>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        {steps.map((step) => (
+          <Card
+            key={step.number}
+            className="flex flex-col items-center text-center p-6 shadow-md border-none"
+          >
+            <div
+              className={cn(
+                "w-14 h-14 flex items-center justify-center rounded-full mb-4 text-white shadow-lg",
+                `bg-gradient-to-tr ${step.gradient}`
+              )}
+            >
+              <step.icon className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">
+              {step.number}. {step.title}
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {step.description}
+            </p>
+          </Card>
+        ))}
+      </div>
     </Section>
   );
 };
-
-export default Process;

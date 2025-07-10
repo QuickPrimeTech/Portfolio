@@ -1,4 +1,3 @@
-import { ImageLoader } from "@/components/image-loader";
 import {
   Smartphone,
   Check,
