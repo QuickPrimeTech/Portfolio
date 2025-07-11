@@ -38,7 +38,7 @@ const features = [
     description:
       "Contactless dining made simple. Generate custom QR codes that instantly connect customers to your smart menu, reducing wait times and enhancing the dining experience.",
     image:
-      "https://res.cloudinary.com/quick-prime-tech/image/upload/v1752168707/PortfolioShotQrCode_kwpt8p.png",
+      "https://res.cloudinary.com/quick-prime-tech/image/upload/v1752217196/PortfolioShotCustomQRCode_qitvwg.png",
     icon: QrCode,
     benefits: ["Faster service", "Reduced costs"],
     bgColor: "bg-teal-500/20",
