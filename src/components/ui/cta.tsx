@@ -21,7 +21,7 @@ function CtaTitle({ children, className }: WithChildrenAndClass) {
   return (
     <h1
       className={cn(
-        "text-3xl md:text-4xl font-bold mb-4 font-primary",
+        "text-3xl md:text-4xl font-bold mb-4 font-serif",
         className
       )}
     >

@@ -31,7 +31,7 @@ const Hero = () => {
       <LinePattern className="w-full h-full inset-0 absolute" />
       <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-8">
         <div className="relative z-10 flex flex-col gap-6 grow-1 shrink-1">
-          <h1 className="text-3xl md:text-5xl font-medium text-gray-900 leading-tight font-primary">
+          <h1 className="text-3xl md:text-5xl font-medium text-gray-900 leading-tight font-serif">
             <span className="text-secondary">Supercharge</span> Your Restaurant{" "}
             <span className="text-secondary">Sales</span> With a Smart Website.
           </h1>
@@ -73,16 +73,16 @@ const Mockups = () => {
       <Image
         width={430}
         height={900}
-        src="https://res.cloudinary.com/dhlyei79o/image/upload/v1749112634/mockup1_xvblxz.png"
+        src="https://res.cloudinary.com/quick-prime-tech/image/upload/v1749112634/mockup1_xvblxz.png"
         alt="Image of a quickprimetech restaurant website mockup"
-        className="relative z-10 shadow-sm w-1/2"
+        className="w-1/2"
       />
       <Image
         width={430}
         height={900}
-        src="https://res.cloudinary.com/dhlyei79o/image/upload/v1749112635/mockup2_hfwijf.png"
+        src="https://res.cloudinary.com/quick-prime-tech/image/upload/v1749112635/mockup2_hfwijf.png"
         alt="Image of a quickprimetech restaurant website mockup"
-        className="w-1/2"
+        className="relative z-10 shadow-sm w-1/2"
       />
     </div>
   );
