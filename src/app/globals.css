@@ -4,9 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-primary: var(--font-dm-sans);
-  --font-secondary: var(--font-roboto);
-  --font-secondary: var(--font-roboto);
+  --font-serif: var(--font-dm-sans);
+  --font-sans: var(--font-roboto);
+  --font-sans: var(--font-roboto);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

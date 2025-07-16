@@ -65,10 +65,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} ${dmSans.variable} font-secondary`}>
+      <body className={`${roboto.variable} ${dmSans.variable} font-sans`}>
         <PostHogProvider>
           <Navbar />
-          {children}
+          <main>{children}</main>
           <Footer />
           <Toaster position="top-right" richColors />
         </PostHogProvider>
