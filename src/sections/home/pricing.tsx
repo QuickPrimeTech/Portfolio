@@ -19,6 +19,7 @@ import { Feature, FeaturesContainer } from "@/components/ui/feature";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
 import { pricingCardsInfo } from "@/data/pricing";
 import Link from "next/link";
+import { getWhatsAppLink } from "@/layouts/helpers";
 
 const Pricing = () => {
   return (
@@ -45,7 +46,7 @@ const PricingCards = () => {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
       {pricingCardsInfo.map(
-        ({ title, description, price, features, popular, planId }, index) => (
+        ({ title, description, price, features, popular }, index) => (
           <PricingCard key={index} popular={popular}>
             <PricingCardHeader>
               <PricingCardTitle className={cn(popular && "text-secondary")}>
@@ -66,7 +67,7 @@ const PricingCards = () => {
               </div>
               <Button asChild size="lg" className="w-full">
                 <Link
-                  href={process.env.NEXT_PUBLIC_CONTACT_ME_URL!}
+                  href={getWhatsAppLink(title)}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check } from "lucide-react";
+import { Check, ExternalLink } from "lucide-react";
+import Link from "next/link";
+import { getWhatsAppLink } from "@/layouts/helpers";
 
 export default function Pricing() {
   return (
@@ -47,12 +49,12 @@ export default function Pricing() {
               <Card
                 className={`relative overflow-hidden h-full ${
                   plan.popular
-                    ? "border-primary shadow-lg"
+                    ? "border-secondary shadow-lg"
                     : "border-border/40 shadow-md"
                 } bg-gradient-to-b from-background to-muted/10 backdrop-blur`}
               >
                 {plan.popular && (
-                  <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium rounded-bl-lg">
+                  <div className="absolute top-0 right-0 bg-secondary text-secondary-foreground px-3 py-1 text-xs font-medium rounded-bl-lg">
                     Most Popular
                   </div>
                 )}
@@ -81,8 +83,16 @@ export default function Pricing() {
                         : "bg-muted hover:bg-muted/80"
                     }`}
                     variant={plan.popular ? "default" : "outline"}
+                    asChild
                   >
-                    {plan.popular ? "Get Started" : "Contact Us"}
+                    <Link
+                      href={getWhatsAppLink(plan.title)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {plan.popular ? "Get Started" : "Contact Us"}
+                      <ExternalLink />
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
