@@ -9,6 +9,7 @@ import {
 import { Section, Header, Title, SubTitle } from "@/components/typography";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const features = [
   {
@@ -116,9 +117,11 @@ export const Features = () => {
                 ))}
               </div>
 
-              <Button className="bg-indigo-600 hover:bg-indigo-700 mt-4">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <Button size={"lg"} asChild>
+                <Link href={"/features#features"}>
+                  Learn More
+                  <ArrowRight />
+                </Link>
               </Button>
             </div>
           </div>
