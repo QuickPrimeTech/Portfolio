@@ -22,12 +22,20 @@ export const features = [
       "Highlight specials and popular dishes",
     ],
   },
-  // {
-  //   title: "Gallery Management",
-  //   description:
-  //     "Showcase your delicious dishes and restaurant ambiance with beautiful photo galleries.",
-  //   icon: <Camera className="size-5" />,
-  // },
+  {
+    title: "Gallery Management",
+    description:
+      "Showcase your delicious dishes and restaurant ambiance with beautiful photo galleries.",
+    publicId: "galleryManagement",
+    icon: <Camera className="size-5" />,
+    benefits: [
+      "Upload high-quality images of your food and space",
+      "Organize photos by category or event",
+      "Easily reorder or remove images",
+      "Highlight featured dishes visually",
+      "Keep your gallery fresh with seasonal updates",
+    ],
+  },
   // {
   //   title: "QR Code Menus",
   //   description:

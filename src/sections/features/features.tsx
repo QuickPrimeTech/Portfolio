@@ -10,10 +10,11 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="section-x section-y"
+      className="relative section-x section-y"
       aria-labelledby="features-header"
       aria-describedby="features-description"
     >
+      <BackgroundPattern className="absolute h-full w-full inset-0" />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +53,6 @@ export default function Features() {
             transition={{ duration: 0.6, delay: i * 0.1 }}
           >
             <Card className="overflow-hidden py-0 border border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur">
-              <BackgroundPattern className="absolute h-full w-full inset-0" />
               <CardContent className="p-0">
                 <div
                   className={`grid md:grid-cols-2 gap-0 items-center ${
@@ -69,16 +69,11 @@ export default function Features() {
                       src={feature.publicId}
                       width="1080"
                       height="720"
-                      id="adaptive-bitrate-streaming"
                       colors={{
                         accent: "#ff6600",
                         base: "#ffffff",
                         text: "#000000",
                       }}
-                      transformation={{
-                        streaming_profile: "hd",
-                      }}
-                      sourceTypes={["hls"]}
                       fontFace="Poppins"
                       className="w-full h-full object-cover"
                     />
