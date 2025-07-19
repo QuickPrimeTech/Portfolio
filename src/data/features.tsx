@@ -14,6 +14,13 @@ export const features = [
       "Easily update your menu items, prices, and descriptions with our intuitive management system.",
     publicId: "menuManagement",
     icon: <ChefHat className="size-5" />,
+    benefits: [
+      "Easily add and remove menu items",
+      "Seamlessly update item descriptions and prices",
+      "Organize items by category (e.g. drinks, mains, desserts)",
+      "Add item images for better visual appeal",
+      "Highlight specials and popular dishes",
+    ],
   },
   // {
   //   title: "Gallery Management",

@@ -4,6 +4,7 @@ import { features } from "@/data/features";
 import { Card, CardContent } from "@/components/ui/card";
 import { CldVideoPlayer } from "@/components/cld-video-player";
 import { BackgroundPattern } from "@/components/background-pattern";
+import { Check } from "lucide-react";
 
 export default function Features() {
   return (
@@ -68,11 +69,16 @@ export default function Features() {
                       src={feature.publicId}
                       width="1080"
                       height="720"
+                      id="adaptive-bitrate-streaming"
                       colors={{
                         accent: "#ff6600",
                         base: "#ffffff",
                         text: "#000000",
                       }}
+                      transformation={{
+                        streaming_profile: "hd",
+                      }}
+                      sourceTypes={["hls"]}
                       fontFace="Poppins"
                       className="w-full h-full object-cover"
                     />
@@ -96,6 +102,14 @@ export default function Features() {
                     <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
                       {feature.description}
                     </p>
+                    <ul className="text-muted-foreground text-sm space-y-2">
+                      {feature.benefits.map((benefit, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <Check className="size-4 text-primary mt-1" />
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </CardContent>
