@@ -81,7 +81,7 @@ export const Features = () => {
             } items-center gap-10 md:gap-12`}
           >
             {/* Image Section */}
-            <div className="w-full md:w-1/2 aspect-[4/3] rounded-lg overflow-hidden relative">
+            <div className="w-full md:w-1/2 aspect-[4/3] rounded-sm overflow-hidden relative">
               <Image
                 src={feature.image}
                 alt="Description of the image"

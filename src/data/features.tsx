@@ -36,12 +36,19 @@ export const features = [
       "Keep your gallery fresh with seasonal updates",
     ],
   },
-  // {
-  //   title: "QR Code Menus",
-  //   description:
-  //     "Generate QR codes for contactless menu viewing, perfect for modern dining experiences.",
-  //   icon: <QrCode className="size-5" />,
-  // },
+  {
+    title: "QR Code Menus",
+    description:
+      "Generate QR codes for contactless menu viewing, perfect for modern dining experiences.",
+    publicId: "qrCode",
+    icon: <QrCode className="size-5" />,
+    benefits: [
+      "Create dynamic QR codes that link directly to your online menu",
+      "Provide a hygienic, touch-free menu experience for customers",
+      "Update menu content without reprinting codes",
+      "Display QR codes at tables, counters, or to-go packaging",
+    ],
+  },
   // {
   //   title: "Reservation Management",
   //   description:
