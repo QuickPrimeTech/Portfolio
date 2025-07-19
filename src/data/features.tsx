@@ -1,11 +1,4 @@
-import {
-  ChefHat,
-  Camera,
-  QrCode,
-  Calendar,
-  Settings,
-  PartyPopper,
-} from "lucide-react";
+import { ChefHat, Camera, QrCode, Utensils } from "lucide-react";
 
 export const features = [
   {
@@ -49,22 +42,17 @@ export const features = [
       "Display QR codes at tables, counters, or to-go packaging",
     ],
   },
-  // {
-  //   title: "Reservation Management",
-  //   description:
-  //     "Streamline table bookings with integrated reservation system and automated confirmations.",
-  //   icon: <Calendar className="size-5" />,
-  // },
-  // {
-  //   title: "Basic Management",
-  //   description:
-  //     "Complete website management including updates, maintenance, and content management.",
-  //   icon: <Settings className="size-5" />,
-  // },
-  // {
-  //   title: "Private Events Management",
-  //   description:
-  //     "Dedicated section for private events, catering inquiries, and special occasion bookings.",
-  //   icon: <PartyPopper className="size-5" />,
-  // },
+  {
+    title: "Smart Menu",
+    description:
+      "Offer an interactive, personalized dining experience with a smart digital menu that adapts to customer preferences and device types.",
+    publicId: "smartMenu", // replace with actual Cloudinary public ID
+    icon: <Utensils className="size-5" />, // Or another relevant icon
+    benefits: [
+      "Highlight popular or recommended items using customer data",
+      "Support for multiple languages and dietary filters",
+      "Optimized layout for mobile, tablet, and desktop views",
+      "Quick updates for promotions, combos, and limited-time offers",
+    ],
+  },
 ];
