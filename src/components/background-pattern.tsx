@@ -17,7 +17,7 @@ export function BackgroundPattern({
       viewBox="0 0 1600 800"
       preserveAspectRatio="xMidYMid slice"
       className={cn("absolute inset-0 pointer-events-none z-[-1]", className)}
-      style={{ width, height, opacity: 0.25 }}
+      style={{ width, height, opacity: 0.5 }}
     >
       <rect fill="#bfdbfe" width="1600" height="800" />{" "}
       {/* Tailwind blue-100 */}
