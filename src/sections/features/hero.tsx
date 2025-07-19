@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowDownCircle, Check, ExternalLink } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -16,12 +16,6 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
-            <Badge
-              className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium"
-              variant="secondary"
-            >
-              Launching Soon
-            </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
               Elevate Your Restaurant's Digital Presence
             </h1>
@@ -31,16 +25,26 @@ export default function Hero() {
               private events - we've got you covered.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="rounded-full h-12 px-8 text-base">
-                Start Free Trial
-                <ArrowRight className="ml-2 size-4" />
+              <Button
+                size="lg"
+                className="rounded-full h-12 px-8 text-base"
+                asChild
+              >
+                <Link href={"#features"}>
+                  Explore Features
+                  <ArrowDownCircle className="size-5" />
+                </Link>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="rounded-full h-12 px-8 text-base bg-transparent"
+                asChild
               >
-                Contact Us
+                <Link href={process.env.NEXT_PUBLIC_CONTACT_ME_URL ?? ""}>
+                  Contact Us
+                  <ExternalLink className="size-5" />
+                </Link>
               </Button>
             </div>
             <div className="flex items-center justify-center gap-4 mt-6 text-sm text-muted-foreground">
