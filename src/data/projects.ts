@@ -1,6 +1,17 @@
 export const projects = [
   {
     id: 1,
+    name: "The Ziwa Restaurant",
+    category: "Seafood Restaurant",
+    description:
+      "We built a sleek and modern website for Ziwa Restaurant to highlight their delicious coastal cuisine, vibrant events, and serene beachfront atmosphere.",
+    shortDescription: "Elegant coastal dining at Ziwa Restaurant",
+    image:
+      "https://res.cloudinary.com/quick-prime-tech/image/upload/v1753297405/ZiwaRestaurant_sbttyu.png",
+    liveUrl: "https://ziwa-nu.vercel.app/",
+  },
+  {
+    id: 2,
     name: "The Coastal Cuisine",
     category: "Seafood Restaurant",
     description:
@@ -11,7 +22,7 @@ export const projects = [
     liveUrl: "https://coastal-cuisine.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     name: "The Obsidian Plate",
     category: "Ethiopian Cusine",
     description:
@@ -23,7 +34,7 @@ export const projects = [
   },
 
   {
-    id: 3,
+    id: 4,
     name: "Savoria",
     category: "Russian Cuisine",
     description:
@@ -34,7 +45,7 @@ export const projects = [
     liveUrl: "http://savoria-swart.vercel.app/",
   },
   {
-    id: 4,
+    id: 5,
     name: "Azure Shores",
     category: "Ethiopian Cuisine",
     description:
@@ -45,7 +56,7 @@ export const projects = [
     liveUrl: "https://azureshores.vercel.app/",
   },
   {
-    id: 5,
+    id: 6,
     name: "Open Karen",
     category: "Fine Dining",
     description:
