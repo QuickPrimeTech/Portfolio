@@ -1,5 +1,5 @@
-import Hero from "@/sections/work/hero";
-import CTA from "@/sections/work/CTA";
+import Hero from "@/sections/projects/hero";
+import CTA from "@/sections/projects/CTA";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
