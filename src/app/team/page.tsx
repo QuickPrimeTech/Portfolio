@@ -5,7 +5,7 @@ import Values from "@/sections/team/values";
 
 export default function TeamPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <Hero />
       <Team />
       <Values />

@@ -3,14 +3,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
 
-// "https://res.cloudinary.com/dhlyei79o/image/upload/v1749244431/cropped-face_2_iiznfp.jpg",
-// "https://res.cloudinary.com/dhlyei79o/image/upload/v1749222987/20240524_141146_ivt1e1.jpg",
 const teamMembers = [
   {
     name: "Derick Kibiwott",
     role: "Designer and Front-end Developer",
     image:
-      "https://res.cloudinary.com/quick-prime-tech/image/upload/v1749244431/cropped-face_2_iiznfp.jpg",
+      "https://res.cloudinary.com/quick-prime-tech/image/upload/v1749222987/20240524_141146_ivt1e1.jpg",
     bio: "I'm a Designer and Front-end Developer who helps businesses grow with clean, modern websites. I focus on designs that look great, work well, and turn visitors into loyal customers. ",
     skills: ["Customer Service", "Restaurant Tech", "UX Design"],
   },
@@ -18,7 +16,7 @@ const teamMembers = [
     name: "Meshack Kipkemoi",
     role: "Front-end & Back-end Developer",
     image:
-      "https://res.cloudinary.com/quick-prime-tech/image/upload/v1749222987/20240524_141146_ivt1e1.jpg",
+      "https://res.cloudinary.com/quick-prime-tech/image/upload/v1749244431/cropped-face_2_iiznfp.jpg",
     bio: "Ensures every website meets our high standards for performance, accessibility, and user experience. Leads our customer support team.",
     skills: [
       "React Js",

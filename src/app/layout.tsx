@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "https://res.cloudinary.com/quikc-prime-tech/image/upload/v1749102720/opengraph-image_lmiplo.png",
+        url: "https://res.cloudinary.com/quick-prime-tech/image/upload/v1749102720/opengraph-image_lmiplo.png",
       },
     ],
     title: "QuickPrimeTech - Free Restaurant Websites",

@@ -30,7 +30,7 @@ const FeaturedProjects = () => {
       </Header>
       <ProjectCarousel />
       <Button variant={"outline"} asChild>
-        <Link href={`/work`}>See All Projects</Link>
+        <Link href={`/projects`}>See All Projects</Link>
       </Button>
     </Section>
   );
