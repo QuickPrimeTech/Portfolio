@@ -19,7 +19,7 @@ import { Feature, FeaturesContainer } from "@/components/ui/feature";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
 import { pricingCardsInfo } from "@/data/pricing";
 import Link from "next/link";
-import { getWhatsAppLink } from "@/layouts/helpers";
+import { getWhatsAppPlanLink } from "@/lib/helpers";
 
 const Pricing = () => {
   return (
@@ -67,7 +67,7 @@ const PricingCards = () => {
               </div>
               <Button asChild size="lg" className="w-full">
                 <Link
-                  href={getWhatsAppLink(title)}
+                  href={getWhatsAppPlanLink(title)}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

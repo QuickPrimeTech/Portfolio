@@ -12,3 +12,9 @@ export function generateWhatsappLink(message: string) {
   const encodedMessage = encodeURIComponent(message);
   return `${baseUrl}?text=${encodedMessage}`;
 }
+
+// This generates the link but for the plan pricing
+export function getWhatsAppPlanLink(plan: string) {
+  const message = `Hi QuickPrimeTech, I'm interested in the ${plan} plan for my restaurant website. Can you tell me more?`;
+  return generateWhatsappLink(message);
+}
