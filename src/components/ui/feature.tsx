@@ -18,3 +18,29 @@ const Feature = ({ children }: Children) => {
 };
 
 export { Feature, FeaturesContainer };
+
+// Reusable feature list item
+export function FeatureItem({
+  icon: Icon,
+  text,
+  bold,
+  iconColor = "text-primary",
+}: {
+  icon: any;
+  text: string;
+  bold?: boolean;
+  iconColor?: string;
+}) {
+  return (
+    <li className="flex items-start">
+      <Icon className={`h-5 w-5 mr-3 mt-0.5 flex-shrink-0 ${iconColor}`} />
+      <span
+        className={
+          bold ? "font-semibold text-foreground" : "text-muted-foreground"
+        }
+      >
+        {text}
+      </span>
+    </li>
+  );
+}

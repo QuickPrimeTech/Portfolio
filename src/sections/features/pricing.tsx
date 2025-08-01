@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, ExternalLink } from "lucide-react";
 import Link from "next/link";
-import { getWhatsAppLink } from "@/layouts/helpers";
+import { getWhatsAppPlanLink } from "@/lib/helpers";
 
 export default function Pricing() {
   return (
@@ -86,7 +86,7 @@ export default function Pricing() {
                     asChild
                   >
                     <Link
-                      href={getWhatsAppLink(plan.title)}
+                      href={getWhatsAppPlanLink(plan.title)}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

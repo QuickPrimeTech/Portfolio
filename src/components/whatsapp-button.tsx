@@ -5,16 +5,13 @@ import { MessageCircleX } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { generateWhatsappLink } from "@/lib/helpers";
 
 export function WhatsAppButton() {
   const [open, setOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
-  const baseURL = process.env.NEXT_PUBLIC_CONTACT_ME_URL; // e.g. https://wa.me/254717448835
-  const message = encodeURIComponent(
-    "Hey QuickPrimeTech, I want to start my restaurant website."
-  );
-  const whatsappLink = baseURL ? `${baseURL}?text=${message}` : "";
+  const message = "Hey QuickPrimeTech, I want to start my restaurant website.";
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -63,7 +60,7 @@ export function WhatsAppButton() {
 
       {open ? (
         <a
-          href={whatsappLink}
+          href={generateWhatsappLink(message)}
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
