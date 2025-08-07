@@ -6,7 +6,7 @@ export const features = [
     description:
       "Easily update your menu items, prices, and descriptions with our intuitive management system.",
     publicId: "menuManagement",
-    icon: <ChefHat className="size-5" />,
+    icon: ChefHat,
     benefits: [
       "Easily add and remove menu items",
       "Seamlessly update item descriptions and prices",
@@ -20,7 +20,7 @@ export const features = [
     description:
       "Showcase your delicious dishes and restaurant ambiance with beautiful photo galleries.",
     publicId: "galleryManagement",
-    icon: <Camera className="size-5" />,
+    icon: Camera,
     benefits: [
       "Upload high-quality images of your food and space",
       "Organize photos by category or event",
@@ -34,7 +34,7 @@ export const features = [
     description:
       "Generate QR codes for contactless menu viewing, perfect for modern dining experiences.",
     publicId: "qrCode",
-    icon: <QrCode className="size-5" />,
+    icon: QrCode,
     benefits: [
       "Create dynamic QR codes that link directly to your online menu",
       "Provide a hygienic, touch-free menu experience for customers",
@@ -47,7 +47,7 @@ export const features = [
     description:
       "Offer an interactive, personalized dining experience with a smart digital menu that adapts to customer preferences and device types.",
     publicId: "smartMenu", // replace with actual Cloudinary public ID
-    icon: <Utensils className="size-5" />, // Or another relevant icon
+    icon: Utensils, // Or another relevant icon
     benefits: [
       "Highlight popular or recommended items using customer data",
       "Support for multiple languages and dietary filters",

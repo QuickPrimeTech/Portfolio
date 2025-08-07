@@ -64,7 +64,7 @@ export const pricingFaqs = [
   {
     question: "Are there any ongoing costs?",
     answer:
-      "The only ongoing costs are hosting (usually $20–30 per month) and a domain name (about $15/year). If you’d like, we can manage everything for you with a simple maintenance plan.",
+      "The only ongoing costs are hosting (usually Ksh 3,000–5,000 per month) and a domain name (about ksh 2500/year). If you’d like, we can manage everything for you with a simple maintenance plan.",
   },
   {
     question: "What is included in the price?",
@@ -74,7 +74,7 @@ export const pricingFaqs = [
   {
     question: "Is there a maintenance plan available?",
     answer:
-      "Yes, if you prefer not to deal with technical tasks, we offer maintenance plans starting at $30/month. This covers updates, security, backups, and small edits to your site. You will only have to deal with the kitchen",
+      "Yes, if you prefer not to deal with technical tasks, we offer maintenance plans starting at Ksh 4,000/month. This covers updates, security, backups, and small edits to your site. You will only have to deal with the kitchen",
   },
   {
     question: "Can I upgrade my package later?",
