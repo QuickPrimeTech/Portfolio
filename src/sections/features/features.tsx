@@ -85,7 +85,7 @@ export default function Features() {
                   >
                     <div className="flex items-center gap-3 mb-4">
                       <div className="size-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary">
-                        {feature.icon}
+                        {<feature.icon className="size-5" />}
                       </div>
                       <Badge variant="secondary" className="text-xs">
                         Feature {String(i + 1).padStart(2, "0")}
