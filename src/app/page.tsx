@@ -5,13 +5,13 @@ import Pricing from "@/sections/home/pricing";
 import { Features } from "@/sections/home/features";
 import Faqs from "@/sections/home/faqs";
 import Contact from "@/sections/home/contact";
-import CrazyOffers from "@/sections/home/crazy-offers";
+// import CrazyOffers from "@/sections/home/crazy-offers";
 
 function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
       <Hero />
-      <CrazyOffers />
+      {/* <CrazyOffers /> */}
       <Features />
       <FeaturedProjects />
       <Pricing />
