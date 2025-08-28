@@ -1,18 +1,10 @@
 import { Plan } from "@/types";
 import { BarChart3, Calendar, Headphones, Mail } from "lucide-react";
 
-export const currency = "Ksh";
-const pricing = {
-  basic: "40,000",
-  pro: "60,000",
-  premium: "80,000",
-};
-
 export const pricingCardsInfo = [
   {
     title: "Basic",
     description: "For small cafes or takeout spots",
-    price: `${pricing["basic"]}`,
     features: [
       "3-page custom website (Homepage, Menu, Contact)",
       "Unlimited menu items",
@@ -30,7 +22,6 @@ export const pricingCardsInfo = [
   {
     title: "Pro",
     description: "For growing restaurants",
-    price: `${pricing["pro"]}`,
     features: [
       "Everything in Basic",
       "Custom branding",
@@ -48,7 +39,6 @@ export const pricingCardsInfo = [
   {
     title: "Premium",
     description: "For upscale brands",
-    price: `${pricing["premium"]}`,
     features: [
       "Everything in Pro",
       "10-20 page custom website",
@@ -194,17 +184,15 @@ export const features = [
 ];
 
 export const plans: Plan[] = [
-  { name: "Basic", price: `${pricing["basic"]}`, key: "starter" },
+  { name: "Basic", key: "starter" },
   {
     name: "Pro",
-    price: `${pricing["pro"]}`,
     key: "pro",
     badge: "Most Popular",
     highlight: true,
   },
   {
     name: "Premium",
-    price: `${pricing["premium"]}`,
     key: "premium",
   },
 ];
@@ -213,27 +201,23 @@ export const addOns = [
   {
     title: "Advanced SEO Optimization",
     description: "Advanced SEO setup and local search optimization",
-    price: `${currency} 7,500`,
     icon: BarChart3,
   },
   {
     title: "Extended Support",
     description: "6 months of priority support and updates",
-    price: `${currency} 4,999`,
     icon: Headphones,
   },
   {
     title: "Newsletter Signup",
     description:
       "Get your customers to sign up to your newletter and keep them engaged",
-    price: `${currency} 3,000`,
     icon: Mail,
   },
   {
     title: "Custom Reservation System",
     description:
       "Stop paying expensive prices for third-party apps and have it get table bookings right from your webiste",
-    price: `${currency} 9,000`,
     icon: Calendar,
   },
 ];

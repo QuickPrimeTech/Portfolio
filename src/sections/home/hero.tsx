@@ -26,7 +26,7 @@ const points = [
 
 const Hero = () => {
   return (
-    <section className="py-8 h-screen lg:py-12 relative bg-gray-50 overflow-hidden">
+    <section className="py-8 h-screen lg:h-180 lg:py-12 relative bg-gray-50 overflow-hidden">
       <WavePattern className="w-full h-full bottom-0 absolute" />
       <LinePattern className="w-full h-full inset-0 absolute" />
       <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-8">

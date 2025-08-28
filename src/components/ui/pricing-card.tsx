@@ -2,7 +2,6 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { Children, WithChildrenAndClass } from "@/types";
-import { currency } from "@/data/pricing";
 
 interface PricingCardProps extends Children {
   popular?: boolean;
@@ -36,17 +35,6 @@ const PricingCardDescription = ({ children }: Children) => {
   return <p className="text-sm text-muted-foreground">{children}</p>;
 };
 
-const PricingCardPrice = ({ children, className }: WithChildrenAndClass) => {
-  return (
-    <p className={cn("text-3xl font-bold text-gray-900 mt-4", className)}>
-      <span className="text-lg font-semibold text-muted-foreground mr-2 block">
-        {currency}
-      </span>
-      {children}
-    </p>
-  );
-};
-
 const PricingCardContent = ({ children }: Children) => {
   return <div className="p-6 pt-0">{children}</div>;
 };
@@ -65,5 +53,4 @@ export {
   PricingCardContent,
   PricingCardTitle,
   PricingCardDescription,
-  PricingCardPrice,
 };

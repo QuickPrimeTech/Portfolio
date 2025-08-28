@@ -13,7 +13,6 @@ export interface FeatureCategory {
 
 export interface Plan {
   name: string;
-  price: string;
   key: PlanKey;
   badge?: string;
   highlight?: boolean;

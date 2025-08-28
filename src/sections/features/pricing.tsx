@@ -1,4 +1,4 @@
-import { pricingCardsInfo, currency } from "@/data/pricing";
+import { pricingCardsInfo } from "@/data/pricing";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -60,11 +60,6 @@ export default function Pricing() {
                 )}
                 <CardContent className="p-6 flex flex-col h-full">
                   <h3 className="text-2xl font-bold">{plan.title}</h3>
-                  <div className="flex items-baseline mt-4">
-                    <span className="text-4xl font-bold">
-                      {currency} {plan.price}
-                    </span>
-                  </div>
                   <p className="text-muted-foreground mt-2">
                     {plan.description}
                   </p>
