@@ -3,7 +3,6 @@ import { Badge } from "@/components/ui/badge";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
 import { FeatureCategory } from "@/types";
 import { features, plans } from "@/data/pricing";
-import { currency } from "@/data/pricing";
 
 const MorePricing = () => {
   return (
@@ -40,12 +39,6 @@ const FeatureTable = ({ features }: { features: FeatureCategory[] }) => {
             }`}
           >
             <h3 className="text-lg font-semibold">{plan.name}</h3>
-            <p className="text-secondary font-bold">
-              <span className="text-muted-foreground text-sm block">
-                {currency}
-              </span>
-              {plan.price}
-            </p>
             {plan.badge && (
               <Badge className="mt-1 bg-secondary text-white">
                 {plan.badge}

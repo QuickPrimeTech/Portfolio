@@ -12,7 +12,6 @@ import {
   PricingCardContent,
   PricingCardTitle,
   PricingCardDescription,
-  PricingCardPrice,
 } from "@/components/ui/pricing-card";
 import { ArrowRight, ChevronDown, ExternalLink } from "lucide-react";
 import { Feature, FeaturesContainer } from "@/components/ui/feature";
@@ -46,16 +45,13 @@ const PricingCards = () => {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
       {pricingCardsInfo.map(
-        ({ title, description, price, features, popular }, index) => (
+        ({ title, description, features, popular }, index) => (
           <PricingCard key={index} popular={popular}>
             <PricingCardHeader>
               <PricingCardTitle className={cn(popular && "text-secondary")}>
                 {title}
               </PricingCardTitle>
               <PricingCardDescription>{description}</PricingCardDescription>
-              <PricingCardPrice className={cn(popular && "text-secondary")}>
-                {price}
-              </PricingCardPrice>
             </PricingCardHeader>
             <PricingCardContent>
               <div className="hidden md:block">
