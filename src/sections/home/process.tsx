@@ -1,3 +1,5 @@
+// @/sections/home/process.tsx
+
 import { MonitorSmartphone, PencilRuler, Code2, Rocket } from "lucide-react";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
 import { Card } from "@/components/ui/card";
