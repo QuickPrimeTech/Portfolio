@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    "google-site-verification": "svtKqX6-WvwK1_3MBBYLIFz6HNAWrnX6U7VaNZnd2CE",
+    "google-site-verification": "Ads6Q-6hTdhuSR-UY_bxWN-HWiJX2o7aM0Wgq-wbS-Y",
   },
 };
 const dmSans = DM_Sans({
