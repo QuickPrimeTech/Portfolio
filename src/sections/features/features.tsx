@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { features } from "@/data/features";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,13 +14,9 @@ export default function Features() {
       aria-describedby="features-description"
     >
       <BackgroundPattern className="absolute h-full w-full inset-0" />
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="flex flex-col items-center justify-center space-y-4 text-center mb-16"
-      >
+
+      {/* Section Header */}
+      <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
         <Badge
           className="rounded-full px-4 py-1.5 text-sm font-medium"
           variant="secondary"
@@ -39,19 +34,14 @@ export default function Features() {
           id="features-description"
         >
           Our comprehensive platform provides all the tools you need to manage
-          your restaurant's online presence and boost your business.
+          your restaurant&apos;s online presence and boost your business.
         </p>
-      </motion.div>
+      </div>
 
+      {/* Feature Cards */}
       <div className="space-y-20">
         {features.map((feature, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-          >
+          <div key={i}>
             <Card className="overflow-hidden py-0 border border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur">
               <CardContent className="p-0">
                 <div
@@ -79,7 +69,7 @@ export default function Features() {
                     />
                   </div>
 
-                  {/* Content Section with background pattern */}
+                  {/* Content Section */}
                   <div
                     className={`p-8 md:p-12 ${i % 2 === 1 ? "md:order-1" : ""}`}
                   >
@@ -109,7 +99,7 @@ export default function Features() {
                 </div>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>
