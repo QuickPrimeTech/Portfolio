@@ -43,19 +43,11 @@ function ProjectCarousel() {
         <CarouselContent className="-ml-4 md:-ml-6">
           {projects.map(
             (
-              {
-                id,
-                name,
-                category,
-                description,
-                shortDescription,
-                image,
-                liveUrl,
-              },
+              { name, category, description, shortDescription, image, liveUrl },
               index
             ) => (
               <CarouselItem
-                key={id}
+                key={index}
                 className="pl-4 md:pl-6 basis-full md:basis-1/2 lg:basis-1/3"
               >
                 <ProjectCard>
