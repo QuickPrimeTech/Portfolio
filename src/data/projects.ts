@@ -1,6 +1,15 @@
 export const projects = [
   {
-    id: 1,
+    name: "Li's Chinese Restaurant Nairobi",
+    category: "Chinese Restaurant",
+    description:
+      "Website featuring online reservations, pickup orders, career inquires and private event inquiries to attract more diners, boost online revenue and boost bookings.",
+    shortDescription: "Elegant Chinese Restaurant in Gigiri",
+    image:
+      "https://res.cloudinary.com/quick-prime-tech/image/upload/v1761301076/lis-chinese-restaurant_xmgsxq.png",
+    liveUrl: "http://lischineserestaurantnairobi.co.ke/",
+  },
+  {
     name: "The Ziwa Restaurant",
     category: "Seafood Restaurant",
     description:
@@ -11,7 +20,6 @@ export const projects = [
     liveUrl: "https://ziwa-nu.vercel.app/",
   },
   {
-    id: 2,
     name: "The Coastal Cuisine",
     category: "Seafood Restaurant",
     description:
@@ -22,7 +30,6 @@ export const projects = [
     liveUrl: "https://coastal-cuisine.vercel.app/",
   },
   {
-    id: 3,
     name: "The Obsidian Plate",
     category: "Ethiopian Cusine",
     description:
@@ -34,7 +41,6 @@ export const projects = [
   },
 
   {
-    id: 4,
     name: "Savoria",
     category: "Russian Cuisine",
     description:
@@ -45,7 +51,6 @@ export const projects = [
     liveUrl: "http://savoria-swart.vercel.app/",
   },
   {
-    id: 5,
     name: "Azure Shores",
     category: "Ethiopian Cuisine",
     description:
@@ -56,7 +61,6 @@ export const projects = [
     liveUrl: "https://azureshores.vercel.app/",
   },
   {
-    id: 6,
     name: "Open Karen",
     category: "Fine Dining",
     description:
