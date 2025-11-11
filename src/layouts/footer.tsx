@@ -36,6 +36,12 @@ const footerSections = [
   },
 ];
 
+const footerSecondaryLinks = [
+  { name: "Privacy Policy", href: "/privacy-policy" },
+  { name: "Terms of Service", href: "/terms-service" },
+  { name: "Cookie Policy", href: "/cookie-policy" },
+];
+
 export function Footer() {
   return (
     <footer className="bg-gradient-to-b from-indigo-950 to-black text-white pt-16 pb-8 section-x">
@@ -99,17 +105,15 @@ export function Footer() {
           © {new Date().getFullYear()} RestaurantTech. All rights reserved.
         </p>
         <div className="flex flex-wrap justify-center gap-6">
-          {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
-            (link) => (
-              <a
-                key={link}
-                href="#"
-                className="text-sm text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                {link}
-              </a>
-            )
-          )}
+          {footerSecondaryLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm text-gray-400 hover:text-white transition-colors duration-300"
+            >
+              {link.name}
+            </a>
+          ))}
         </div>
       </div>
     </footer>
