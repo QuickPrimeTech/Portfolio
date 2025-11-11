@@ -1,36 +1,40 @@
 import { WavePattern, LinePattern } from "@/components/ui/background-pattern";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Lightbulb, CheckCircle, Lock, Rocket } from "lucide-react";
-import Image from "next/image";
 import { FeaturesContainer } from "@/components/ui/feature";
+import { Lightbulb, CheckCircle, Lock, Rocket, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const points = [
   {
     icon: CheckCircle,
-    text: "No setup fees or large upfront costs",
+    text: "Start taking reservations online",
   },
   {
     icon: Lightbulb,
-    text: "Tailored website built to drive more orders & bookings",
+    text: "Start getting reservations online",
   },
   {
     icon: Lock,
-    text: "Low monthly fee — includes security, updates, and ongoing support",
+    text: "Start receiving private events inquiries online",
   },
   {
     icon: Rocket,
-    text: "Optimized to help you grow faster with less hassle",
+    text: "Showcase your menu online",
+  },
+  {
+    icon: Rocket,
+    text: "And much, much more",
   },
 ];
 
 const Hero = () => {
   return (
-    <section className="py-8 h-screen lg:h-180 lg:py-12 relative bg-gray-50 overflow-hidden">
+    <section className="container py-8 h-screen lg:h-180 lg:py-12 relative bg-gray-50 overflow-hidden">
       <WavePattern className="w-full h-full bottom-0 absolute" />
       <LinePattern className="w-full h-full inset-0 absolute" />
       <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-8">
-        <div className="relative z-10 flex flex-col gap-6 grow-1 shrink-1">
+        <div className="relative z-10 flex flex-col gap-6">
           <h1 className="text-3xl md:text-5xl font-medium text-gray-900 leading-tight font-serif">
             <span className="text-secondary">Supercharge</span> Your Restaurant{" "}
             <span className="text-secondary">Sales</span> With a Smart Website.
@@ -69,21 +73,20 @@ const Hero = () => {
 
 const Mockups = () => {
   return (
-    <div className="relative z-10 flex -space-x-8">
+    <div className="relative z-10 w-100 aspect-9/16 shrink-0">
       <Image
-        width={430}
-        height={900}
+       fill
         src="https://res.cloudinary.com/quick-prime-tech/image/upload/v1749112634/mockup1_xvblxz.png"
         alt="Image of a quickprimetech restaurant website mockup"
-        className="w-1/2"
+        className="object-contain"
       />
-      <Image
+      {/* <Image
         width={430}
         height={900}
         src="https://res.cloudinary.com/quick-prime-tech/image/upload/v1749112635/mockup2_hfwijf.png"
         alt="Image of a quickprimetech restaurant website mockup"
         className="relative z-10 shadow-sm w-1/2"
-      />
+      /> */}
     </div>
   );
 };
