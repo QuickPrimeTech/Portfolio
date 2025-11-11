@@ -39,7 +39,6 @@ const footerSections = [
 const footerSecondaryLinks = [
   { name: "Privacy Policy", href: "/privacy-policy" },
   { name: "Terms of Service", href: "/terms-service" },
-  { name: "Cookie Policy", href: "/cookie-policy" },
 ];
 
 export function Footer() {
