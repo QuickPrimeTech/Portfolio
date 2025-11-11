@@ -2,92 +2,214 @@
 
 export default function PrivacyPolicy() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-12 text-gray-800 space-y-6">
-      <h1 className="text-3xl font-bold">Privacy Policy</h1>
-      <p className="text-sm text-gray-500">Effective Date: 1 January 2025</p>
-
-      <p>
-        [Agency Name] (“we”, “us”, “our”) builds and manages websites for
-        restaurants. This policy explains how we collect, use and protect
-        information when visitors browse a restaurant site we host, place online
-        orders or bookings, sign up for marketing, or contact customer support.
-      </p>
+    <main className="max-w-4xl mx-auto px-6 md:px-8 py-12 text-gray-800 leading-relaxed space-y-8">
+      <header className="space-y-2">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">
+          Privacy Policy
+        </h1>
+        <p className="text-center text-gray-500 text-sm">
+          Effective Date: 1 January 2025
+        </p>
+      </header>
 
       <section>
-        <h2 className="text-xl font-semibold mt-6 mb-2">
+        <p>
+          At <strong>QuickPrimeTech</strong> we build and manage websites for
+          restaurants. We respect your privacy and are committed to protecting
+          the data of every restaurant, customer, and website visitor. This
+          Privacy Policy explains how we collect, use, store, and protect
+          information when you or your customers interact with a restaurant
+          website we manage, including online orders, reservations, contact
+          forms, and marketing tools.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold mb-3">
           1. Information We Collect
         </h2>
-        <ul className="list-disc ml-6 space-y-1">
+        <p>
+          We collect information necessary to operate and maintain restaurant
+          websites and online services securely and efficiently. This may
+          include:
+        </p>
+        <ul className="list-disc ml-6 space-y-1 mt-2">
           <li>
-            Name, email, phone, delivery address, dietary notes, payment details
-            (PCI-compliant processor; we never store full card numbers).
+            Customer details such as name, email address, phone number, delivery
+            address, and order or reservation information.
           </li>
           <li>
-            Reservation details (date, time, party size, special requests).
+            Payment and transaction information (processed securely via
+            third-party payment gateways — we never store full card details).
           </li>
           <li>
-            IP address, browser type, device identifiers, pages visited,
-            approximate location, cookies.
+            Technical information such as IP address, browser type, device
+            identifiers, pages visited, and general location data.
+          </li>
+          <li>
+            Communication preferences and marketing opt-ins (when explicitly
+            provided).
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold mt-6 mb-2">2. How We Use It</h2>
-        <p>
-          Process orders & payments, confirm reservations, send service emails,
-          deliver marketing (opt-in only), detect fraud, improve performance.
-        </p>
-      </section>
-
-      <section>
-        <h2 className="text-xl font-semibold mt-6 mb-2">3. Sharing</h2>
-        <p>
-          We never sell data. We share only with the restaurant owner, payment
-          processor, email/SMS platform, analytics providers or when legally
-          required.
-        </p>
-      </section>
-
-      <section>
-        <h2 className="text-xl font-semibold mt-6 mb-2">4. Cookies</h2>
-        <p>
-          Essential cookies keep you logged-in; analytics/marketing cookies are
-          set only after consent. Manage choices via the footer “Cookie
-          Settings” link.
-        </p>
-      </section>
-
-      <section>
-        <h2 className="text-xl font-semibold mt-6 mb-2">
-          5. Retention & Security
+        <h2 className="text-2xl font-semibold mb-3">
+          2. How We Use Information
         </h2>
         <p>
-          Orders: 7 years for tax; marketing: until unsubscribe. Data is
-          encrypted, hashed, and hosted on ISO-certified servers.
+          We use collected data only to provide and improve our services. This
+          includes:
+        </p>
+        <ul className="list-disc ml-6 space-y-1 mt-2">
+          <li>Processing restaurant orders, bookings, and payments.</li>
+          <li>Providing customer support and confirming transactions.</li>
+          <li>
+            Maintaining and improving website performance, security, and
+            reliability.
+          </li>
+          <li>
+            Sending service-related notifications (e.g., order confirmations).
+          </li>
+          <li>
+            Sending marketing emails or SMS messages only if the recipient has
+            opted in.
+          </li>
+          <li>Detecting and preventing fraud or unauthorized access.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold mb-3">
+          3. Data Ownership & Access
+        </h2>
+        <p>
+          While we <strong>own and manage the database infrastructure</strong>{" "}
+          that powers the restaurant websites, all restaurant data remains the
+          property of the restaurant owner. We have technical access to this
+          data for the purpose of system maintenance, troubleshooting, and
+          ensuring operational integrity — but we do <strong>not</strong> view,
+          disclose, or use any data for unrelated purposes.
+        </p>
+        <p className="mt-3">
+          We can only share or disclose data if the restaurant owner explicitly
+          provides written permission or if disclosure is required by law.
         </p>
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold mt-6 mb-2">6. Your Rights</h2>
+        <h2 className="text-2xl font-semibold mb-3">4. Data Sharing</h2>
         <p>
-          Access, correct, delete, restrict, export, object, opt-out. Email
-          privacy@[agency-domain].com with the restaurant name.
+          We never sell, rent, or trade any information. We may share limited
+          data with trusted third-party service providers who help us operate
+          restaurant websites, such as:
+        </p>
+        <ul className="list-disc ml-6 space-y-1 mt-2">
+          <li>Payment processors (for secure transactions).</li>
+          <li>
+            Email or SMS service providers (for order confirmations or opt-in
+            marketing).
+          </li>
+          <li>Analytics tools (to improve performance and user experience).</li>
+          <li>
+            Legal authorities, if required by applicable law or court order.
+          </li>
+        </ul>
+        <p className="mt-2">
+          All third parties are bound by confidentiality and data protection
+          agreements.
         </p>
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold mt-6 mb-2">7. Contact</h2>
+        <h2 className="text-2xl font-semibold mb-3">5. Cookies & Tracking</h2>
         <p>
-          Data Protection Officer: [Name] | privacy@[agency-domain].com |
-          [Agency Legal Address]
+          Our websites use essential cookies to ensure functionality (like login
+          sessions or cart persistence). Non-essential cookies, such as those
+          used for analytics or marketing, are activated only after consent.
+          Visitors can manage or withdraw cookie preferences through the “Cookie
+          Settings” link found in the website footer.
         </p>
       </section>
 
-      <p className="text-xs text-gray-500 mt-8">
-        This template is for general information only; adapt to each
-        restaurant’s data flows and obtain legal review.
-      </p>
+      <section>
+        <h2 className="text-2xl font-semibold mb-3">
+          6. Data Retention & Security
+        </h2>
+        <p>
+          We retain data only as long as necessary to fulfill legitimate
+          business, tax, or legal obligations:
+        </p>
+        <ul className="list-disc ml-6 space-y-1 mt-2">
+          <li>Order and transaction data: retained for up to 1 year.</li>
+          <li>
+            Marketing data: retained until the user unsubscribes or requests
+            deletion.
+          </li>
+        </ul>
+        <p className="mt-2">
+          All data is securely encrypted, stored on ISO-certified servers, and
+          protected with access control, firewalls, and regular audits.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold mb-3">7. Your Rights</h2>
+        <p>Restaurant owners and their customers have the right to:</p>
+        <ul className="list-disc ml-6 space-y-1 mt-2">
+          <li>Access a copy of their personal data.</li>
+          <li>Request correction or deletion of inaccurate data.</li>
+          <li>Limit or object to data processing.</li>
+          <li>Withdraw consent to marketing communications at any time.</li>
+        </ul>
+        <p className="mt-2">
+          To exercise these rights, contact us at{" "}
+          <a
+            href="mailto:privacy@quickprimetech.com"
+            className="text-blue-600 hover:underline"
+          >
+            privacy@quickprimetech.com
+          </a>{" "}
+          and include the restaurant name in your message.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold mb-3">8. Policy Updates</h2>
+        <p>
+          We may occasionally update this Privacy Policy to reflect operational
+          changes, legal requirements, or security improvements. The “Effective
+          Date” above indicates when the latest revision took effect.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold mb-3">9. Contact Us</h2>
+        <p>For any questions, concerns, or data requests, please contact:</p>
+        <p className="mt-2">
+          Data Protection Officer: [Name] <br />
+          Email:{" "}
+          <a
+            href="mailto:privacy@quickprimetech.com"
+            className="text-blue-600 hover:underline"
+          >
+            privacy@quickprimetech.com
+          </a>
+          <br />
+          Address: Wood Ave, Nairobi
+        </p>
+      </section>
+
+      <footer className="pt-8 border-t text-xs text-gray-500">
+        <p>
+          This Privacy Policy is intended to provide a clear understanding of
+          how we handle restaurant and customer data. While we manage the
+          technical infrastructure, each restaurant is responsible for ensuring
+          its own compliance with applicable data protection laws. You should
+          review this policy with legal counsel to ensure alignment with local
+          regulations (e.g., GDPR, CCPA, or Kenyan Data Protection Act).
+        </p>
+      </footer>
     </main>
   );
 }
