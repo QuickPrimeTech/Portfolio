@@ -48,7 +48,11 @@ export function Footer() {
       {/* Logo and Description */}
       <div className="flex flex-wrap gap-20">
         <div className="flex flex-col gap-6 max-w-md">
-          <Link href="/" className="flex items-center gap-4">
+          <Link
+            href="/"
+            className="flex items-center gap-4"
+            aria-label="head back to home page"
+          >
             <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center p-3">
               <Logo className="h-7 w-7 text-white" />
             </div>
@@ -69,9 +73,10 @@ export function Footer() {
                 rel="noopener noreferrer"
                 target="_blank"
                 key={index}
+                aria-label={`visit our ${link.name} profile`}
                 className="p-3 bg-gradient-to-r from-gray-800 to-gray-700 rounded-xl hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 hover:scale-110 cursor-pointer"
               >
-                <link.icon className="h-5 w-5" />
+                <link.icon className="size-5" />
               </Link>
             ))}
           </div>
