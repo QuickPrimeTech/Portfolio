@@ -1,4 +1,11 @@
 // app/privacy-policy/page.tsx
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Learn how QuickPrimeTech collects, uses, stores, and protects restaurant and customer data. Understand your rights, data ownership, sharing, cookies, and security practices.",
+};
 
 export default function PrivacyPolicy() {
   return (
