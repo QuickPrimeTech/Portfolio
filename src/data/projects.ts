@@ -51,16 +51,6 @@ export const projects = [
     liveUrl: "http://savoria-swart.vercel.app/",
   },
   {
-    name: "Azure Shores",
-    category: "Ethiopian Cuisine",
-    description:
-      "Crafted an elegant and user-friendly website for an Ethiopian restaurant by the sea, featuring dynamic menu browsing, event highlights, and easy table reservations.",
-    shortDescription: "Elegant Ethiopian dining by the sea",
-    image:
-      "https://res.cloudinary.com/quick-prime-tech/image/upload/v1750952466/ProjectThubnail_jqkvjx.png",
-    liveUrl: "https://azureshores.vercel.app/",
-  },
-  {
     name: "Open Karen",
     category: "Fine Dining",
     description:
