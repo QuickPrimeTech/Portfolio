@@ -53,8 +53,8 @@ function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
       <Hero />
-      <Features />
       <FeaturedProjects />
+      <Features />
       <Pricing />
       <Process />
       <Faqs />
