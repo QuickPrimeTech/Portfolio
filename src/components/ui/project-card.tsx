@@ -1,15 +1,15 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
 import { WithChildrenAndClass } from "@/types";
 import { cn } from "@/lib/utils";
+import { ImageWithFallback } from "./image";
 
 function ProjectCard({ children, className }: WithChildrenAndClass) {
   return (
     <Card
       className={cn(
         "group hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between py-0 pb-3",
-        className
+        className,
       )}
     >
       {children}
@@ -19,7 +19,7 @@ function ProjectCard({ children, className }: WithChildrenAndClass) {
 
 function ProjectCardImage({ image, alt }: { image: string; alt: string }) {
   return (
-    <Image
+    <ImageWithFallback
       src={image}
       alt={`${alt} by Quick Prime Tech`}
       width={600}

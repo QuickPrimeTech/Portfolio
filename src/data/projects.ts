@@ -20,16 +20,6 @@ export const projects = [
     liveUrl: "https://ziwa-nu.vercel.app/",
   },
   {
-    name: "The Coastal Cuisine",
-    category: "Seafood Restaurant",
-    description:
-      "We built a modern website for a seaside restaurant to beautifully showcase their events, fresh seafood offerings, and coastal ambiance.",
-    shortDescription: "Modern seaside restaurant website",
-    image:
-      "https://res.cloudinary.com/quick-prime-tech/image/upload/v1750952422/Thumbnail_bo8wje.png",
-    liveUrl: "https://coastal-cuisine.vercel.app/",
-  },
-  {
     name: "The Obsidian Plate",
     category: "Ethiopian Cusine",
     description:

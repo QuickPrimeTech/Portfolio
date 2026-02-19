@@ -8,8 +8,8 @@ import {
 } from "lucide-react";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
+import { ImageWithFallback } from "@/components/ui/image";
 
 const features = [
   {
@@ -83,7 +83,7 @@ export const Features = () => {
           >
             {/* Image Section */}
             <div className="w-full md:w-1/2 aspect-[4/3] rounded-sm overflow-hidden relative">
-              <Image
+              <ImageWithFallback
                 src={feature.image}
                 alt="Description of the image"
                 fill

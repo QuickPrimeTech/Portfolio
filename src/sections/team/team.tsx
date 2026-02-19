@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
+import { ImageWithFallback } from "@/components/ui/image";
 
 const teamMembers = [
   {
@@ -45,7 +45,7 @@ const Team = () => {
             key={member.name}
             className="overflow-hidden hover:shadow-lg transition-shadow w-full py-0"
           >
-            <Image
+            <ImageWithFallback
               src={member.image}
               alt={`Photo of ${member.name}`}
               width={300}
