@@ -20,6 +20,7 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
 import { projects } from "@/data/projects";
+import TrustpilotReviewWidget from "@/components/trust-pilot";
 
 const FeaturedProjects = () => {
   return (
@@ -29,9 +30,12 @@ const FeaturedProjects = () => {
         <SubTitle>Showcasing my latest work</SubTitle>
       </Header>
       <ProjectCarousel />
-      <Button variant={"outline"} asChild>
-        <Link href={`/projects`}>See All Projects</Link>
-      </Button>
+      <div className="flex flex-col sm:flex-row gap-1">
+        <Button variant={"outline"} asChild>
+          <Link href={`/projects`}>See All Projects</Link>
+        </Button>
+        <TrustpilotReviewWidget />
+      </div>
     </Section>
   );
 };
@@ -44,7 +48,7 @@ function ProjectCarousel() {
           {projects.map(
             (
               { name, category, description, shortDescription, image, liveUrl },
-              index
+              index,
             ) => (
               <CarouselItem
                 key={index}
@@ -77,7 +81,7 @@ function ProjectCarousel() {
                   {index + 1} of {projects.length} projects
                 </div>
               </CarouselItem>
-            )
+            ),
           )}
         </CarouselContent>
         <CarouselPrevious className="-left-6" />
