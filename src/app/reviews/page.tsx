@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import Hero from "@/sections/reviews/hero";
 import CTA from "@/sections/reviews/CTA";
-import EmptyReviews from "@/sections/reviews/empty-reviews";
+import Testimonials from "@/sections/home/testimonial";
 
 export const metadata: Metadata = {
   title: "QuickPrimeTech Reviews | Client Testimonials & Success Stories",
@@ -48,7 +48,7 @@ export default function ReviewsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Hero />
-      <EmptyReviews />
+      <Testimonials />
       <CTA />
     </div>
   );

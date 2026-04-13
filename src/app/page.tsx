@@ -7,6 +7,7 @@ import Pricing from "@/sections/home/pricing";
 import { Features } from "@/sections/home/features";
 import Faqs from "@/sections/home/faqs";
 import Contact from "@/sections/home/contact";
+import TestimonialSection from "@/sections/home/testimonial";
 
 export const metadata: Metadata = {
   title: "Restaurant Websites with No Upfront Cost | QuickPrimeTech",
@@ -54,6 +55,7 @@ function Portfolio() {
     <div className="min-h-screen bg-background">
       <Hero />
       <FeaturedProjects />
+      <TestimonialSection />
       <Features />
       <Pricing />
       <Process />
