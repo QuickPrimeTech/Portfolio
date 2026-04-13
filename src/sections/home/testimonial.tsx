@@ -52,7 +52,7 @@ export default function Testimonials() {
       rating: 5,
       category: "Restaurant",
       url: "https://www.instagram.com/stories/highlights/18100204627953661/",
-      location: "Petrocity Gigiri, Nairobi",
+      location: "Li's Chinese Restaurant, Petrocity Gigiri",
     },
   ];
 
