@@ -229,7 +229,7 @@ export default function Testimonials() {
         </div>
       ) : (
         // Centered single card for one review
-        <div className="w-full max-w-6xl mx-auto px-4">
+        <div className="w-full max-w-6xl mx-auto  ">
           <div className="flex justify-center">
             <TestimonialCard testimonial={testimonials[0]} />
           </div>

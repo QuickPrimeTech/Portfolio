@@ -52,9 +52,7 @@ export function Footer() {
             className="flex items-center gap-4"
             aria-label="head back to home page"
           >
-            <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center p-3">
-              <Logo className="h-7 w-7 text-white" />
-            </div>
+            <Logo className="size-10 text-white" />
             <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
               QuickPrimeTech
             </span>
