@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/layouts/navbar";
-import Footer from "@/layouts/footer";
-import { Toaster } from "sonner";
 import { PostHogProvider } from "./providers";
-import { WhatsAppButton } from "@/components/whatsapp-button";
 
 export const metadata: Metadata = {
   title: "QuickPrimeTech - Get your website running with no upfront cost",
@@ -67,15 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${dmSans.variable} font-sans`}>
-        <PostHogProvider>
-          <Navbar />
-          <main>
-            {children}
-            <WhatsAppButton />
-          </main>
-          <Footer />
-          <Toaster position="top-right" richColors />
-        </PostHogProvider>
+        <PostHogProvider>{children}</PostHogProvider>
       </body>
     </html>
   );
