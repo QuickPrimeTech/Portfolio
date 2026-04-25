@@ -71,7 +71,6 @@ export default function WorkPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 container mx-auto px-4">
           {projects.map(
             ({
-              id,
               name,
               category,
               description,
@@ -79,7 +78,7 @@ export default function WorkPage() {
               image,
               liveUrl,
             }) => (
-              <ProjectCard key={id}>
+              <ProjectCard key={name}>
                 <ProjectCardImage image={image} alt={name} />
                 <ProjectCardContent>
                   <ProjectCardBadge>{category}</ProjectCardBadge>
@@ -102,7 +101,7 @@ export default function WorkPage() {
                   </Button>
                 </ProjectCardFooter>
               </ProjectCard>
-            )
+            ),
           )}
         </div>
       </Section>

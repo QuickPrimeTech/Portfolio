@@ -64,8 +64,18 @@ function ProjectCarousel() {
                     </ProjectCardDescription>
                     <p className="text-sm text-gray-600 mt-2">{description}</p>
                   </ProjectCardContent>
-                  <ProjectCardFooter>
-                    <Button className="w-full" asChild>
+                  <ProjectCardFooter className="flex  gap-2">
+                    <Button variant={"outline"} asChild>
+                      <Link
+                        href={liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Case Study
+                        <ExternalLink className="h-4 w-4 ml-2" />
+                      </Link>
+                    </Button>
+                    <Button className="flex-1" asChild>
                       <Link
                         href={liveUrl}
                         target="_blank"
@@ -77,9 +87,6 @@ function ProjectCarousel() {
                     </Button>
                   </ProjectCardFooter>
                 </ProjectCard>
-                <div className="text-center mt-2 text-sm text-muted-foreground">
-                  {index + 1} of {projects.length} projects
-                </div>
               </CarouselItem>
             ),
           )}

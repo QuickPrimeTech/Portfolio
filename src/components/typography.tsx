@@ -6,7 +6,7 @@ const Section = ({ children, className }: WithChildrenAndClass) => {
     <section
       className={cn(
         "section-x section-y gap-12 flex flex-col items-center justify-center",
-        className
+        className,
       )}
     >
       {children}
@@ -24,7 +24,7 @@ const Title = ({ children, className, ...props }: WithChildrenAndClass) => {
     <h2
       className={cn(
         "text-2xl md:text-3xl lg:text-4xl font-bold font-serif",
-        className
+        className,
       )}
       {...props}
     >
@@ -46,7 +46,12 @@ const H1 = ({ children, className, ...props }: WithChildrenAndClass) => {
 
 const SubTitle = ({ children, className }: WithChildrenAndClass) => {
   return (
-    <h3 className={cn("text-muted-foreground max-w-3xl mx-auto", className)}>
+    <h3
+      className={cn(
+        "font-sans text-muted-foreground max-w-3xl mx-auto",
+        className,
+      )}
+    >
       {children}
     </h3>
   );

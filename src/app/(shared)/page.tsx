@@ -10,21 +10,25 @@ import Contact from "@/sections/home/contact";
 import TestimonialSection from "@/sections/home/testimonial";
 
 export const metadata: Metadata = {
-  title: "Restaurant Websites with No Upfront Cost | QuickPrimeTech",
+  title: "Premium Websites That Convert — No Upfront Cost | QuickPrimeTech",
   description:
-    "Get a stunning, high-converting restaurant website with no upfront cost. QuickPrimeTech builds custom websites that showcase your brand, attract more customers, and grow your business fast.",
+    "Get a stunning, high-converting website built by experts — with zero upfront cost. QuickPrimeTech designs and develops custom websites for brands, startups, and businesses that want to stand out and scale fast.",
   keywords: [
-    "restaurant website design",
-    "free restaurant website",
-    "custom restaurant websites",
-    "restaurant website development",
+    "custom website design",
+    "web development agency",
     "no upfront cost website",
+    "high converting websites",
+    "business website design",
+    "startup web design",
     "QuickPrimeTech",
+    "premium web development",
+    "brand website design",
+    "conversion focused websites",
   ],
   openGraph: {
-    title: "Restaurant Websites with No Upfront Cost | QuickPrimeTech",
+    title: "Premium Websites That Convert — No Upfront Cost | QuickPrimeTech",
     description:
-      "QuickPrimeTech helps restaurants succeed online with beautiful, mobile-friendly, and high-converting websites — all at zero upfront cost.",
+      "QuickPrimeTech builds beautiful, high-performing websites for modern brands. Zero upfront cost. Maximum impact. Let's build something extraordinary.",
     url: "https://quickprimetech.vercel.app",
     siteName: "QuickPrimeTech",
     type: "website",
@@ -33,7 +37,7 @@ export const metadata: Metadata = {
         url: "https://res.cloudinary.com/quick-prime-tech/image/upload/v1749102720/opengraph-image_lmiplo.png",
         width: 1200,
         height: 630,
-        alt: "QuickPrimeTech - Free Custom Restaurant Websites",
+        alt: "QuickPrimeTech — Premium Websites Built to Convert",
       },
     ],
   },
@@ -41,9 +45,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@quickprimetech",
     creator: "@quickprimetech",
-    title: "Restaurant Websites with No Upfront Cost | QuickPrimeTech",
+    title: "Premium Websites That Convert — No Upfront Cost | QuickPrimeTech",
     description:
-      "Custom, high-converting restaurant websites — zero upfront cost. Showcase your brand, attract customers, and grow your business with QuickPrimeTech.",
+      "Custom, conversion-focused websites for brands and businesses. Zero upfront cost. Built to impress and perform.",
     images: [
       "https://res.cloudinary.com/quick-prime-tech/image/upload/v1749102720/opengraph-image_lmiplo.png",
     ],

@@ -8,6 +8,7 @@ export const projects = [
     image:
       "https://res.cloudinary.com/quick-prime-tech/image/upload/v1761301076/lis-chinese-restaurant_xmgsxq.png",
     liveUrl: "http://lischineserestaurantnairobi.co.ke/",
+    caseStudy: "/case-study/lis-chinese-restaurant",
   },
   {
     name: "The Ziwa Restaurant",

@@ -1,71 +1,103 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, Utensils, TrendingUp, Clock } from "lucide-react";
+import { ArrowRight, Globe, Zap, BarChart3, Layers } from "lucide-react";
 import Link from "next/link";
 import { generateWhatsappLink } from "@/lib/helpers";
 import { YouTubePlayer } from "@/components/ui/youtube-video-player";
-import { Section } from "@/components/typography";
 
 const heroFeatures = [
   {
-    icon: Clock,
-    text: "Accept reservations automatically, even while you sleep",
+    icon: Globe,
+    text: "A professional online presence that works for you 24/7",
   },
   {
-    icon: TrendingUp,
-    text: "Capture private event inquiries worth thousands in revenue",
+    icon: Zap,
+    text: "Fast, mobile-first builds delivered in days — not months",
   },
   {
-    icon: Utensils,
-    text: "Showcase your menu beautifully to hungry customers online",
+    icon: BarChart3,
+    text: "Conversion-focused design that turns visitors into customers",
   },
   {
-    icon: Star,
-    text: "Build your brand and stand out from competitors",
+    icon: Layers,
+    text: "Every site custom-built — no templates, no compromises",
   },
+];
+
+const industries = [
+  "E-commerce",
+  "Law Firms",
+  "Gyms & Fitness",
+  "Consultants",
+  "Startups",
+  "Portfolios",
 ];
 
 export default function Hero() {
   return (
-    <Section id="hero" className="relative bg-muted overflow-hidden">
-      {/* Content */}
-      <div className="container mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Content */}
-          <div className="space-y-6 max-w-xl">
+    <section id="hero" className="relative overflow-hidden py-12 section-x">
+      {/* Subtle grid texture */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px),
+            linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
+          backgroundSize: "48px 48px",
+        }}
+      />
+
+      <div className="container mx-auto relative">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* ── Left ── */}
+          <div className="space-y-7 max-w-xl">
+            {/* Eyebrow pill */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+              </span>
+              <span className="text-xs font-medium text-primary tracking-wide">
+                Available for new projects
+              </span>
+            </div>
+
             {/* Headline */}
-            <div className="space-y-3">
-              <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
-                Stop Losing Diners to{" "}
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-foreground leading-[1.05] tracking-tight">
+                Your website should be your{" "}
                 <span className="relative inline-block">
                   <span className="relative z-10 text-primary">
-                    Bad Websites
+                    best salesperson.
                   </span>
                   <svg
-                    className="absolute -bottom-1 left-0 w-full h-2 text-primary/60"
+                    className="absolute -bottom-1 left-0 w-full h-2 text-primary/50"
                     viewBox="0 0 200 8"
                     fill="none"
                     preserveAspectRatio="none"
                   >
                     <path
-                      d="M2 6C25.75 8.375 83.5 -3 198 6"
+                      d="M2 6C40 2 120 2 198 6"
                       stroke="currentColor"
-                      strokeWidth="4"
+                      strokeWidth="3"
                       strokeLinecap="round"
                     />
                   </svg>
                 </span>
               </h1>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                While you're cooking, your website should be booking. Get a 24/7
-                revenue machine that fills tables while you sleep.
+                We build custom, high-converting websites for businesses of
+                every kind — with{" "}
+                <span className="text-foreground font-medium">
+                  no upfront cost
+                </span>
+                . Beautiful design, fast delivery, real results.
               </p>
             </div>
 
-            {/* Features */}
+            {/* Feature list */}
             <ul className="space-y-3">
               {heroFeatures.map((feature, index) => (
                 <li key={index} className="flex items-start gap-3 group">
-                  <div className="mt-0.5 shrink-0 size-8 rounded-lg bg-primary/30 border border-primary/30 flex items-center justify-center group-hover:border-primary/70 group-hover:bg-primary/40 transition-all duration-200">
+                  <div className="mt-0.5 shrink-0 size-8 rounded-lg bg-primary/20 border border-primary/25 flex items-center justify-center group-hover:border-primary/60 group-hover:bg-primary/35 transition-all duration-200">
                     <feature.icon className="w-4 h-4 text-primary" />
                   </div>
                   <span className="text-foreground text-sm md:text-base leading-relaxed pt-1">
@@ -75,49 +107,68 @@ export default function Hero() {
               ))}
             </ul>
 
-            {/* CTA Section */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-4">
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Button size="lg" asChild>
                 <Link
                   href={generateWhatsappLink(
-                    "Hey there, I'm interested in getting my restaurant website done",
+                    "Hey, I'm interested in getting a website built for my business",
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Get Your Free Consultation
+                  Get a Free Consultation
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </Button>
 
               <Button size="lg" variant="outline" asChild>
-                <Link href={"/projects"}>See Our Work</Link>
+                <Link href="/projects">See Our Work</Link>
               </Button>
             </div>
 
-            {/* Social Proof */}
-            <div className="flex items-center gap-3 pt-2 text-muted-foreground text-xs">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-7 h-7 rounded-full bg-muted border-2 border-background flex items-center justify-center text-[10px] font-medium text-muted-foreground"
+            {/* Social proof + industry tags */}
+            <div className="space-y-3 pt-1">
+              <div className="flex items-center gap-3 text-muted-foreground text-xs">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3, 4].map((i) => (
+                    <div
+                      key={i}
+                      className="w-7 h-7 rounded-full bg-muted border-2 border-background flex items-center justify-center text-[10px] font-semibold text-muted-foreground"
+                    >
+                      {i === 4 ? "+" : "C"}
+                    </div>
+                  ))}
+                </div>
+                <p>
+                  Trusted by businesses across{" "}
+                  <span className="text-foreground font-medium">
+                    6+ industries
+                  </span>
+                </p>
+              </div>
+
+              {/* Industry pills */}
+              <div className="flex flex-wrap gap-2">
+                {industries.map((name) => (
+                  <span
+                    key={name}
+                    className="text-[11px] font-medium px-3 py-1 rounded-full bg-background border border-border text-muted-foreground"
                   >
-                    {i === 4 ? "+" : "R"}
-                  </div>
+                    {name}
+                  </span>
                 ))}
               </div>
-              <p>Join other restaurants already growing</p>
             </div>
           </div>
 
-          {/* Right Content - Video */}
-          <div className="relative lg:pl-8">
-            {/* Subtle Glow */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-3xl blur-2xl opacity-40" />
+          {/* ── Right — Video + floating stat cards ── */}
+          <div className="relative lg:pl-6">
+            {/* Glow */}
+            <div className="absolute -inset-6 bg-gradient-to-br from-primary/25 via-primary/10 to-transparent rounded-3xl blur-3xl opacity-50 pointer-events-none" />
 
-            {/* Video Container */}
-            <div className="relative rounded-xl overflow-hidden shadow-xl border border-border bg-card">
+            {/* Video */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
               <div className="aspect-video relative">
                 <YouTubePlayer
                   className="w-full h-full"
@@ -126,9 +177,39 @@ export default function Hero() {
                 />
               </div>
             </div>
+
+            {/* Floating stat — top left */}
+            <div className="absolute -left-6 top-6 hidden lg:flex items-center gap-3 bg-background border border-border rounded-xl px-4 py-3 shadow-lg">
+              <div className="size-9 rounded-lg bg-primary/15 flex items-center justify-center shrink-0">
+                <Zap className="w-4 h-4 text-primary" />
+              </div>
+              <div>
+                <p className="text-[11px] text-muted-foreground leading-none mb-0.5">
+                  Avg. delivery
+                </p>
+                <p className="text-sm font-bold text-foreground leading-none">
+                  7 days
+                </p>
+              </div>
+            </div>
+
+            {/* Floating stat — bottom right */}
+            <div className="absolute -right-4 -bottom-4 hidden lg:flex items-center gap-3 bg-background border border-border rounded-xl px-4 py-3 shadow-lg">
+              <div className="size-9 rounded-lg bg-primary/15 flex items-center justify-center shrink-0">
+                <BarChart3 className="w-4 h-4 text-primary" />
+              </div>
+              <div>
+                <p className="text-[11px] text-muted-foreground leading-none mb-0.5">
+                  Upfront cost
+                </p>
+                <p className="text-sm font-bold text-foreground leading-none">
+                  £0
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }
