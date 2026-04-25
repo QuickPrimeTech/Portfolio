@@ -1,19 +1,21 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { WithChildrenAndClass } from "@/types";
 import { cn } from "@/lib/utils";
 import { ImageWithFallback } from "./image";
+import React from "react";
 
-function ProjectCard({ children, className }: WithChildrenAndClass) {
+function ProjectCard({
+  className,
+  ...props
+}: React.ComponentProps<typeof Card>) {
   return (
     <Card
       className={cn(
-        "group hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between py-0 pb-3",
+        "group hover:shadow-xl gap-2 transition-all duration-300 overflow-hidden flex flex-col justify-between py-0 pb-3",
         className,
       )}
-    >
-      {children}
-    </Card>
+      {...props}
+    />
   );
 }
 
@@ -30,34 +32,27 @@ function ProjectCardImage({ image, alt }: { image: string; alt: string }) {
 }
 
 function ProjectCardContent({
-  children,
   className,
   ...props
-}: WithChildrenAndClass) {
-  return (
-    <div className={cn("p-6", className)} {...props}>
-      {children}
-    </div>
-  );
+}: React.ComponentProps<"div">) {
+  return <div className={cn("p-6", className)} {...props} />;
 }
 
 function ProjectCardBadge({
-  children,
+  variant,
   className,
   ...props
-}: WithChildrenAndClass) {
+}: React.ComponentProps<typeof Badge>) {
   return (
-    <Badge variant="secondary" className={cn("text-xs", className)} {...props}>
-      {children}
-    </Badge>
+    <Badge
+      variant={variant ?? "secondary"}
+      className={cn("text-xs mb-2", className)}
+      {...props}
+    />
   );
 }
 
-function ProjectCardTitle({
-  children,
-  className,
-  ...props
-}: WithChildrenAndClass) {
+function ProjectCardTitle({ className, ...props }: React.ComponentProps<"h3">) {
   return (
     <h3
       className={cn(
@@ -65,17 +60,14 @@ function ProjectCardTitle({
         className,
       )}
       {...props}
-    >
-      {children}
-    </h3>
+    />
   );
 }
 
 function ProjectCardDescription({
-  children,
   className,
   ...props
-}: WithChildrenAndClass) {
+}: React.ComponentProps<"p">) {
   return (
     <p
       className={cn(
@@ -83,22 +75,15 @@ function ProjectCardDescription({
         className,
       )}
       {...props}
-    >
-      {children}
-    </p>
+    />
   );
 }
 
 function ProjectCardFooter({
-  children,
   className,
   ...props
-}: WithChildrenAndClass) {
-  return (
-    <div className={cn("px-6 pb-6", className)} {...props}>
-      {children}
-    </div>
-  );
+}: React.ComponentProps<"div">) {
+  return <div className={cn("px-6 pb-6", className)} {...props} />;
 }
 
 export {

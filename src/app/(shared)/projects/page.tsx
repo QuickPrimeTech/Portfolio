@@ -18,20 +18,20 @@ import { Section } from "@/components/typography";
 import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Restaurant Website Portfolio | QuickPrimeTech Projects",
+  title: "Projects",
   description:
-    "Explore our portfolio of custom restaurant websites. See real examples of QuickPrimeTech projects designed to attract more customers and grow restaurant businesses — with no upfront cost.",
+    "Explore our portfolio of high-converting websites for businesses. From e-commerce stores to custom business websites, QuickPrimeTech helps brands grow online.",
   keywords: [
-    "restaurant website portfolio",
-    "restaurant website projects",
+    "website portfolio",
+    "e-commerce website projects",
+    "business website design",
     "QuickPrimeTech portfolio",
-    "restaurant website design examples",
-    "restaurant website showcase",
+    "high converting websites",
   ],
   openGraph: {
-    title: "Restaurant Website Portfolio | QuickPrimeTech Projects",
+    title: "Website Portfolio | QuickPrimeTech Projects",
     description:
-      "Browse real restaurant website projects built by QuickPrimeTech. Stunning, mobile-friendly, and high-converting websites — with zero upfront cost.",
+      "Browse real projects built by QuickPrimeTech — modern, mobile-friendly, and optimized for business growth.",
     url: "https://quickprimetech.vercel.app/projects",
     siteName: "QuickPrimeTech",
     type: "website",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         url: "https://res.cloudinary.com/quick-prime-tech/image/upload/v1749102720/opengraph-image_lmiplo.png",
         width: 1200,
         height: 630,
-        alt: "QuickPrimeTech Projects - Restaurant Website Portfolio",
+        alt: "QuickPrimeTech Projects - Website Portfolio",
       },
     ],
   },
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@quickprimetech",
     creator: "@quickprimetech",
-    title: "Restaurant Website Portfolio | QuickPrimeTech Projects",
+    title: "Website Portfolio | QuickPrimeTech Projects",
     description:
-      "See our restaurant website portfolio — real projects that help restaurants grow online. Built by QuickPrimeTech with no upfront cost.",
+      "See our portfolio of business and e-commerce websites built to drive results.",
     images: [
       "https://res.cloudinary.com/quick-prime-tech/image/upload/v1749102720/opengraph-image_lmiplo.png",
     ],

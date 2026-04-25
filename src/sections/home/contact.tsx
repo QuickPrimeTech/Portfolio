@@ -2,7 +2,7 @@ import ContactForm from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Mail, Instagram } from "lucide-react";
+import { Phone, Mail, Instagram, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
 import { FaWhatsapp } from "react-icons/fa";
@@ -65,8 +65,9 @@ const ContactCard = () => {
         ))}
         <Button className="w-full" size={"lg"} asChild>
           <Link href={`${process.env.NEXT_PUBLIC_CONTACT_ME_URL}`}>
-            Text Us On Whatsapp
             <FaWhatsapp className="size-5" />
+            Text Us On Whatsapp
+            <ExternalLink />
           </Link>
         </Button>
       </CardContent>

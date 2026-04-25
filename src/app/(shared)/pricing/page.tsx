@@ -10,7 +10,7 @@ import { MorePricing } from "@/sections/pricing/more-pricing";
 import { Section } from "@/components/typography";
 
 export const metadata: Metadata = {
-  title: "Pricing | Flexible Website Plans for Businesses",
+  title: "Pricing",
   description:
     "Explore flexible pricing plans designed for businesses of all sizes. Choose from custom website packages, add-ons, and scalable solutions tailored to your needs.",
 

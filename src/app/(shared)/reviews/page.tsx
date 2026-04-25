@@ -5,20 +5,20 @@ import CTA from "@/sections/reviews/CTA";
 import Testimonials from "@/sections/home/testimonial";
 
 export const metadata: Metadata = {
-  title: "QuickPrimeTech Reviews | Client Testimonials & Success Stories",
+  title: "Reviews",
   description:
-    "See what restaurant owners say about QuickPrimeTech. Real client testimonials, success stories, and reviews of our custom restaurant website design services — with no upfront cost.",
+    "See what clients say about QuickPrimeTech. Real testimonials, success stories, and reviews from businesses using our high-converting websites to grow online.",
   keywords: [
     "QuickPrimeTech reviews",
-    "restaurant website testimonials",
-    "QuickPrimeTech client feedback",
-    "restaurant website success stories",
-    "QuickPrimeTech ratings",
+    "website testimonials",
+    "client success stories",
+    "e-commerce website reviews",
+    "business website feedback",
   ],
   openGraph: {
     title: "QuickPrimeTech Reviews | Client Testimonials & Success Stories",
     description:
-      "Discover how restaurant owners grow their business with QuickPrimeTech. Read testimonials and reviews of our custom restaurant websites.",
+      "Discover how businesses grow with QuickPrimeTech. Read real testimonials and success stories from our website clients.",
     url: "https://quickprimetech.vercel.app/reviews",
     siteName: "QuickPrimeTech",
     type: "website",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         url: "https://res.cloudinary.com/quick-prime-tech/image/upload/v1749102720/opengraph-image_lmiplo.png",
         width: 1200,
         height: 630,
-        alt: "QuickPrimeTech Reviews - Restaurant Website Client Testimonials",
+        alt: "QuickPrimeTech Reviews - Client Testimonials",
       },
     ],
   },
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     creator: "@quickprimetech",
     title: "QuickPrimeTech Reviews | Client Testimonials & Success Stories",
     description:
-      "See what our clients say. Reviews and testimonials from restaurant owners who got stunning, high-converting websites with QuickPrimeTech — at zero upfront cost.",
+      "See what our clients say about working with QuickPrimeTech. Real reviews from businesses growing with high-performing websites.",
     images: [
       "https://res.cloudinary.com/quick-prime-tech/image/upload/v1749102720/opengraph-image_lmiplo.png",
     ],

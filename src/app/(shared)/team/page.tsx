@@ -6,20 +6,21 @@ import { CTA } from "@/sections/team/cta";
 import { Values } from "@/sections/team/values";
 
 export const metadata: Metadata = {
-  title: "Meet the QuickPrimeTech Team | Restaurant Website Experts",
+  title: "Team",
   description:
-    "Get to know the QuickPrimeTech team — passionate designers, developers, and marketers dedicated to building high-converting restaurant websites with no upfront cost.",
+    "Get to know the QuickPrimeTech team — passionate designers, developers, and digital strategists dedicated to building high-converting websites that help businesses grow online.",
   keywords: [
-    "restaurant website team",
     "QuickPrimeTech team",
-    "restaurant website experts",
+    "website design team",
+    "e-commerce website experts",
     "about QuickPrimeTech",
-    "restaurant website designers",
+    "web development team",
   ],
   openGraph: {
-    title: "Meet the QuickPrimeTech Team | Restaurant Website Experts",
+    title:
+      "Meet the QuickPrimeTech Team | Designers, Developers & Growth Experts",
     description:
-      "We’re a team of restaurant website specialists helping restaurants grow with stunning, custom websites — at no upfront cost.",
+      "We’re a team of designers, developers, and strategists focused on building high-performing websites that drive real business growth.",
     url: "https://quickprimetech.vercel.app/team",
     siteName: "QuickPrimeTech",
     type: "website",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
         url: "https://res.cloudinary.com/quick-prime-tech/image/upload/v1749102720/opengraph-image_lmiplo.png",
         width: 1200,
         height: 630,
-        alt: "QuickPrimeTech Team - Restaurant Website Experts",
+        alt: "QuickPrimeTech Team - Designers, Developers & Growth Experts",
       },
     ],
   },
@@ -36,9 +37,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@quickprimetech",
     creator: "@quickprimetech",
-    title: "Meet the QuickPrimeTech Team | Restaurant Website Experts",
+    title:
+      "Meet the QuickPrimeTech Team | Designers, Developers & Growth Experts",
     description:
-      "Passionate designers, developers, and marketers — all dedicated to creating restaurant websites that grow your business. Meet the QuickPrimeTech team.",
+      "Meet the team behind QuickPrimeTech — experts in building high-converting websites that help businesses succeed online.",
     images: [
       "https://res.cloudinary.com/quick-prime-tech/image/upload/v1749102720/opengraph-image_lmiplo.png",
     ],

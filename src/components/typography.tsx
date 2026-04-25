@@ -1,25 +1,21 @@
-import { WithChildrenAndClass } from "@/types";
 import { cn } from "@/lib/utils";
 
-const Section = ({ children, className }: WithChildrenAndClass) => {
+const Section = ({ className, ...props }: React.ComponentProps<"section">) => {
   return (
     <section
       className={cn(
         "section-x section-y gap-12 flex flex-col items-center justify-center",
         className,
       )}
-    >
-      {children}
-    </section>
+      {...props}
+    />
   );
 };
-const Header = ({ children, className }: WithChildrenAndClass) => {
-  return (
-    <div className={cn("space-y-2 text-center", className)}>{children}</div>
-  );
+const Header = ({ className, ...props }: React.ComponentProps<"div">) => {
+  return <div className={cn("space-y-2 text-center", className)} {...props} />;
 };
 
-const Title = ({ children, className, ...props }: WithChildrenAndClass) => {
+const Title = ({ className, ...props }: React.ComponentProps<"h2">) => {
   return (
     <h2
       className={cn(
@@ -27,33 +23,28 @@ const Title = ({ children, className, ...props }: WithChildrenAndClass) => {
         className,
       )}
       {...props}
-    >
-      {children}
-    </h2>
+    />
   );
 };
 
-const H1 = ({ children, className, ...props }: WithChildrenAndClass) => {
+const H1 = ({ className, ...props }: React.ComponentProps<"h1">) => {
   return (
     <h1
       className={cn("font-bold text-3xl md:text-4xl lg:text-6xl", className)}
       {...props}
-    >
-      {children}
-    </h1>
+    />
   );
 };
 
-const SubTitle = ({ children, className }: WithChildrenAndClass) => {
+const SubTitle = ({ className, ...props }: React.ComponentProps<"h3">) => {
   return (
     <h3
       className={cn(
         "font-sans text-muted-foreground max-w-3xl mx-auto",
         className,
       )}
-    >
-      {children}
-    </h3>
+      {...props}
+    />
   );
 };
 

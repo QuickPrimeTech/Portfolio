@@ -192,21 +192,6 @@ export default function Hero() {
                 </p>
               </div>
             </div>
-
-            {/* Floating stat — bottom right */}
-            <div className="absolute -right-4 -bottom-4 hidden lg:flex items-center gap-3 bg-background border border-border rounded-xl px-4 py-3 shadow-lg">
-              <div className="size-9 rounded-lg bg-primary/15 flex items-center justify-center shrink-0">
-                <BarChart3 className="w-4 h-4 text-primary" />
-              </div>
-              <div>
-                <p className="text-[11px] text-muted-foreground leading-none mb-0.5">
-                  Upfront cost
-                </p>
-                <p className="text-sm font-bold text-foreground leading-none">
-                  £0
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

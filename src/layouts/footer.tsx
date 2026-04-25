@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "@/components/logo";
-import { Facebook, Instagram } from "lucide-react";
+import { ArrowUpRight, Facebook, Instagram } from "lucide-react";
 
 const socialLinks = [
   {
@@ -30,7 +30,7 @@ const footerSections = [
     links: [
       { name: "Projects", href: "/projects" },
       { name: "Pricing", href: "/pricing" },
-      { name: "Contact", href: "/contact" },
+      { name: "Contact", href: "/#contact" },
     ],
   },
 ];
@@ -42,7 +42,7 @@ const footerSecondaryLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-indigo-950 rounded-t-4xl -mt-6 to-black text-white pt-16 pb-8 section-x">
+    <footer className="bg-gradient-to-b from-background rounded-t-4xl -mt-6 to-primary/30 pt-16 pb-8 section-x">
       {/* Logo and Description */}
       <div className="flex flex-wrap gap-20">
         <div className="flex flex-col gap-6 max-w-md">
@@ -51,13 +51,13 @@ export function Footer() {
             className="flex items-center gap-4"
             aria-label="head back to home page"
           >
-            <Logo className="size-10 text-white" />
-            <span className="font-serif tracking-wider text-2xl sm:text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            <Logo className="size-10" />
+            <span className="font-serif tracking-wider text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
               QuickPrimeTech
             </span>
           </Link>
 
-          <p className="text-base text-gray-400 leading-relaxed">
+          <p className="text-base text-muted-foreground leading-relaxed">
             Transforming restaurants with simple, cutting-edge digital solutions
             that drive growth and enhance customer experiences worldwide.
           </p>
@@ -70,9 +70,9 @@ export function Footer() {
                 target="_blank"
                 key={index}
                 aria-label={`visit our ${link.name} profile`}
-                className="p-3 bg-gradient-to-r from-gray-800 to-gray-700 rounded-xl hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 hover:scale-110 cursor-pointer"
+                className="group p-3 bg-background/30 border rounded-xl hover:bg-gradient-to-br hover:from-primary hover:to-purple-600 transition-all duration-300 hover:scale-110 cursor-pointer"
               >
-                <link.icon className="size-5" />
+                <link.icon className="size-5 text-foreground group-hover:text-primary-foreground" />
               </Link>
             ))}
           </div>
@@ -80,18 +80,17 @@ export function Footer() {
         {/* Footer Sections */}
         <div className="flex flex-wrap gap-12">
           {footerSections.map((section) => (
-            <div key={section.title} className="flex flex-col gap-6">
-              <h4 className="text-lg font-semibold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                {section.title}
-              </h4>
-              <ul className="flex flex-col gap-4">
+            <div key={section.title} className="flex flex-col gap-4">
+              <h4 className="text-lg font-semibold">{section.title}</h4>
+              <ul className="flex flex-col gap-3">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition duration-300 hover:underline hover:translate-x-1 inline-block"
+                      className="group flex gap-1.5 items-center text-muted-foreground hover:text-foreground transition duration-300 hover:underline hover:-translate-x-1"
                     >
                       {link.name}
+                      <ArrowUpRight className="size-3.5 opacity-0 group-hover:opacity-100 transition-all duration-300" />
                     </Link>
                   </li>
                 ))}
@@ -101,7 +100,7 @@ export function Footer() {
         </div>
       </div>
       {/* Footer Bottom */}
-      <div className="border-t border-gray-800 mt-16 pt-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="border-t border-dashed border-foreground/20 mt-16 pt-12 flex flex-col md:flex-row items-center justify-between gap-6">
         <p className="text-base text-gray-400 text-center md:text-left">
           © {new Date().getFullYear()} RestaurantTech. All rights reserved.
         </p>

@@ -40,12 +40,13 @@ import { usePathname } from "next/navigation";
 import { links } from "@/config/navigation";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { FaWhatsapp } from "react-icons/fa";
+import { Separator } from "@/components/ui/separator";
 
 /* ─────────────────────────────────────────
    CONTACT INFO — Update these
    ───────────────────────────────────────── */
 const CONTACT = {
-  email: "hello@quickprimetech.com",
+  email: "quickprimetech@quickprimetech.com",
   phone: "+254 717 448 835",
   phoneRaw: "254717448835",
   whatsapp: "254717448835",
@@ -172,7 +173,11 @@ export default function Navbar() {
             </div>
 
             {/* WhatsApp CTA */}
-            <Button size="lg" className="hidden md:inline-flex" asChild>
+            <Button
+              size="lg"
+              className="hidden md:inline-flex shadow-xl shadow-primary/20"
+              asChild
+            >
               <Link
                 href={`https://wa.me/${CONTACT.whatsapp}?text=Hi%20QuickPrimeTech,%20I'm%20interested%20in%20a%20website`}
                 target="_blank"
@@ -218,19 +223,15 @@ function AccessibilityOptions() {
         </Label>
         <div className="grid grid-cols-3 gap-2">
           {themes.map((t) => (
-            <button
+            <Button
+              size={"sm"}
               key={t.value}
               onClick={() => setTheme(t.value)}
-              className={cn(
-                "flex flex-col items-center gap-1.5 p-2.5 rounded-xl border text-xs font-medium transition-all",
-                theme === t.value
-                  ? "border-primary bg-primary/10 text-primary ring-1 ring-primary/20"
-                  : "border-border bg-muted/40 text-muted-foreground hover:bg-muted hover:text-foreground",
-              )}
+              variant={theme === t.value ? "default" : "outline"}
             >
               <t.icon className="size-4" />
               {t.label}
-            </button>
+            </Button>
           ))}
         </div>
       </div>
@@ -244,6 +245,7 @@ function AccessibilityOptions() {
           {textSizes.map((item) => (
             <Button
               key={item.key}
+              size={"sm"}
               onClick={() => setTextSize(item.key)}
               className="flex-1"
               variant={textSize === item.key ? "default" : "outline"}
@@ -256,12 +258,17 @@ function AccessibilityOptions() {
       </div>
 
       {/* Reduced Motion */}
-      <div className="flex items-center justify-between p-3.5 rounded-xl border border-border bg-muted/30">
-        <div className="space-y-0.5">
+      <div className="flex relative items-center justify-between rounded-xl border border-border bg-muted/30">
+        <Label
+          className="flex flex-col gap-y-0.5 items-start px-4 flex-1 py-3"
+          htmlFor={"motion-switch"}
+        >
           <p className="text-sm font-medium">Reduced Motion</p>
           <p className="text-xs text-muted-foreground">Minimize animations</p>
-        </div>
+        </Label>
         <Switch
+          id="motion-switch"
+          className="absolute right-2"
           checked={reducedMotion}
           onCheckedChange={setReducedMotion}
           aria-label="Toggle reduced motion"
@@ -273,14 +280,17 @@ function AccessibilityOptions() {
 
 /* ─── Accessibility Popover ─── */
 function AccessibilityPopover() {
+  const label = "Accessibility settings";
+
   return (
     <Popover>
       <PopoverTrigger asChild>
         <Button
           variant="ghost"
           size="icon"
+          aria-label={label}
+          title={label}
           className="rounded-full transition-colors"
-          aria-label="Accessibility settings"
         >
           <Accessibility className="size-5" />
         </Button>
@@ -289,9 +299,9 @@ function AccessibilityPopover() {
       <PopoverContent
         align="end"
         sideOffset={12}
-        className="w-80 p-5 rounded-2xl"
+        className="w-80 p-4 rounded-2xl"
       >
-        <h3 className="text-sm font-semibold flex items-center gap-2 mb-5">
+        <h3 className="tracking-wider text-sm font-semibold flex items-center gap-2 mb-5">
           <Accessibility className="size-4 text-primary" />
           Accessibility
         </h3>
@@ -316,7 +326,7 @@ function ContactCards() {
         icon={Phone}
         title="Call Us"
         detail={CONTACT.phone}
-        color="primary"
+        color="green"
       />
       <ContactCard
         href={`https://wa.me/${CONTACT.whatsapp}?text=Hi%20QuickPrimeTech,%20I'm%20interested%20in%20a%20website`}
@@ -335,7 +345,11 @@ function ContactPopover() {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="ghost" className="rounded-full gap-2">
+        <Button
+          variant="ghost"
+          title={"Contact options(whatsapp e.t.c)"}
+          className="rounded-full gap-2"
+        >
           <Phone />
           <span className="hidden md:inline">Contact</span>
         </Button>
@@ -344,9 +358,11 @@ function ContactPopover() {
       <PopoverContent
         align="end"
         sideOffset={12}
-        className="w-80 p-5 rounded-2xl"
+        className="w-80 p-4 rounded-2xl"
       >
-        <h3 className="text-sm font-semibold mb-5">Get in Touch</h3>
+        <h3 className="tracking-wider text-sm font-semibold mb-5">
+          Get in Touch
+        </h3>
 
         <ContactCards />
       </PopoverContent>
@@ -440,9 +456,9 @@ function MobileNav() {
 
       <SheetContent
         side="right"
-        className="w-full sm:w-1/2 lg:w-2/3 bg-background/95 backdrop-blur-xl border-l border-border p-0"
+        className="w-full rounded-l-3xl gap-0 sm:w-1/2 lg:w-2/3 bg-background/95 backdrop-blur-xl border-l border-border p-0"
       >
-        <SheetHeader className="border-b border-border">
+        <SheetHeader className="border-b rounded-b-xl border-dashed">
           <SheetTitle>
             <SheetClose asChild>
               <Brand />
@@ -451,7 +467,7 @@ function MobileNav() {
         </SheetHeader>
 
         <ScrollArea className="h-0 flex-1 px-5">
-          <div className="flex flex-col space-y-12 pb-8">
+          <div className="flex flex-col space-y-8 pb-8 pt-4">
             {/* Links */}
             <div className="space-y-1.5">
               {links.map((link, i) => (
@@ -476,14 +492,14 @@ function MobileNav() {
                 </motion.div>
               ))}
             </div>
-
+            <Separator />
             <div className="space-y-3">
               <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
                 Contact
               </h4>
               <ContactCards />
             </div>
-
+            <Separator />
             {/* Accessibility Mobile */}
             <div className="space-y-4">
               <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
