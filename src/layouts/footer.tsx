@@ -19,16 +19,15 @@ const footerSections = [
   {
     title: "Solutions",
     links: [
-      { name: "Smart Menus", href: "/features" },
-      { name: "Management Dashboard", href: "/features" },
-      { name: "QR Code Integration", href: "/features" },
-      { name: "Event Management", href: "/features" },
+      { name: "Web Design", href: "#" },
+      { name: "Web Development", href: "#" },
+      { name: "SEO Optimization", href: "#" },
+      { name: "Custom Solutions", href: "#" },
     ],
   },
   {
     title: "Company",
     links: [
-      { name: "About Us", href: "/about" },
       { name: "Projects", href: "/projects" },
       { name: "Pricing", href: "/pricing" },
       { name: "Contact", href: "/contact" },
@@ -53,7 +52,7 @@ export function Footer() {
             aria-label="head back to home page"
           >
             <Logo className="size-10 text-white" />
-            <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="font-serif tracking-wider text-2xl sm:text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
               QuickPrimeTech
             </span>
           </Link>

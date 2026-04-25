@@ -9,26 +9,21 @@ export const links = [
   },
   {
     id: 2,
-    link: "Features",
-    href: "/features",
-  },
-  {
-    id: 3,
     link: "Projects",
     href: "/projects",
   },
   {
-    id: 4,
+    id: 3,
     link: "Pricing",
     href: "/pricing",
   },
   {
-    id: 5,
+    id: 4,
     link: "Team",
     href: "/team",
   },
   {
-    id: 6,
+    id: 5,
     link: "Reviews",
     href: "/reviews",
   },
