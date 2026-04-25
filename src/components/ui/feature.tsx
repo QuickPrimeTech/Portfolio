@@ -11,7 +11,7 @@ const FeaturesContainer = ({ children, className }: WithChildrenAndClass) => {
 const Feature = ({ children }: Children) => {
   return (
     <li className="flex items-center">
-      <CheckCircle className="size-5 text-secondary mr-3 shrink-0" />
+      <CheckCircle className="size-5 text-muted-foreground mr-3 shrink-0" />
       {children}
     </li>
   );

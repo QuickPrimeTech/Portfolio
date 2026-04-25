@@ -4,11 +4,10 @@ import { Section, Header, Title, SubTitle } from "@/components/typography";
 
 const AddOns = () => {
   return (
-    <Section className="py-20 bg-white">
+    <Section className="py-20 bg-background">
       <Header>
         <Title>Optional Add-ons</Title>
         <SubTitle>
-          {" "}
           Enhance your website with these additional services available for any
           package.
         </SubTitle>
@@ -20,12 +19,15 @@ const AddOns = () => {
           return (
             <Card
               key={index}
-              className="text-center px-4 hover:shadow-lg transition-shadow flex flex-col"
+              className="text-center px-4 hover:shadow-lg transition-shadow flex flex-col gap-0"
             >
-              <Icon className="h-12 w-12 text-secondary mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">{addon.title}</h3>
-              <p className="text-gray-600 text-sm mb-4">{addon.description}</p>
-              <p className="text-2xl font-bold text-secondary">{addon.price}</p>
+              <Icon className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+              <h3 className="tracking-wider text-lg font-semibold mb-2">
+                {addon.title}
+              </h3>
+              <p className="text-muted-foreground text-sm">
+                {addon.description}
+              </p>
             </Card>
           );
         })}

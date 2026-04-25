@@ -4,7 +4,6 @@ import Hero from "@/sections/home/hero";
 import { Process } from "@/sections/home/process";
 import FeaturedProjects from "@/sections/home/projects";
 import Pricing from "@/sections/home/pricing";
-import { Features } from "@/sections/home/features";
 import Faqs from "@/sections/home/faqs";
 import Contact from "@/sections/home/contact";
 import TestimonialSection from "@/sections/home/testimonial";
@@ -56,16 +55,15 @@ export const metadata: Metadata = {
 
 function Portfolio() {
   return (
-    <div className="min-h-screen bg-background">
+    <>
       <Hero />
       <FeaturedProjects />
       <TestimonialSection />
-      <Features />
       <Pricing />
       <Process />
       <Faqs />
       <Contact />
-    </div>
+    </>
   );
 }
 

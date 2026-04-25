@@ -12,7 +12,7 @@ const PricingCard = ({ children, popular }: PricingCardProps) => {
     <Card
       className={cn(
         "border-2 relative transition-colors",
-        popular ? "border-secondary" : "hover:border-secondary"
+        popular && "border-primary/50 scale-105",
       )}
     >
       {popular && <PopularBadge>Most Popular</PopularBadge>}
@@ -41,7 +41,7 @@ const PricingCardContent = ({ children }: Children) => {
 
 const PopularBadge = ({ children }: Children) => {
   return (
-    <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 text-secondary-foreground bg-secondary">
+    <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2">
       {children}
     </Badge>
   );

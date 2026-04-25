@@ -1,11 +1,13 @@
+import { CircuitBoard } from "@/components/patterns/circuit-board";
 import { Section, Header, H1, SubTitle } from "@/components/typography";
 
-const Hero = () => {
+export const Hero = () => {
   return (
-    <Section className="bg-gray-50">
+    <Section className="relative">
+      <CircuitBoard />
       <Header>
         <H1>
-          <span className="text-secondary">Transparent Pricing</span> for Every
+          <span className="text-primary">Transparent Pricing</span> for Every
           Restaurant
         </H1>
         <SubTitle>
@@ -16,5 +18,3 @@ const Hero = () => {
     </Section>
   );
 };
-
-export default Hero;

@@ -196,8 +196,8 @@ export default function Testimonials() {
           Don't just take our word for it
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Hear more from restaurants about how a website has elevated their
-          online presence.
+          Hear more from clients about how a website has elevated their online
+          presence.
         </p>
       </div>
 

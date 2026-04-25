@@ -62,7 +62,7 @@ export const TestimonialDialog = ({
               <AvatarFallback>{testimonial.name.slice(0, 2)}</AvatarFallback>
             </Avatar>
             <div>
-              <DialogTitle className="text-lg font-semibold text-foreground tracking-tighter">
+              <DialogTitle className="text-lg font-semibold text-foreground tracking-wider">
                 {testimonial.name}
               </DialogTitle>
               <div className="flex items-center mt-2 space-x-1">

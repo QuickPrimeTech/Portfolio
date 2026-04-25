@@ -6,20 +6,21 @@ import { CircuitBoard } from "@/components/patterns/circuit-board";
 
 export const Hero = () => {
   return (
-    <Section className="relative py-20" aria-labelledby="work-header">
-      {/* Diagonal Grid with Light */}
+    <Section className="relative py-16" aria-labelledby="work-header">
       <CircuitBoard />
-      {/* Your Content/Components */}
+
       <Header>
         <H1 id="work-header">
-          Our <span className="text-primary">Restaurant</span> Success Stories
+          Our <span className="text-primary">Web Design</span> Success Stories
         </H1>
+
         <SubTitle>
-          Discover how we've helped restaurants transform their online presence,
-          increase bookings, and grow their business with custom websites that
-          deliver real results.
+          Discover how we've helped businesses transform their online presence,
+          attract more customers, and grow through high-performance custom
+          websites built for real results.
         </SubTitle>
       </Header>
+
       <Button size="lg" asChild>
         <Link href={`${process.env.NEXT_PUBLIC_CONTACT_ME_URL}`}>
           Start Your Project

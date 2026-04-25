@@ -24,7 +24,7 @@ const Pricing = () => {
   return (
     <Section id="pricing" aria-labelledby="pricing-header">
       <Header>
-        <Title id="pricing-header"> Maintenance Pricing</Title>
+        <Title id="pricing-header">Pricing</Title>
         <SubTitle>
           Choose the perfect package for your restaurant. No hidden fees, no
           surprises.
@@ -48,7 +48,7 @@ const PricingCards = () => {
         ({ title, description, features, popular }, index) => (
           <PricingCard key={index} popular={popular}>
             <PricingCardHeader>
-              <PricingCardTitle className={cn(popular && "text-secondary")}>
+              <PricingCardTitle className={cn(popular && "text-primary")}>
                 {title}
               </PricingCardTitle>
               <PricingCardDescription>{description}</PricingCardDescription>
@@ -73,7 +73,7 @@ const PricingCards = () => {
               <PricingFeatures features={features} />
             </PricingCardContent>
           </PricingCard>
-        )
+        ),
       )}
     </div>
   );

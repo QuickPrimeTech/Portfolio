@@ -3,10 +3,12 @@ import { Badge } from "@/components/ui/badge";
 import { Section, Header, Title, SubTitle } from "@/components/typography";
 import { FeatureCategory } from "@/types";
 import { features, plans } from "@/data/pricing";
+import { Aurora } from "@/components/patterns/aurora";
 
-const MorePricing = () => {
+export const MorePricing = () => {
   return (
-    <Section className="bg-gray-50">
+    <Section className="-mt-6 bg-background rounded-t-4xl relative isolate">
+      <Aurora className="dark:opacity-20" />
       <Header>
         <Title>Detailed Feature Comparison</Title>
         <SubTitle>
@@ -22,36 +24,32 @@ const MorePricing = () => {
 const FeatureTable = ({ features }: { features: FeatureCategory[] }) => {
   return (
     <div>
-      <div className="grid grid-cols-4 text-center border-b border-gray-200 sticky top-20 z-30 bg-white rounded-lg overflow-hidden">
+      <div className="grid grid-cols-4 text-center border-b sticky top-20 z-30 bg-muted/30 rounded-lg overflow-hidden">
         {/*
           Sticky "Features" column header:
           Sticks to the left edge of its parent (the horizontally scrolling header section).
         */}
-        <div className="text-left px-4 py-4 sticky left-0 z-40 border-r border-gray-200 backdrop-blur-md">
+        <div className="text-left px-4 py-4 sticky left-0 z-40 border-r backdrop-blur-md">
           <h3 className="text-lg font-semibold">Features</h3>
         </div>
         {/* Plan headers */}
         {plans.map((plan) => (
           <div
             key={plan.key}
-            className={`px-4 flex flex-col items-center py-4 border-l border-gray-200 ${
-              plan.highlight ? "bg-secondary/20 rounded-t-lg" : ""
+            className={`px-4 flex flex-col items-center py-4 border-l ${
+              plan.highlight ? "bg-muted rounded-t-lg" : ""
             }`}
           >
             <h3 className="text-lg font-semibold">{plan.name}</h3>
-            {plan.badge && (
-              <Badge className="mt-1 bg-secondary text-white">
-                {plan.badge}
-              </Badge>
-            )}
+            {plan.badge && <Badge className="mt-1">{plan.badge}</Badge>}
           </div>
         ))}
       </div>
       {/* Rows */}
-      <div className="divide-y divide-gray-200">
+      <div className="divide-y divide-border">
         {features.map((category) => (
           <div key={category.category} className="mb-8">
-            <h4 className="text-lg font-semibold text-gray-900 my-6 px-4 sticky left-0 bg-gray-50 z-20">
+            <h4 className="text-lg font-semibold my-6 px-4 sticky left-0  z-20">
               {category.category}
             </h4>
 
@@ -60,7 +58,7 @@ const FeatureTable = ({ features }: { features: FeatureCategory[] }) => {
                 key={item.name}
                 className="grid grid-cols-4 items-center text-center py-4"
               >
-                <div className="text-left px-4 text-gray-700 font-medium sticky left-0 z-10 bg-gray-50 backdrop-blur-md">
+                <div className="text-left px-4 text-foreground/80 font-medium sticky left-0 z-10 backdrop-blur-md">
                   {item.name}
                 </div>
                 {plans.map((plan) => (
@@ -90,12 +88,10 @@ const FeatureCheck = ({
   return (
     <div className={`${classes}`}>
       {available ? (
-        <CheckCircle className="h-5 w-5 text-secondary mx-auto" />
+        <CheckCircle className="h-5 w-5 text-muted-foreground mx-auto" />
       ) : (
-        <X className="h-5 w-5 text-secondary mx-auto" />
+        <X className="h-5 w-5 text-muted-foreground mx-auto" />
       )}
     </div>
   );
 };
-
-export default MorePricing;
