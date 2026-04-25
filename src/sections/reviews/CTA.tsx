@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function CTA() {
   return (
@@ -13,9 +14,10 @@ export default function CTA() {
           See why restaurant owners consistently rate us 5 stars. Let's create
           your success story next.
         </p>
-        <Button size="lg" variant={"outline"} asChild>
+        <Button size="lg" asChild>
           <Link href={`${process.env.NEXT_PUBLIC_CONTACT_ME_URL}`}>
-            Contact Us
+            <FaWhatsapp className="size-5" />
+            Whatsapp Us
             <ExternalLink />
           </Link>
         </Button>

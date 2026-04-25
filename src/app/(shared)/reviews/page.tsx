@@ -46,10 +46,10 @@ export const metadata: Metadata = {
 
 export default function ReviewsPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
       <Hero />
       <Testimonials />
       <CTA />
-    </div>
+    </>
   );
 }
