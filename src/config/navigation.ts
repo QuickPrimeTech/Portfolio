@@ -1,7 +1,13 @@
 // src/config/navigation.ts
 
 // List of navigation links for the application
-export const links = [
+
+type NavLink = {
+  id: number;
+  link: string;
+  href: string;
+};
+export const links: NavLink[] = [
   {
     id: 1,
     link: "Home",

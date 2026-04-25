@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "high converting websites",
   ],
   openGraph: {
-    title: "Website Portfolio | QuickPrimeTech Projects",
+    title: "Projects | QuickPrimeTech",
     description:
       "Browse real projects built by QuickPrimeTech — modern, mobile-friendly, and optimized for business growth.",
     url: "https://quickprimetech.vercel.app/projects",

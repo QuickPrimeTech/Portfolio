@@ -35,7 +35,12 @@ const footerSections = [
   },
 ];
 
-const footerSecondaryLinks = [
+type FooterLink = {
+  name: string;
+  href: string;
+};
+
+export const footerSecondaryLinks: FooterLink[] = [
   { name: "Privacy Policy", href: "/privacy-policy" },
   { name: "Terms of Service", href: "/terms-service" },
 ];
