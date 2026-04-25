@@ -42,7 +42,7 @@ const steps = [
 
 export const Process = () => {
   return (
-    <Section className="bg-gray-50">
+    <Section className="bg-muted/30 rounded-t-4xl -mt-4">
       <Header className="text-center mb-12">
         <Title>Our Process</Title>
         <SubTitle>
@@ -60,12 +60,12 @@ export const Process = () => {
             <div
               className={cn(
                 "w-14 h-14 flex items-center justify-center rounded-full mb-4 text-white shadow-lg",
-                `bg-gradient-to-tr ${step.gradient}`
+                `bg-gradient-to-tr ${step.gradient}`,
               )}
             >
               <step.icon className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">
+            <h3 className="text-lg font-bold tracking-wider mb-2">
               {step.number}. {step.title}
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">

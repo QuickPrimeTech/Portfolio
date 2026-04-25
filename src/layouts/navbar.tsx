@@ -444,7 +444,9 @@ function MobileNav() {
       >
         <SheetHeader className="border-b border-border">
           <SheetTitle>
-            <Brand />
+            <SheetClose asChild>
+              <Brand />
+            </SheetClose>
           </SheetTitle>
         </SheetHeader>
 
@@ -453,12 +455,13 @@ function MobileNav() {
             {/* Links */}
             <div className="space-y-1.5">
               {links.map((link, i) => (
-                <SheetClose asChild key={link.id}>
-                  <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                  >
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  key={link.id}
+                >
+                  <SheetClose asChild key={link.id}>
                     <Link
                       href={link.href}
                       className={cn(
@@ -469,8 +472,8 @@ function MobileNav() {
                       {link.link}
                       {pathname === link.href && <Check className="size-4" />}
                     </Link>
-                  </motion.div>
-                </SheetClose>
+                  </SheetClose>
+                </motion.div>
               ))}
             </div>
 

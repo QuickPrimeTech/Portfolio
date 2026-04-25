@@ -83,13 +83,13 @@ const PricingFeatures = ({ features }: { features: string[] }) => {
   return (
     <div className="block md:hidden my-4">
       <Collapsible>
-        <CollapsibleTrigger className="group w-full inline-flex justify-center items-center gap-2 text-sm font-medium text-secondary border-t border-gray-300 rounded px-4 py-2 hover:bg-gray-50 transition">
+        <CollapsibleTrigger className="group w-full inline-flex justify-center items-center gap-2 text-sm font-medium text-muted-foreground border-t rounded px-4 py-2 transition">
           {/* View Text */}
           <span className="group-data-[state=open]:hidden">View Features</span>
           <span className="hidden group-data-[state=open]:inline">
             Hide Features
           </span>
-          <ChevronDown className="h-4 w-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+          <ChevronDown className="size-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
         </CollapsibleTrigger>
 
         <CollapsibleContent className="overflow-hidden transition-all data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up mt-5">

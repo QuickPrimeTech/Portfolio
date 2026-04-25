@@ -43,7 +43,7 @@ const footerSecondaryLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-indigo-950 to-black text-white pt-16 pb-8 section-x">
+    <footer className="bg-gradient-to-b from-indigo-950 rounded-t-4xl -mt-6 to-black text-white pt-16 pb-8 section-x">
       {/* Logo and Description */}
       <div className="flex flex-wrap gap-20">
         <div className="flex flex-col gap-6 max-w-md">

@@ -32,7 +32,7 @@ function AccordionTrigger({
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {
   const baseClassName =
-    "text-muted-foreground bg-secondary rounded-sm box-content p-2 pointer-events-none size-4 shrink-0 translate-y-0.5 transition-all duration-200 group-[[data-state=open]]:rotate-180";
+    "absolute scale-0 text-muted-foreground bg-secondary rounded-sm box-content p-2 pointer-events-none size-4 shrink-0 translate-y-0.5 transition-all duration-200";
   return (
     <AccordionPrimitive.Header className="flex">
       <AccordionPrimitive.Trigger
@@ -45,15 +45,17 @@ function AccordionTrigger({
       >
         {children}
         <Plus
+          aria-hidden="true"
           className={cn(
             baseClassName,
-            "absolute opacity-0 group-[[data-state=closed]]:opacity-100 group-[[data-state=closed]]:relative",
+            "opacity-0 group-[[data-state=closed]]:opacity-100 group-[[data-state=closed]]:scale-100 group-[[data-state=closed]]:relative",
           )}
         />
         <Minus
+          aria-hidden="true"
           className={cn(
             baseClassName,
-            "absolute opacity-0 group-[[data-state=open]]:opacity-100 group-[[data-state=open]]:relative",
+            "opacity-0 group-[[data-state=open]]:opacity-100 group-[[data-state=open]]:scale-100 group-[[data-state=open]]:relative",
           )}
         />
       </AccordionPrimitive.Trigger>

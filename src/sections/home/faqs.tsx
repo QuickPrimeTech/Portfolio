@@ -9,7 +9,11 @@ import { homeFaqs } from "@/data/faqs";
 
 const Faqs = () => {
   return (
-    <Section className="" id="faqs" aria-labelledby="faqs-title">
+    <Section
+      className="-mt-4 rounded-t-4xl bg-background"
+      id="faqs"
+      aria-labelledby="faqs-title"
+    >
       <Header>
         <Title id="faqs-title"> Frequently Asked Questions</Title>
         <SubTitle>Get all of your doubts clarified</SubTitle>

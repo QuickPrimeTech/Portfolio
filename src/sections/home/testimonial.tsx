@@ -185,7 +185,7 @@ export default function Testimonials() {
   );
 
   return (
-    <section className="py-20 rounded-4xl bg-background -mt-4 px-6 space-y-12 relative">
+    <section className="py-20 rounded-t-4xl bg-background -mt-4 px-6 space-y-12 relative">
       {/* Header */}
       <div className="text-center space-y-4">
         <Badge variant="outline" className="text-primary border-primary/20">

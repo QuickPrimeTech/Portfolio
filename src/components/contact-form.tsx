@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import { Send } from "lucide-react";
 
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -25,7 +26,7 @@ const ContactForm = () => {
         "service_y05uc3f", // your EmailJS service ID
         "template_rqumroc", // your EmailJS template ID
         formRef.current,
-        "z60r8iUm1ZTw51nDT" // your EmailJS public key
+        "z60r8iUm1ZTw51nDT", // your EmailJS public key
       )
       .then(() => {
         toast.success("Message sent!", {
@@ -36,16 +37,16 @@ const ContactForm = () => {
       })
       .catch(() => {
         toast.error(
-          "Failed to send message. Please check your internet connection."
+          "Failed to send message. Please check your internet connection.",
         );
         setLoading(false);
       });
   };
 
   return (
-    <Card className="bg-white/10 border border-white/20 rounded-xl shadow-lg w-full max-w-xl">
+    <Card className="rounded-xl shadow-lg w-full max-w-xl">
       <CardHeader>
-        <CardTitle className="text-white text-center">
+        <CardTitle className="font-serif tracking-wider text-center text-xl">
           Send Us a Message
         </CardTitle>
       </CardHeader>
@@ -65,7 +66,6 @@ const ContactForm = () => {
                 id="name"
                 name="user_name" // must match EmailJS template variable
                 placeholder="Your Name"
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
                 required
               />
             </div>
@@ -78,7 +78,6 @@ const ContactForm = () => {
                 name="user_email" // must match EmailJS template variable
                 type="email"
                 placeholder="Email Address"
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
                 required
               />
             </div>
@@ -92,7 +91,6 @@ const ContactForm = () => {
               id="restaurant"
               name="restaurant" // custom variable, update template accordingly
               placeholder="Restaurant Name"
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
               required
             />
           </div>
@@ -105,7 +103,6 @@ const ContactForm = () => {
               id="message"
               name="message"
               placeholder="Tell us about your project..."
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
               rows={4}
               required
             />
@@ -113,10 +110,11 @@ const ContactForm = () => {
 
           <Button
             type="submit"
-            className="w-full bg-white text-blue-600 hover:bg-gray-100"
+            className="w-full"
+            size={"lg"}
             disabled={loading}
           >
-            {loading ? "Sending..." : "Send Message"}
+            {loading ? "Sending..." : "Send Message"} <Send />
           </Button>
         </form>
       </CardContent>
