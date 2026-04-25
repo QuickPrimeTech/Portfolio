@@ -7,7 +7,7 @@ import {
   CtaPrimaryButton,
 } from "@/components/ui/cta";
 
-const CTA = () => {
+export const CTA = () => {
   return (
     <Cta>
       <CtaTitle>Ready to Work with Our Team?</CtaTitle>
@@ -24,5 +24,3 @@ const CTA = () => {
     </Cta>
   );
 };
-
-export default CTA;

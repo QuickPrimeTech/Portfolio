@@ -5,14 +5,17 @@ export const Hero = () => {
   return (
     <Section className="relative">
       <CircuitBoard />
+
       <Header>
         <H1>
           <span className="text-primary">Transparent Pricing</span> for Every
-          Restaurant
+          Business
         </H1>
+
         <SubTitle>
-          Choose the perfect package for your restaurant. No hidden fees, no
-          surprises. All prices include design, development, and launch.
+          Choose the right package for your needs. No hidden fees, no surprises
+          — just high-quality design, development, and launch built for real
+          results.
         </SubTitle>
       </Header>
     </Section>

@@ -27,12 +27,15 @@ const teamMembers = [
   },
 ];
 
-const Team = () => {
+export const Team = () => {
   return (
-    <Section className="bg-white" aria-labelledby="team-heading">
+    <Section
+      className="bg-muted/30 rounded-t-4xl"
+      aria-labelledby="team-heading"
+    >
       <Header>
         <Title id="team-heading">
-          Our <span className="text-secondary">Expert</span> Team
+          Our <span className="text-primary">Expert</span> Team
         </Title>
         <SubTitle>
           Each team member brings unique expertise to ensure your restaurant
@@ -54,12 +57,14 @@ const Team = () => {
             />
             <CardContent className="p-6">
               <div className="mb-4">
-                <h3 className="text-xl font-bold text-gray-900 mb-1">
+                <h3 className="text-xl tracking-wider font-bold mb-1">
                   {member.name}
                 </h3>
-                <p className="text-secondary font-medium mb-2">{member.role}</p>
+                <p className="text-foreground/80 font-medium mb-2">
+                  {member.role}
+                </p>
               </div>
-              <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                 {member.bio}
               </p>
               {/* Skills */}
@@ -68,11 +73,7 @@ const Team = () => {
                 aria-label={`${member.name}'s skills`}
               >
                 {member.skills.map((skill) => (
-                  <Badge
-                    key={skill}
-                    variant="secondary"
-                    className="bg-secondary text-secondary-foreground text-xs"
-                  >
+                  <Badge key={skill} variant="secondary" className="text-xs">
                     {skill}
                   </Badge>
                 ))}
@@ -84,5 +85,3 @@ const Team = () => {
     </Section>
   );
 };
-
-export default Team;

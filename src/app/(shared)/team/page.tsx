@@ -1,9 +1,9 @@
 // @/app/team/page.tsx
 import type { Metadata } from "next";
-import Hero from "@/sections/team/hero";
-import Team from "@/sections/team/team";
-import CTA from "@/sections/team/cta";
-import Values from "@/sections/team/values";
+import { Hero } from "@/sections/team/hero";
+import { Team } from "@/sections/team/team";
+import { CTA } from "@/sections/team/cta";
+import { Values } from "@/sections/team/values";
 
 export const metadata: Metadata = {
   title: "Meet the QuickPrimeTech Team | Restaurant Website Experts",
@@ -47,11 +47,11 @@ export const metadata: Metadata = {
 
 export default function TeamPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <>
       <Hero />
       <Team />
       <Values />
       <CTA />
-    </div>
+    </>
   );
 }

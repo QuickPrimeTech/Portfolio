@@ -1,3 +1,4 @@
+import { Aurora } from "@/components/patterns/aurora";
 import { Card } from "@/components/ui/card";
 import {
   ChefHat,
@@ -41,18 +42,22 @@ const data = [
   },
 ];
 
-const Values = () => {
+export const Values = () => {
   return (
-    <section className="py-20 bg-gray-50" aria-labelledby="values-heading">
+    <section
+      className="relative py-20 bg-background isolate rounded-t-4xl -mt-6"
+      aria-labelledby="values-heading"
+    >
+      <Aurora />
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2
             id="values-heading"
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl font-bold mb-4"
           >
             Our Values
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             The principles that guide everything we do and how we work with our
             restaurant partners.
           </p>
@@ -64,11 +69,14 @@ const Values = () => {
               key={title}
               className="p-8 text-center hover:shadow-lg transition-shadow"
             >
-              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Icon className="h-8 w-8 text-secondary" aria-hidden="true" />
+              <div className="w-16 h-16 bg-secondary/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Icon
+                  className="h-8 w-8 text-muted-foreground"
+                  aria-hidden="true"
+                />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{title}</h3>
-              <p className="text-gray-600">{desc}</p>
+              <h3 className="text-xl font-bold mb-4">{title}</h3>
+              <p className="text-muted-foreground">{desc}</p>
             </Card>
           ))}
         </div>
@@ -76,5 +84,3 @@ const Values = () => {
     </section>
   );
 };
-
-export default Values;

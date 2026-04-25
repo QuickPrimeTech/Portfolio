@@ -34,7 +34,7 @@ function CtaDescription({ children, className }: WithChildrenAndClass) {
   return (
     <p
       className={cn(
-        "text-xl text-orange-100 max-w-2xl mx-auto mb-8",
+        "text-xl text-muted-foreground max-w-2xl mx-auto mb-8",
         className,
       )}
     >
