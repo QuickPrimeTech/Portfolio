@@ -2,13 +2,17 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import { Section, Header, H1, SubTitle } from "@/components/typography";
 import Link from "next/link";
+import { CircuitBoard } from "@/components/patterns/circuit-board";
 
-const Hero = () => {
+export const Hero = () => {
   return (
-    <Section className="py-20 bg-gray-50" aria-labelledby="work-header">
+    <Section className="relative py-20" aria-labelledby="work-header">
+      {/* Diagonal Grid with Light */}
+      <CircuitBoard />
+      {/* Your Content/Components */}
       <Header>
         <H1 id="work-header">
-          Our <span className="text-secondary">Restaurant</span> Success Stories
+          Our <span className="text-primary">Restaurant</span> Success Stories
         </H1>
         <SubTitle>
           Discover how we've helped restaurants transform their online presence,
@@ -25,27 +29,3 @@ const Hero = () => {
     </Section>
   );
 };
-
-const Stats = () => {
-  return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-      <div className="text-center">
-        <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
-        <div className="text-gray-600">Projects Completed</div>
-      </div>
-      <div className="text-center">
-        <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
-        <div className="text-gray-600">Client Satisfaction</div>
-      </div>
-      <div className="text-center">
-        <div className="text-3xl font-bold text-blue-600 mb-2">45%</div>
-        <div className="text-gray-600">Avg. Booking Increase</div>
-      </div>
-      <div className="text-center">
-        <div className="text-3xl font-bold text-blue-600 mb-2">2-4</div>
-        <div className="text-gray-600">Weeks to Launch</div>
-      </div>
-    </div>
-  );
-};
-export default Hero;

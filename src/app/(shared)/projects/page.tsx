@@ -1,6 +1,6 @@
 // @/app/projects/page.tsx
 import type { Metadata } from "next";
-import Hero from "@/sections/projects/hero";
+import { Hero } from "@/sections/projects/hero";
 import CTA from "@/sections/projects/CTA";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
@@ -61,13 +61,13 @@ export default function WorkPage() {
   return (
     <>
       <Hero />
-      <section className="py-12 bg-white border-b">
-        <div className="text-sm text-gray-600 container mx-auto section-x">
+      <section className="py-12 bg-muted/50 rounded-t-4xl border-b">
+        <div className="text-sm text-muted-foreground container mx-auto section-x">
           {projects.length} project
           {projects.length !== 1 ? "s" : ""} found
         </div>
       </section>
-      <Section className="bg-gray-50" aria-label="Projects Section">
+      <Section className="bg-muted/50" aria-label="Projects Section">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 container mx-auto px-4">
           {projects.map(
             ({
@@ -76,6 +76,7 @@ export default function WorkPage() {
               description,
               shortDescription,
               image,
+              caseStudy,
               liveUrl,
             }) => (
               <ProjectCard key={name}>
@@ -86,10 +87,24 @@ export default function WorkPage() {
                   <ProjectCardDescription>
                     {shortDescription}
                   </ProjectCardDescription>
-                  <p className="text-sm text-gray-600 mt-2">{description}</p>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    {description}
+                  </p>
                 </ProjectCardContent>
-                <ProjectCardFooter>
-                  <Button className="w-full" asChild>
+                <ProjectCardFooter className="flex  gap-2">
+                  {caseStudy && (
+                    <Button variant={"outline"} asChild>
+                      <Link
+                        href={caseStudy}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Case Study
+                        <ExternalLink className="h-4 w-4 ml-2" />
+                      </Link>
+                    </Button>
+                  )}
+                  <Button className="flex-1" asChild>
                     <Link
                       href={liveUrl}
                       target="_blank"

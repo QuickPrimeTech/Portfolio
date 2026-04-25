@@ -1,18 +1,20 @@
 import { ArrowRight } from "lucide-react";
 import {
-  Cta,
-  CtaTitle,
   CtaDescription,
   CtaContent,
   CtaPrimaryButton,
   CtaSecondaryButton,
 } from "@/components/ui/cta";
+import { Aurora } from "@/components/patterns/aurora";
 
 const CTA = () => {
   return (
-    <Cta>
-      <CtaTitle>Ready to Join Our Success Stories?</CtaTitle>
-      <CtaDescription className="text-xl text-orange-100 max-w-2xl mx-auto mb-8">
+    <div className="section-x section-y relative isolate">
+      <Aurora />
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-center">
+        Ready to Join Our Success Stories?
+      </h2>
+      <CtaDescription className="text-xl text-center text-muted-foreground max-w-2xl mx-auto mb-8">
         Let's create a website that transforms your restaurant's online presence
         and drives real business results.
       </CtaDescription>
@@ -23,7 +25,7 @@ const CTA = () => {
         </CtaPrimaryButton>
         <CtaSecondaryButton href="/pricing">View Pricing</CtaSecondaryButton>
       </CtaContent>
-    </Cta>
+    </div>
   );
 };
 

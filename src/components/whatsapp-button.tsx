@@ -57,7 +57,7 @@ export function WhatsAppButton() {
           className={cn(
             "bg-green-100 dark:bg-green-900 text-green-900 dark:text-green-100",
             "rounded-xl shadow-lg px-4 py-3 max-w-xs",
-            shake && "animate-shake" // 👈 only shake briefly
+            shake && "animate-shake", // 👈 only shake briefly
           )}
         >
           <div className="flex items-start justify-between gap-2">
@@ -84,11 +84,12 @@ export function WhatsAppButton() {
         href={generateWhatsappLink(message)}
         target="_blank"
         rel="noopener noreferrer"
+        title="Contact us on Whatsapp"
         className={cn(
           buttonVariants({ variant: "default", size: "lg" }),
-          "rounded-full h-fit p-4 bg-green-600 hover:bg-green-700 text-white shadow-lg transition animate-bounce-slow"
+          "rounded-full h-fit p-3 bg-green-600 hover:bg-green-700 text-white shadow-lg transition animate-bounce-slow",
         )}
-        aria-label="Open WhatsApp chat"
+        aria-label="Contact us on WhatsApp chat"
       >
         <FaWhatsapp className="size-6" />
       </Link>

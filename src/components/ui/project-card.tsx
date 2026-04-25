@@ -60,7 +60,10 @@ function ProjectCardTitle({
 }: WithChildrenAndClass) {
   return (
     <h3
-      className={cn("text-xl font-bold text-gray-900 mb-2", className)}
+      className={cn(
+        "font-serif text-xl font-bold tracking-wide mb-2",
+        className,
+      )}
       {...props}
     >
       {children}
@@ -75,7 +78,10 @@ function ProjectCardDescription({
 }: WithChildrenAndClass) {
   return (
     <p
-      className={cn("text-gray-600 mb-4 text-sm leading-relaxed", className)}
+      className={cn(
+        "text-muted-foreground mb-4 text-sm leading-relaxed",
+        className,
+      )}
       {...props}
     >
       {children}

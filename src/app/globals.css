@@ -112,6 +112,13 @@
   --background: oklch(1 0 0);
 
   --foreground: oklch(0.145 0 0);
+
+  --aurora-blob-1: oklch(0.82 0.1 264 / 0.32);
+  --aurora-blob-2: oklch(0.88 0.08 166 / 0.24);
+  --aurora-blob-3: oklch(0.85 0.09 300 / 0.28);
+  --aurora-blob-4: oklch(0.9 0.06 340 / 0.2);
+  --aurora-base: var(--background);
+  --aurora-mix: var(--muted);
 }
 
 .dark {
@@ -176,6 +183,13 @@
   --sidebar-border: oklch(1 0 0 / 10%);
 
   --sidebar-ring: oklch(0.556 0 0);
+
+  --aurora-blob-1: oklch(0.38 0.2 264 / 0.55);
+  --aurora-blob-2: oklch(0.42 0.16 166 / 0.45);
+  --aurora-blob-3: oklch(0.4 0.15 300 / 0.5);
+  --aurora-blob-4: oklch(0.36 0.11 340 / 0.4);
+  --aurora-base: var(--background);
+  --aurora-mix: var(--muted);
 }
 
 @layer base {
