@@ -1,19 +1,24 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { Children, WithChildrenAndClass } from "@/types";
+import React from "react";
 
-interface PricingCardProps extends Children {
+type PricingCardProps = {
   popular?: boolean;
-}
+};
 
-const PricingCard = ({ children, popular }: PricingCardProps) => {
+const PricingCard = ({
+  children,
+  popular,
+  ...props
+}: PricingCardProps & React.ComponentProps<typeof Card>) => {
   return (
     <Card
       className={cn(
         "border-2 relative transition-colors",
         popular && "border-primary/50 scale-105",
       )}
+      {...props}
     >
       {popular && <PopularBadge>Most Popular</PopularBadge>}
       {children}
@@ -21,29 +26,48 @@ const PricingCard = ({ children, popular }: PricingCardProps) => {
   );
 };
 
-const PricingCardHeader = ({ children }: Children) => {
-  return <div className="text-center p-6">{children}</div>;
+const PricingCardHeader = ({
+  className,
+  ...props
+}: React.ComponentProps<"div">) => {
+  return <div className={cn("text-center p-6", className)} {...props} />;
 };
 
-const PricingCardTitle = ({ children, className }: WithChildrenAndClass) => {
+const PricingCardTitle = ({
+  className,
+  ...props
+}: React.ComponentProps<"h3">) => {
+  return <h3 className={cn("text-2xl font-semibold", className)} {...props} />;
+};
+
+const PricingCardDescription = ({
+  className,
+  ...props
+}: React.ComponentProps<"p">) => {
   return (
-    <h3 className={cn("text-2xl font-semibold", className)}>{children}</h3>
+    <p className={cn("text-sm text-muted-foreground", className)} {...props} />
   );
 };
 
-const PricingCardDescription = ({ children }: Children) => {
-  return <p className="text-sm text-muted-foreground">{children}</p>;
+const PricingCardContent = ({
+  className,
+  ...props
+}: React.ComponentProps<"div">) => {
+  return <div className={cn("p-6 pt-0", className)} {...props} />;
 };
 
-const PricingCardContent = ({ children }: Children) => {
-  return <div className="p-6 pt-0">{children}</div>;
-};
-
-const PopularBadge = ({ children }: Children) => {
+const PopularBadge = ({
+  className,
+  ...props
+}: React.ComponentProps<typeof Badge>) => {
   return (
-    <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-      {children}
-    </Badge>
+    <Badge
+      className={cn(
+        "absolute -top-3 left-1/2 transform -translate-x-1/2",
+        className,
+      )}
+      {...props}
+    />
   );
 };
 

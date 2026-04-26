@@ -19,10 +19,16 @@ import { Section, Header, Title, SubTitle } from "@/components/typography";
 import { pricingCardsInfo } from "@/data/pricing";
 import Link from "next/link";
 import { getWhatsAppPlanLink } from "@/lib/helpers";
+import { Aurora } from "@/components/patterns/aurora";
 
 const Pricing = () => {
   return (
-    <Section id="pricing" aria-labelledby="pricing-header">
+    <Section
+      id="pricing"
+      className="relative isolate rounded-t-4xl overflow-hidden -mt-6 border-t"
+      aria-labelledby="pricing-header"
+    >
+      <Aurora />
       <Header>
         <Title id="pricing-header">Pricing</Title>
         <SubTitle>

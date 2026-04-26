@@ -42,7 +42,7 @@ const steps = [
 
 export const Process = () => {
   return (
-    <Section className="bg-muted/30 rounded-t-4xl -mt-4">
+    <Section className="bg-muted/30 backdrop-blur-lg rounded-t-4xl -mt-4">
       <Header className="text-center mb-12">
         <Title>Our Process</Title>
         <SubTitle>
