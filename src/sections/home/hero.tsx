@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Zap, BarChart3, Layers } from "lucide-react";
 import Link from "next/link";
 import { generateWhatsappLink } from "@/lib/helpers";
-import { YouTubePlayer } from "@/components/ui/youtube-video-player";
+import { ImageWithFallback } from "@/components/ui/image";
 
 const heroFeatures = [
   {
@@ -45,8 +45,18 @@ export default function Hero() {
         }}
       />
 
-      <div className="container mx-auto relative">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="container flex flex-col-reverse mx-auto relative">
+        <div className="relative lg:absolute max-sm:inset-4 lg:-right-30 lg:top-1/2 lg:-translate-y-1/2 lg:w-180 aspect-3/2">
+          <div className="absolute hidden lg:block bg-linear-to-br from-background/80 to-transparent size-full z-10" />
+          <ImageWithFallback
+            src={
+              "https://res.cloudinary.com/quick-prime-tech/image/upload/v1777211364/homepage-preview_eytq06.png"
+            }
+            alt="preview of projects made by QuickPrimeTech"
+            fill
+          />
+        </div>
+        <div className="relative grid lg:grid-cols-2 gap-12 items-center">
           {/* ── Left ── */}
           <div className="space-y-7 max-w-xl">
             {/* Eyebrow pill */}
@@ -161,30 +171,15 @@ export default function Hero() {
               </div>
             </div>
           </div>
-
           {/* ── Right — Video + floating stat cards ── */}
-          <div className="relative lg:pl-6">
-            {/* Glow */}
-            <div className="absolute -inset-6 bg-gradient-to-br from-primary/25 via-primary/10 to-transparent rounded-3xl blur-3xl opacity-50 pointer-events-none" />
-
-            {/* Video */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
-              <div className="aspect-video relative">
-                <YouTubePlayer
-                  className="w-full h-full"
-                  videoId="2RRE2Hosyxk"
-                  customThumbnail="https://res.cloudinary.com/quick-prime-tech/image/upload/v1771076145/Thumbnail_hwa60a.png"
-                />
-              </div>
-            </div>
-
+          <div className="relative">
             {/* Floating stat — top left */}
-            <div className="absolute -left-6 top-6 hidden lg:flex items-center gap-3 bg-background border border-border rounded-xl px-4 py-3 shadow-lg">
+            <div className="absolute -left-6 top-6 hidden lg:flex items-center gap-3 bg-card/60 backdrop-blur-sm border rounded-xl px-4 py-3 shadow-lg">
               <div className="size-9 rounded-lg bg-primary/15 flex items-center justify-center shrink-0">
                 <Zap className="w-4 h-4 text-primary" />
               </div>
               <div>
-                <p className="text-[11px] text-muted-foreground leading-none mb-0.5">
+                <p className="text-xs text-muted-foreground leading-none mb-0.5">
                   Avg. delivery
                 </p>
                 <p className="text-sm font-bold text-foreground leading-none">

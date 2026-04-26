@@ -110,7 +110,7 @@ function useReducedMotion() {
 /* ═════════════════════════════════════════
    NAVBAR
    ═════════════════════════════════════════ */
-export default function Navbar() {
+export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
 

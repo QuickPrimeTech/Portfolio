@@ -1,5 +1,5 @@
-import Navbar from "@/layouts/navbar";
-import Footer from "@/layouts/footer";
+import { Navbar } from "@/layouts/navbar";
+import { Footer } from "@/layouts/footer";
 import { Toaster } from "sonner";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 
