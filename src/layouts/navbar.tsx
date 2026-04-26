@@ -121,10 +121,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+    <nav
       className={cn(
         "sticky top-0 z-50 w-full border-b transition-all duration-500",
         scrolled
@@ -193,7 +190,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 }
 

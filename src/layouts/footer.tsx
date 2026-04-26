@@ -47,7 +47,7 @@ export const footerSecondaryLinks: FooterLink[] = [
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-background rounded-t-4xl -mt-6 to-primary/30 pt-16 pb-8 section-x">
+    <footer className="bg-gradient-to-t from-background from-10% backdrop-blur-xl rounded-t-4xl -mt-6 to-primary/30 pt-16 pb-8 section-x">
       {/* Logo and Description */}
       <div className="flex flex-wrap gap-20">
         <div className="flex flex-col gap-6 max-w-md">
@@ -106,7 +106,7 @@ export function Footer() {
       </div>
       {/* Footer Bottom */}
       <div className="border-t border-dashed border-foreground/20 mt-16 pt-12 flex flex-col md:flex-row items-center justify-between gap-6">
-        <p className="text-base text-gray-400 text-center md:text-left">
+        <p className="text-base text-muted-foreground text-center md:text-left">
           © {new Date().getFullYear()} RestaurantTech. All rights reserved.
         </p>
         <div className="flex flex-wrap justify-center gap-6">
@@ -114,9 +114,10 @@ export function Footer() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-gray-400 hover:text-white transition-colors duration-300"
+              className="group flex items-center hover:-translate-x-2 transition-all hover:underline gap-1.5 text-sm text-muted-foreground hover:text-foreground duration-300"
             >
               {link.name}
+              <ArrowUpRight className="size-3.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </a>
           ))}
         </div>
