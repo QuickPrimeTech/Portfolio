@@ -43,8 +43,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import { Separator } from "@/components/ui/separator";
 
 /* ─────────────────────────────────────────
-   CONTACT INFO — Update these
-   ───────────────────────────────────────── */
+    CONTACT INFO — Update these
+    ───────────────────────────────────────── */
 const CONTACT = {
   email: "quickprimetech@quickprimetech.com",
   phone: "+254 717 448 835",
@@ -53,8 +53,8 @@ const CONTACT = {
 };
 
 /* ─────────────────────────────────────────
-   TEXT SIZE HOOK (persisted via localStorage)
-   ───────────────────────────────────────── */
+    TEXT SIZE HOOK (persisted via localStorage)
+    ───────────────────────────────────────── */
 type TextSize = "small" | "default" | "large";
 
 const TEXT_SIZE_MAP: Record<TextSize, string> = {
@@ -84,8 +84,8 @@ function useTextSize() {
 }
 
 /* ─────────────────────────────────────────
-   REDUCED MOTION HOOK (persisted)
-   ───────────────────────────────────────── */
+    REDUCED MOTION HOOK (persisted)
+    ───────────────────────────────────────── */
 function useReducedMotion() {
   const [reducedMotion, setReducedMotionState] = useState(false);
 
@@ -108,8 +108,8 @@ function useReducedMotion() {
 }
 
 /* ═════════════════════════════════════════
-   NAVBAR
-   ═════════════════════════════════════════ */
+    NAVBAR
+    ═════════════════════════════════════════ */
 export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -212,21 +212,22 @@ function AccessibilityOptions() {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 w-full">
       {/* Theme */}
-      <div className="space-y-2.5">
+      <div className="w-full space-y-2.5">
         <Label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
           Appearance
         </Label>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="flex items-center gap-1.5 bg-muted/50 rounded-4xl p-1.5 border">
           {themes.map((t) => (
             <Button
-              size={"sm"}
+              size="sm"
               key={t.value}
               onClick={() => setTheme(t.value)}
               variant={theme === t.value ? "default" : "outline"}
+              className="whitespace-nowrap"
             >
-              <t.icon className="size-4" />
+              <t.icon />
               {t.label}
             </Button>
           ))}
@@ -238,7 +239,7 @@ function AccessibilityOptions() {
         <Label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
           Text Size
         </Label>
-        <div className="flex items-center gap-1.5 bg-muted/50 rounded-4xl p-1.5 border border-border">
+        <div className="flex items-center gap-1.5 bg-muted/50 rounded-4xl p-1.5 border">
           {textSizes.map((item) => (
             <Button
               key={item.key}
@@ -453,7 +454,7 @@ function MobileNav() {
 
       <SheetContent
         side="right"
-        className="w-full rounded-l-3xl gap-0 sm:w-1/2 lg:w-2/3 bg-background/95 backdrop-blur-xl border-l border-border p-0"
+        className="w-full sm:rounded-l-3xl gap-0 sm:w-9/10 lg:w-2/3 bg-background/95 backdrop-blur-xl border-l border-border p-0"
       >
         <SheetHeader className="border-b rounded-b-xl border-dashed">
           <SheetTitle>
@@ -478,7 +479,7 @@ function MobileNav() {
                     <Link
                       href={link.href}
                       className={cn(
-                        "text-muted-foreground hover:bg-muted hover:text-foreground border border-border/30 flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all",
+                        "text-muted-foreground hover:bg-muted hover:text-foreground border border-border/50 flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all",
                         pathname === link.href && "bg-primary/10 text-primary",
                       )}
                     >

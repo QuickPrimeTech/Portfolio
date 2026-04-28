@@ -42,7 +42,7 @@ export default function Hero() {
           backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px),
             linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
           backgroundSize: "48px 48px",
-        }}
+        }}  
       />
 
       <div className="container flex flex-col-reverse mx-auto relative">

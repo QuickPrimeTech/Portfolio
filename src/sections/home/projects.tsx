@@ -82,13 +82,9 @@ function ProjectCarousel() {
                 <ProjectCardFooter className="flex  gap-2">
                   {project.caseStudy && (
                     <Button variant={"outline"} asChild>
-                      <Link
-                        href={project.caseStudy}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <Link href={project.caseStudy}>
                         Case Study
-                        <ExternalLink className="h-4 w-4 ml-2" />
+                        <ExternalLink />
                       </Link>
                     </Button>
                   )}
@@ -99,7 +95,7 @@ function ProjectCarousel() {
                       rel="noopener noreferrer"
                     >
                       See Live Demo
-                      <ExternalLink className="h-4 w-4 ml-2" />
+                      <ExternalLink />
                     </Link>
                   </Button>
                 </ProjectCardFooter>
