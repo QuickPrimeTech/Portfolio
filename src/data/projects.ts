@@ -10,6 +10,16 @@ export const projects = [
     liveUrl: "http://lischineserestaurantnairobi.co.ke/",
     caseStudy: "/case-study/lis-chinese-restaurant",
   },
+{
+  name: "Nova Kicks",
+  category: "Online shoe store",
+  description:
+    "Website featuring online shopping functionality, detailed shoe listings, special offers and streamlined browsing to increase sales, improve customer experience and boost conversions.",
+  shortDescription: "Shoe store located at Kimathi Street, Nairobi.",
+  image:
+    "https://res.cloudinary.com/quick-prime-tech/image/upload/v1778491171/nova_kicks_kdhrrl.png",
+  liveUrl: "https://novakicks.quickprimetech.com/"
+},
   {
     name: "The Ziwa Restaurant",
     category: "Seafood Restaurant",
